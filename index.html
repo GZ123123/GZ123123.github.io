@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="preload" href="./fonts/Miraculous&Christmas.ttf" as="font" type="font/ttf" crossorigin>
+  <link href="./fonts/Salsa-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link href="./fonts/iCiel-Astrolight-Roman.ttf" as="font" type="font/ttf" crossorigin>
+
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/icons.css">
+</head>
+
+<body>
+  <div class="App">
+    <canvas id="xmas"></canvas>
+    <header>
+      <div class="title">
+        <h1>Merry Christmas</h1>
+        <h4>love message</h4>
+      </div>
+      <div class="banner">
+      </div>
+    </header>
+    <main>
+      <div class="music">
+        <audio controls style="display: none">
+          <source src="./song/de-vuong/song.mp3" type="audio/mpeg">
+        </audio>
+        <div class="image"></div>
+        <div id="lyricer" class="lyric"></div>
+        <div class="duration">
+          <div></div>
+        </div>
+        <div class="control">
+          <span class="icon prev"></span>
+          <span class="icon back"></span>
+          <span class="icon play"></span>
+          <span class="icon next"></span>
+          <span class="icon skip"></span>
+        </div>
+      </div>
+      <div class="question">
+        <h3 class="title"><span>What does christmas mean?</span></h3>
+        <div class="content">
+          <ul>
+            <li data-toggle='modal' data-target="test">
+              <i class="icon santa"></i>
+            </li>
+            <li data-toggle='modal' data-target="test-2">
+              <i class="icon stocking"></i>
+            </li>
+            <li onclick="">
+              <i class="icon star"></i>
+            </li>
+            <li onclick="">
+              <i class="icon wreath"></i>
+            </li>
+            <li onclick="">
+              <i class="icon tree"></i>
+            </li>
+            <li onclick="">
+              <i class="icon bell"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="gift">
+        <h3 class="title"><span>Gift for you</span></h3>
+        <div class="content">
+          <ul>
+            <li id="gift-1" class="gift-item">
+              <div>
+                <i class="icon gift"></i>
+              </div>
+            </li>
+            <li id="gift-2" class="gift-item">
+              <div>
+                <i class="icon gift"></i>
+              </div>
+            </li>
+            <li id="gift-3" class="gift-item">
+              <div>
+                <i class="icon gift"></i>
+              </div>
+            </li>
+            <li id="gift-4" class="gift-item">
+              <div>
+                <i class="icon gift"></i>
+              </div>
+            </li>
+            <li id="gift-5" class="gift-item">
+              <div>
+                <i class="icon gift"></i>
+              </div>
+            </li>
+            <li id="gift-6" class="gift-item">
+              <div>
+                <i class="icon gift"></i>
+              </div>
+            </li>
+            <li id="gift-7" class="gift-item">
+              <div>
+                <i class="icon gift"></i>
+              </div>
+            </li>
+            <li id="gift-8" class="gift-item">
+              <div>
+                <i class="icon gift"></i>
+              </div>
+            </li>
+            <li id="gift-9" class="gift-item">
+              <div>
+                <i class="icon gift"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <h3 class="title"> Project Xmas </h3>
+        <hr>
+        <div class="content">
+          <div class="socials">
+            <a rel="noopener noreferrer" href="https://fb.com" target="_blank" aria-label="instagram">
+              <i class="icon instagram"></i>
+            </a>
+            <a rel="noopener noreferrer" ref href="https://linkedin.com" target="_blank" aria-label="linkedin">
+              <i class="icon linkedin"></i>
+            </a>
+            <a rel="noopener noreferrer" href="https://fb.com" target="_blank" aria-label="facebook">
+              <i class="icon facebook"></i>
+            </a>
+          </div>
+          <div class="owner">
+            <a rel="author" href="#" target="_blank">Phuong Trinh</a> | <a rel="author" href="#" target="_blank">Nguyen
+              Thai Sang</a></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <template id="test" data-class="tree" data-ltr="false">
+    <fragment>
+      asdasd
+    </fragment>
+  </template>
+
+  <template id="test-2" data-class="tree" data-ltr="false">
+    <fragment>
+      <span>
+        Dear , <h3 class="d-inline">Test</h3>
+      </span>
+      <p>
+        Vậy là một mùa Giáng Sinh nữa lại đến, tụi mình mong bạn có một mùa Giáng Sinh an lành và ấm áp.
+      </p>
+      <p>
+        Chúc cho những cố gắng và nỗ lực trong năm của bạn đều được đền đáp xứng đáng. Chúc cho nụ cười của bạn luôn
+        rực
+        rỡ như những ánh đèn.
+      </p>
+      <p>
+        Mong những lời chúc này sẽ mang đến cho bạn niềm vui nhe!
+      </p>
+      <div class="text-right">
+        <h4>Merry<br />Christmas</h4>
+        <h6 class="text-brown">and happy new year</h6>
+      </div>
+    </fragment>
+  </template>
+
+  <div id="modal-container" class="modal-container">
+    <div class="modal">
+      <div class="container">
+        <!-- Content -->
+
+        <!-- End Content-->
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="./scripts/lyricer.js"></script>
+<script src="./scripts/main.js"></script>
+<script src="./scripts/test.js"></script>
+
+</html>
