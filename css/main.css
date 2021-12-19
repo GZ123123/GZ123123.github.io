@@ -1,3 +1,10 @@
+:root {
+  --background-color: #21283A;
+  --background-image: url('../images/header.png');
+  --background-image-rotate: url("../images/footer.png");
+  --color: #FFFFFF;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +12,8 @@
   font-family: 'MC', -apple-system, Roboto, sans-serif;
   font-weight: 400;
   box-sizing: border-box;
-}
 
-:root {
-  --background-color: #21283A;
-  --background-image: url('../images/header.png');
-  --background-image-rotate: url("../images/footer.png");
-  --color: #FFFFFF;
+  color: var(--color);
 }
 
 .App {
@@ -36,12 +38,26 @@
   display: inline-block;
 }
 
+.text-center {
+  text-align: center  ;
+}
+
 .text-right {
   text-align: right;
 }
 
 .text-brown {
   color: #CCBA9C;
+}
+
+.row {
+  display: flex;
+  height: 100%;
+  gap: 20px;
+}
+
+.cols {
+  flex: 0 1 50%;
 }
 
 /* #region Override */
@@ -448,39 +464,70 @@ body.modal-showed {
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
-
-  background: url('../images/Card_Background_1.png') no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .modal .container { 
   padding: 4px;
+  height: 100%;
 }
 
 .modal .container p , 
 .modal .container span {
-  font-family: Arial;
+  font-family: 'Dongle';
 }
-
+.modal .container h3 {
+  font-size: 44px;
+  line-height: 54px;
+}
+.modal .container h4 {
+  font-size: 36px;
+} 
+.modal .container h6 {
+  font-family: 26px;
+}
 .modal .container h4,
 .modal .container h6 {
   font-family: RB;
   letter-spacing: 2px;
 }
 
-.modal .container h4 {
-  font-size: 36px;
-} 
+.modal.question {
+  background: url('../images/Card_Question_Background.png') no-repeat;
+  background-size: cover;
+  background-position: center;
 
-.modal .container h6 {
-  font-family: 26px;
+  padding: 45px 32px;
 }
-
+.modal.question.wreath,
+.modal.question.chirstmas-tree {
+  padding: 34px 32px;
+}
+.modal.question .container {
+  padding: 0;
+}
+.modal.question h3 {
+  margin-bottom: 20px;
+}
+.modal.question p {
+  font-size: 19px;
+  line-height: 31px;
+  margin-bottom: 20px;
+}
+.modal.question img {
+  width: 100%;
+}
+.modal.tree {
+  background: url('../images/Card_Background_1.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .modal.tree .container {
-  margin: 90px 52px 0 294px;
+  margin: 0px 52px 0 294px;
   color: var(--color);
   line-height: 30.89px;
+}
+.modal.tree .container > div {
+  padding-top: 90px;
 }
 /* #endregion */
 

@@ -1,8 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
 	let gifts = localStorage.getItem("gifts")?.split(",") || [];
+	let _name = "Các bạn";
+
+	Object.defineProperty(window, "name", {
+		get: () => _name,
+		set: (v) => (_name = v.toString()),
+	});
+
 	const modal = document.querySelector(".modal-container");
 
-	console.log(gifts);
+	const copyToModalContent = function (id) {
+		const node = document.querySelector(id);
+		const modal = document.querySelector("#modal-container");
+		const { class: _class, ltr } = node.dataset;
+
+		const template = node.content
+			.cloneNode("true")
+			.querySelector("fragment").innerHTML;
+
+		_class
+			.split(" ")
+			.forEach((c) => modal.querySelector(".modal").classList.add(c));
+
+		modal.querySelector(".container").innerHTML = template.replace(
+			"%name%",
+			_name
+		);
+	};
+
+	const clearModal = function () {
+		const modal = document.querySelector("#modal-container");
+		modal.querySelector(".modal").classList.value = "modal";
+		modal.querySelector(".container").innerHTML = "";
+	};
 
 	gifts.forEach((i) =>
 		document.querySelector(`#gift-${i}`).classList.add("active")
@@ -42,23 +72,3 @@ document.addEventListener("DOMContentLoaded", function () {
 		})
 	);
 });
-
-const copyToModalContent = function (id) {
-	const node = document.querySelector(id);
-	const modal = document.querySelector("#modal-container");
-	const { class: _class, ltr } = node.dataset;
-
-	const template = node.content
-		.cloneNode("true")
-		.querySelector("fragment").innerHTML;
-
-	modal.querySelector(".modal").classList.add(_class);
-
-	modal.querySelector(".container").innerHTML = template;
-};
-
-const clearModal = function () {
-	const modal = document.querySelector("#modal-container");
-	modal.querySelector(".modal").classList.value = "modal";
-	modal.querySelector(".container").innerHTML = "";
-};

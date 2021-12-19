@@ -49,22 +49,22 @@
         <h3 class="title"><span>What does christmas mean?</span></h3>
         <div class="content">
           <ul>
-            <li data-toggle='modal' data-target="test">
+            <li data-toggle='modal' data-target="question-santa">
               <i class="icon santa"></i>
             </li>
-            <li data-toggle='modal' data-target="test-2">
+            <li data-toggle='modal' data-target="question-sock">
               <i class="icon stocking"></i>
             </li>
-            <li onclick="">
+            <li data-toggle='modal' data-target="question-star">
               <i class="icon star"></i>
             </li>
-            <li onclick="">
+            <li data-toggle='modal' data-target="question-wreath">
               <i class="icon wreath"></i>
             </li>
-            <li onclick="">
+            <li data-toggle='modal' data-target="question-chirstmas-tree">
               <i class="icon tree"></i>
             </li>
-            <li onclick="">
+            <li data-toggle='modal' data-target="question-bell">
               <i class="icon bell"></i>
             </li>
           </ul>
@@ -74,7 +74,7 @@
         <h3 class="title"><span>Gift for you</span></h3>
         <div class="content">
           <ul>
-            <li id="gift-1" class="gift-item">
+            <li id="gift-1" class="gift-item" data-toggle='modal' data-target="gift-modal-1">
               <div>
                 <i class="icon gift"></i>
               </div>
@@ -147,31 +147,146 @@
     </footer>
   </div>
 
-  <template id="test" data-class="tree" data-ltr="false">
+  <template id="test" data-class="tree asdlkjs weqw" data-ltr="false">
     <fragment>
       asdasd
     </fragment>
   </template>
 
-  <template id="test-2" data-class="tree" data-ltr="false">
+  <template id="gift-modal-1" data-class="gift tree" data-ltr="false">
     <fragment>
-      <span>
-        Dear , <h3 class="d-inline">Test</h3>
-      </span>
-      <p>
-        Vậy là một mùa Giáng Sinh nữa lại đến, tụi mình mong bạn có một mùa Giáng Sinh an lành và ấm áp.
-      </p>
-      <p>
-        Chúc cho những cố gắng và nỗ lực trong năm của bạn đều được đền đáp xứng đáng. Chúc cho nụ cười của bạn luôn
-        rực
-        rỡ như những ánh đèn.
-      </p>
-      <p>
-        Mong những lời chúc này sẽ mang đến cho bạn niềm vui nhe!
-      </p>
-      <div class="text-right">
-        <h4>Merry<br />Christmas</h4>
-        <h6 class="text-brown">and happy new year</h6>
+      <div>
+        <span>
+          Dear , <h3 class="d-inline">%name%</h3>
+        </span>
+        <p>
+          Vậy là một mùa Giáng Sinh nữa lại đến, tụi mình mong bạn có một mùa Giáng Sinh an lành và ấm áp.
+        </p>
+        <p>
+          Chúc cho những cố gắng và nỗ lực trong năm của bạn đều được đền đáp xứng đáng. Chúc cho nụ cười của bạn luôn
+          rực
+          rỡ như những ánh đèn.
+        </p>
+        <p>
+          Mong những lời chúc này sẽ mang đến cho bạn niềm vui nhe!
+        </p>
+        <div class="text-right">
+          <h4>Merry<br />Christmas</h4>
+          <h6 class="text-brown">and happy new year</h6>
+        </div>
+      </div>
+    </fragment>
+  </template>
+
+  <template id="question-santa" data-class="question santa" data-ltr="false">
+    <fragment>
+      <div class="row">
+        <div class="cols">
+          <h3 class="text-center">Ông già noel</h3>
+          <p>Theo truyền thuyết ông Già Noel sống tại Bắc Cực. Ống sống với những người lùn và dành đa số thời gian để
+            nhận thư từ tất cả trẻ con trên thế giới và chuẩn bị quà cho chúng.</p>
+          <p>Hình mẫu ông già Noel được xuất phát từ Santa Claus - Thánh Nicholas của Mỷa Lycia.</p>
+        </div>
+        <div class="cols row">
+          <img src="./images/question-santa-card.png" alt="">
+        </div>
+      </div>
+    </fragment>
+  </template>
+
+  <template id="question-sock" data-class="question sock" data-ltr="false">
+    <fragment>
+      <div class="row">
+        <div class="cols">
+          <h3 class="text-center">Tât Giáng Sinh</h3>
+          <p>Truyền thuyết kể rằng treo tất bên cạnh lò sưởi có ống khói vào đêm Giáng sinh thì sẽ có ông già Noel đến
+            thăm và đặt những món quà ta mong ước vào. </p>
+          <p>Tặng nhau những đôi tất vào Giáng sinh mang lại sự ấm áp và những phúc lành.</p>
+        </div>
+        <div class="cols row">
+          <img src="./images/question-sock-card.png" alt="">
+        </div>
+      </div>
+    </fragment>
+  </template>
+
+  <template id="question-star" data-class="question star" data-ltr="false">
+    <fragment>
+      <div class="row">
+        <div class="cols">
+          <h3 class="text-center">Ngôi sao</h3>
+          <p>TNgôi sao Giáng sinh là biểu tượng ý nghĩa tỏng mùa Giáng Sinh và luôn được treo chỗ trang trọng nhất ở
+            các giáo đường, trên các cây thông Noel, ...
+          </p>
+          <p>
+            Hình ảnh ngôi sao chính là sức mạnh quyền năng của Chúa, xóa tan bóng tối đêm đông lạnh giá, thắp lên một
+            mùa xuân mới ấm áp và hạnh phúc cho muôn dân.</p>
+        </div>
+        <div class="cols row">
+          <img src="./images/question-star-card.png" alt="">
+        </div>
+      </div>
+    </fragment>
+  </template>
+
+  <template id="question-wreath" data-class="question wreath" data-ltr="true">
+    <fragment>
+      <div class="row">
+        <div class="cols row">
+          <img src="./images/question-wreath-card.png" alt="">
+        </div>
+        <div class="cols">
+          <h3 class="text-center">Ngôi sao</h3>
+          <p>TNgôi sao Giáng sinh là biểu tượng ý nghĩa tỏng mùa Giáng Sinh và luôn được treo chỗ trang trọng nhất ở
+            các giáo đường, trên các cây thông Noel, ...
+          </p>
+          <p>
+            Hình ảnh ngôi sao chính là sức mạnh quyền năng của Chúa, xóa tan bóng tối đêm đông lạnh giá, thắp lên một
+            mùa xuân mới ấm áp và hạnh phúc cho muôn dân.</p>
+        </div>
+      </div>
+    </fragment>
+  </template>
+
+  <template id="question-chirstmas-tree" data-class="question chirstmas-tree" data-ltr="true">
+    <fragment>
+      <div class="row">
+        <div class="cols row">
+          <img src="./images/question-tree-card.png" alt="">
+        </div>
+        <div class="cols">
+          <h3 class="text-center">Cây Thông Noel</h3>
+          <p>
+            Loại cây xanh tốt quanh năm tượng trưng cho sự sống vĩnh cửu, phồn vinh và ấm no. Cây thông được chọn cho
+            dịp Giáng sinh cũng là vì nó vẫn có thể xanh tốt vào mùa đông lạnh giá. Dù bị tuyết phủ ngập, lá thông
+            cũng không bị rụng, cành cây cũng không hề gãy.
+          </p>
+          <p>
+            Thánh Boniface nói rằng cây thông là sự sống và nó tượng trưng cho cuộc sống vĩnh hằng của Chúa cứu thế.
+            Chirstmas
+          </p>
+        </div>
+      </div>
+    </fragment>
+  </template>
+
+  <template id="question-bell" data-class="question bell" data-ltr="true">
+    <fragment>
+      <div class="row">
+        <div class="cols row">
+          <img src="./images/question-bell-card.png" alt="">
+        </div>
+        <div class="cols">
+          <h3 class="text-center">Tiêng Chuông</h3>
+          <p>
+            Trong vài nền văn hóa Á Châu, tiếng chuông được dùng báo hiệu cho quần chúng biết một biến cố hoan hỉ hay
+            một sự kiện buồn não vừa xảy đến.
+          </p>
+          <p>
+            Vào lễ Giáng sinh, tại thời khắc 12 giờ đêm 24 tháng 12, những hồi chuông ngân vang báo hiệu Chúa hài đồng
+            giáng sinh, báo hiệu tin vui, phước lành cho thời khắc đầu tiên của năm mới.
+          </p>
+        </div>
       </div>
     </fragment>
   </template>
