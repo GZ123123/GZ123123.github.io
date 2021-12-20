@@ -23,3 +23,8 @@
   font-family: RB;
   src: url("../fonts/ReenieBeanie-Regular.ttf");
 }
+
+@font-face {
+  font-family: Dongle;
+  src: url("../fonts/Dongle-Light.ttf");
+}
