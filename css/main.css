@@ -16,6 +16,14 @@
     stroke: none;
   }
 }
+@keyframes Blind {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+}
 
 * {
   margin: 0;
@@ -155,11 +163,18 @@ header div.title h4::before {
 }
 header div.banner svg{
   width: 100%;
-}
-
-header div.banner svg.active .a {
   transform: rotateY(180deg);
   transform-origin: center;
+}
+
+header div.banner svg.active .svg-star {
+  opacity: 0;
+  animation: Blind 1s infinite 4.3s;
+  /* animation-name: Blind;
+  animation-duration: 5s;
+  animation-fill-mode: n; */
+}
+header div.banner svg.active .a {
   fill: none;
   stroke: white;
   stroke-width: 3px;
