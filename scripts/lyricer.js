@@ -31,9 +31,17 @@
 		this.lyric = lyricParse(lyric);
 		this.node = node;
 		this.duration = this.node.duration;
-		this.index = 0;
+		this.index = -1;
 
 		if (this.node.nodeName === "AUDIO") {
+			this.node.dispatchEvent(
+				new CustomEvent("lyric-update", {
+					detail: {
+						index: 0,
+						lyric: this.lyric[0].line,
+					},
+				})
+			);
 			this.node.addEventListener("timeupdate", (e) => {
 				const current = e.target.currentTime;
 				e.target.dispatchEvent(
@@ -53,6 +61,7 @@
 				const _index = this.lyric.findIndex(
 					(x) => x.starttime <= current && x.endtime >= current
 				);
+
 				if (this.index != _index) {
 					e.target.dispatchEvent(
 						new CustomEvent("lyric-update", {
