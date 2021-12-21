@@ -315,7 +315,6 @@ main .question .content ul {
   padding: 0 50px;
 }
 main .question .content ul li {
-  /* flex: 0 1 25%; */
   min-width: 250px;
   aspect-ratio: 1/1;
   border: 5px solid white;
