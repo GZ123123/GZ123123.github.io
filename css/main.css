@@ -315,7 +315,7 @@ main .question .content ul {
   padding: 0 50px;
 }
 main .question .content ul li {
-  flex: 0 1 25%;
+  /* flex: 0 1 25%; */
   min-width: 250px;
   aspect-ratio: 1/1;
   border: 5px solid white;
@@ -364,9 +364,9 @@ main .question .content ul li:hover i::after {
 /*
  * Gift
  */
- main .gift {
-   z-index: 1;
- }
+main .gift {
+  z-index: 1;
+}
 main .gift .title {
   margin-top: 111px;
 }
