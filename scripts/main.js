@@ -60,17 +60,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		})
 	);
 
-	document.querySelectorAll(".gift-item").forEach((n) =>
-		n.addEventListener("click", (e) => {
-			const target = e.target.closest(".gift-item");
-			const index = target.id.split("-").pop();
-			if (!target.classList.contains("active")) {
-				target.classList.add("active");
-				gifts.push(index);
-				localStorage.setItem("gifts", gifts.join(","));
-			}
-		})
-	);
+	// document.querySelectorAll(".gift-item").forEach((n) =>
+	// 	n.addEventListener("click", (e) => {
+	// 		const target = e.target.closest(".gift-item");
+	// 		const index = target.id.split("-").pop();
+	// 		if (!target.classList.contains("active")) {
+	// 			target.classList.add("active");
+	// 			gifts.push(index);
+	// 			localStorage.setItem("gifts", gifts.join(","));
+	// 		}
+	// 	})
+	// );
 
 	document.querySelector("audio").addEventListener("song-duration", (e) => {
 		document.querySelector(
