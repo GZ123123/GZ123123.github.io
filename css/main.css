@@ -29,6 +29,7 @@
 }
 
 .App {
+  position: relative;
   width: 100%;
 
   color: var(--color);
@@ -363,6 +364,9 @@ main .question .content ul li:hover i::after {
 /*
  * Gift
  */
+ main .gift {
+   z-index: 1;
+ }
 main .gift .title {
   margin-top: 111px;
 }
@@ -430,15 +434,20 @@ footer {
   position: relative;
 }
 footer .image {
+  z-index: 0;
   top: 0;
   left: 0;
   position: absolute;
   width: 100%;
+  height: 100%;
   max-width: unset;
   background: var(--background-image-rotate) no-repeat;
-  background-size: unset;
+  background-size: cover;
+  background-position: bottom
 }
 footer > div {
+  z-index: 1;
+    position: relative;
   padding: 131px 0 86px 0;
   text-align: center;
   
@@ -468,6 +477,16 @@ footer .content .socials {
 footer .content .icon::after {
   width: 46px;
   height: 46px;
+}
+.footer-image {
+  position: absolute;
+  padding-top: 750px;
+  background: var(--background-image-rotate) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
 /* #endregion */
 
