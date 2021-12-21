@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-	let gifts = localStorage.getItem("gifts")?.split(",") || [];
-	let _name = "Các bạn";
+	// let gifts = localStorage.getItem("gifts")?.split(",") || [];
+	let _name = "Matakunkun";
 
 	Object.defineProperty(window, "name", {
 		get: () => _name,
@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		modal.querySelector(".container").innerHTML = "";
 	};
 
-	gifts.forEach((i) =>
-		document.querySelector(`#gift-${i}`).classList.add("active")
-	);
+	fetch("../song/santa-tell-me/lyric.lrc")
+		.then((c) => c.text())
+		.then((c) => (this.lr = new Lyricer(document.querySelector("audio"), c)));
 
 	window.addEventListener("click", (e) => {
 		if (e.target == modal) {
@@ -71,4 +71,47 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		})
 	);
+
+	document.querySelector("audio").addEventListener("song-duration", (e) => {
+		document.querySelector(
+			".duration"
+		).style = `--duration: ${e.detail.percent}%`;
+	});
+
+	document
+		.querySelector("audio")
+		.addEventListener(
+			"lyric-update",
+			(e) => (lyricer.innerHTML = e.detail.lyric)
+		);
+
+	document.querySelector(".duration").addEventListener("click", (e) => {
+		const rect = e.target.getBoundingClientRect();
+		var x = e.clientX - rect.left; //x position within the element.
+		this.lr.move(x / rect.width);
+	});
+
+	document.querySelectorAll(".icon").forEach((n) =>
+		n.addEventListener("click", (e) => {
+			if (e.target.classList.contains("play")) {
+				e.target.classList.toggle("play");
+				e.target.classList.toggle("pause");
+				this.lr.play();
+			} else if (e.target.classList.contains("pause")) {
+				e.target.classList.toggle("play");
+				e.target.classList.toggle("pause");
+				this.lr.pause();
+			}
+		})
+	);
+
+	document
+		.querySelector("input[name='name']")
+		.addEventListener("keydown", (e) => {
+			if (e.keyCode == 13 && !!e.target.value.trim()) {
+				_name = e.target.value;
+				document.querySelector("body").classList.value = "";
+				document.querySelector("#name-modal").remove();
+			}
+		});
 });

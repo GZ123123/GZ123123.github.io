@@ -5,6 +5,18 @@
   --color: #FFFFFF;
 }
 
+@keyframes Signature {
+  55% {
+    stroke-dashoffset: 0000;
+  }
+
+  100% {
+    stroke-dashoffset: 0000;
+    fill: white;
+    stroke: none;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -140,21 +152,49 @@ header div.title h4::before {
   margin: 0 14px;
   border-bottom: 4px solid white;
 }
-header div.banner {
-  margin: auto;
-  margin-top: 64px;
+header div.banner svg{
   width: 100%;
-  max-width: 1220px;
-  height: 500px;
-  -webkit-mask: url("../icons/tree.svg");
-  mask: url("../icons/tree.svg");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-
-  background-color: white;
 }
+
+header div.banner svg.active .a {
+  transform: rotateY(180deg);
+  transform-origin: center;
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+
+  animation-name: Signature;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.55, .25, .43, 1);
+}
+header div.banner svg.active .b {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+
+  animation-name: Signature;
+  animation-duration: 8.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.25, -0.1, .43, .5);
+}
+header div.banner svg.active .c {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+
+  animation-name: Signature;
+  animation-duration: 6.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.55, -0.43, 0.8, 1);
+}
+
 main *{
   font-family: 'Salsa', 'Courier New', Courier, monospace;
 }
@@ -191,7 +231,7 @@ main .music * {
 }
 main .music {
   text-align: left;
-  padding: 138px;
+  padding: 138px 50px;
 }
 
 main .music .image {
@@ -426,10 +466,20 @@ footer .content .icon::after {
 
 /* #region Modal */
 canvas {
-  display: none;
+  /* display: none; */
   position: absolute;
   /* width: 100%; */
   height: 100%;
+}
+
+.snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  z-index: 2;
+  pointer-events: none;
 }
 
 body.modal-showed {
@@ -446,6 +496,10 @@ body.modal-showed {
   height: 100vh; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0, 0.4); /* Fallback color */
+}
+
+.modal-container.bg-white {
+  background-color: #21283A;
 }
 
 .modal-container.show {
@@ -478,6 +532,8 @@ body.modal-showed {
   font-family: 'Dongle';
 }
 .modal .container h3 {
+  font-family: 'iCielKL Soulbeams';
+  letter-spacing: 2px;
   font-size: 54px;
   line-height: 54px;
 }
@@ -492,7 +548,6 @@ body.modal-showed {
   font-family: RB;
   letter-spacing: 2px;
 }
-
 .modal.question {
   background: url('../images/Card_Question_Background.png') no-repeat;
   background-size: cover;
@@ -500,7 +555,6 @@ body.modal-showed {
 
   padding: 45px 32px;
 }
-
 .modal.question .container {
   padding: 0;
 }
@@ -509,25 +563,52 @@ body.modal-showed {
 }
 .modal.question p {
   font-size: 24px;
-  line-height: 31px;
+  line-height: 24px;
   margin-bottom: 20px;
 }
 .modal.question img {
   width: 100%;
 }
-.modal.tree {
+.modal.question.name {
+  background: url("../images/question-name.png") no-repeat;
+  background-position: center;
+  box-shadow: none;
+  border: none;
+  padding: 70px 242px 120px 115px;
+}
+.modal.question.name p{
+  padding: 0 25px;
+  color: black;
+  font-size: 50px;
+  line-height: 55px;
+  margin: 0;
+  pointer-events: none;
+}
+.modal.question.name input {
+  border: none;
+  border-bottom: 1px dotted black;
+  margin: 0 75px;
+  font-size: 30px;
+  color: black;
+  width: 199px;
+  font-family: 'Dongle';
+  outline: none;
+}
+
+.modal.gift.tree {
   background: url('../images/Card_Background_1.png') no-repeat;
   background-size: cover;
   background-position: center;
 }
-.modal.tree .container {
+.modal.gift.tree .container {
   margin: 0px 52px 0 294px;
   color: var(--color);
   line-height: 30.89px;
 }
-.modal.tree .container > div {
+.modal.gift.tree .container > div {
   padding-top: 90px;
 }
+
 /* #endregion */
 
 /* #region Animation */
