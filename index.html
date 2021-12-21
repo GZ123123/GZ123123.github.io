@@ -43,8 +43,9 @@
     </header>
     <main>
       <div class="music">
-        <audio controls style="display: none">
-          <source src="./song/santa-tell-me/song.mp3" type="audio/mpeg">
+        <audio style="display: none;" controls autoplay>
+          <source src="./song/test.ogv" type="audio/ogg">
+          Your browser does not support the audio element.
         </audio>
         <div class="image"></div>
         <div id="lyricer" class="lyric"></div>
@@ -138,6 +139,7 @@
       </div>
     </main>
     <footer>
+      <div class="image"></div>
       <div>
         <h3 class="title"> Project Xmas </h3>
         <hr>
@@ -159,6 +161,7 @@
         </div>
       </div>
     </footer>
+
   </div>
 
   <template id="test" data-class="tree asdlkjs weqw" data-ltr="false">
@@ -338,7 +341,7 @@
       </div>
     </div>
   </div>
-  <div id="name-modal" class="modal-container show bg-white">
+  <div id="name-modal" class="modal-container show">
     <div class="modal question name">
       <div class="container">
         <!-- Content -->
@@ -354,7 +357,7 @@
 </body>
 
 
-<script src="./scripts/lyricer.min.js"></script>
+<script src="./scripts/lyricer.js"></script>
 <script src="./scripts/main.js"></script>
 <script src="./scripts/snow.min.js"></script>
 

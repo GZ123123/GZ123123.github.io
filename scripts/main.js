@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				_name = e.target.value;
 				document.querySelector("body").classList.value = "";
 				document.querySelector("#name-modal").remove();
+				document.querySelector(".banner svg").classList.add("active");
 			}
 		});
 });

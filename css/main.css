@@ -30,7 +30,6 @@
 
 .App {
   width: 100%;
-  max-width: 1440px;
 
   color: var(--color);
 
@@ -141,6 +140,7 @@ header div.title h1::after {
   height: 55px;
 }
 header div.title h4 {
+  font-family: 'Salsa';
   margin-top: -45px;
   text-align: right;
 }
@@ -427,9 +427,16 @@ main .gift .content ul li div:hover i::after {
 
 footer {
   width: 100%; 
+  position: relative;
+}
+footer .image {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  max-width: unset;
   background: var(--background-image-rotate) no-repeat;
   background-size: unset;
-  background-position: 0px -320px;
 }
 footer > div {
   padding: 131px 0 86px 0;
