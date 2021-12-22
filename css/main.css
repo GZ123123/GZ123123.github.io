@@ -627,6 +627,10 @@ body.modal-showed {
 .modal.question h3 {
   margin-bottom: 20px;
 }
+.modal.question.star p {
+  font-size: 30px;
+  line-height: 30px;
+}
 .modal.question p {
   font-size: 32px;
   line-height: 32px;
