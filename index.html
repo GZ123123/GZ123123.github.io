@@ -9,9 +9,9 @@
   <title>Merry Christmas</title>
 
   <link rel="preload" href="./fonts/Miraculous&Christmas.ttf" as="font" type="font/ttf" crossorigin>
-  <link href="./fonts/Salsa-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link href="./fonts/iCiel-Astrolight-Roman.ttf" as="font" type="font/ttf" crossorigin>
-  <link href="./fonts/Dongle-Light.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./fonts/Salsa-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./fonts/iCiel-Astrolight-Roman.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./fonts/Dongle-Light.ttf" as="font" type="font/ttf" crossorigin>
 
   <link rel="stylesheet" href="./css/fonts.min.css">
   <link rel="stylesheet" href="./css/main.css">
@@ -572,9 +572,11 @@
       <div class="row">
         <div class="cols">
           <h3 class="text-center">Ông già noel</h3>
-          <p>Theo truyền thuyết ông Già Noel sống tại Bắc Cực. Ống sống với những người lùn và dành đa số thời gian để
-            nhận thư từ tất cả trẻ con trên thế giới và chuẩn bị quà cho chúng.</p>
-          <p>Hình mẫu ông già Noel được xuất phát từ Santa Claus - Thánh Nicholas của Mỷa Lycia.</p>
+          <p>
+            Theo truyền thuyết ông Già Noel sống tại Bắc Cực. Ống sống với những người lùn và dành đa số thời gian để
+            nhận thư từ tất cả trẻ con trên thế giới và chuẩn bị quà cho chúng.
+          </p>
+          <p>Hình mẫu ông già Noel được xuất phát từ Santa Claus - Thánh Nicholas của Myra Lycia.</p>
         </div>
         <div class="cols row">
           <img src="./images/question-santa-card.png" alt="">
@@ -588,9 +590,10 @@
       <div class="row">
         <div class="cols">
           <h3 class="text-center">Tât Giáng Sinh</h3>
-          <p>Truyền thuyết kể rằng treo tất bên cạnh lò sưởi có ống khói vào đêm Giáng sinh thì sẽ có ông già Noel đến
-            thăm và đặt những món quà ta mong ước vào. </p>
-          <p>Tặng nhau những đôi tất vào Giáng sinh mang lại sự ấm áp và những phúc lành.</p>
+          <p>Truyền thuyết kể rằng treo tất bên cạnh lò sưởi có ống khói vào đêm Giáng Sinh thì sẽ có ông già Noel đến
+            thăm và đặt những món quà ta mong ước vào.
+          </p>
+          <p>Tặng cho nhau những đôi tất vào mùa Giáng sinh sẽ mang lại sự ấm áp và những phúc lành.</p>
         </div>
         <div class="cols row">
           <img src="./images/question-sock-card.png" alt="">
@@ -604,8 +607,8 @@
       <div class="row">
         <div class="cols">
           <h3 class="text-center">Ngôi sao</h3>
-          <p>Ngôi sao Giáng sinh là biểu tượng ý nghĩa tỏng mùa Giáng Sinh và luôn được treo chỗ trang trọng nhất ở
-            các giáo đường, trên các cây thông Noel, ...
+          <p>Ngôi sao Giáng sinh là biểu tượng ý nghĩa trong mùa Giáng Sinh và luôn được treo chỗ trang trọng nhất ở các
+            giáo đường, trên các cây thông Noel.
           </p>
           <p>
             Hình ảnh ngôi sao chính là sức mạnh quyền năng của Chúa, xóa tan bóng tối đêm đông lạnh giá, thắp lên một
@@ -618,7 +621,7 @@
     </fragment>
   </template>
 
-  <template id="question-wreath" data-class="question wreath" data-ltr="true">
+  <template id="question-wreath" data-class="question ltr wreath" data-ltr="true">
     <fragment>
       <div class="row">
         <div class="cols row">
@@ -637,7 +640,7 @@
     </fragment>
   </template>
 
-  <template id="question-chirstmas-tree" data-class="question chirstmas-tree" data-ltr="true">
+  <template id="question-chirstmas-tree" data-class="question ltr chirstmas-tree" data-ltr="true">
     <fragment>
       <div class="row">
         <div class="cols row">
@@ -647,19 +650,18 @@
           <h3 class="text-center">Cây Thông Noel</h3>
           <p>
             Loại cây xanh tốt quanh năm tượng trưng cho sự sống vĩnh cửu, phồn vinh và ấm no. Cây thông được chọn cho
-            dịp Giáng sinh cũng là vì nó vẫn có thể xanh tốt vào mùa đông lạnh giá. Dù bị tuyết phủ ngập, lá thông
-            cũng không bị rụng, cành cây cũng không hề gãy.
+            dịp Giáng sinh cũng là vì nó vẫn có thể xanh tốt vào mùa đông lạnh giá. Dù bị tuyết phủ ngập, lá thông cũng
+            không bị rụng, cành cây cũng không hề gãy.
           </p>
           <p>
             Thánh Boniface nói rằng cây thông là sự sống và nó tượng trưng cho cuộc sống vĩnh hằng của Chúa cứu thế.
-            Chirstmas
           </p>
         </div>
       </div>
     </fragment>
   </template>
 
-  <template id="question-bell" data-class="question bell" data-ltr="true">
+  <template id="question-bell" data-class="question ltr bell" data-ltr="true">
     <fragment>
       <div class="row">
         <div class="cols row">
