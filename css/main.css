@@ -605,7 +605,14 @@ body.modal-showed {
   letter-spacing: 2px;
 }
 .modal.question {
-  background: url('../images/Card_Question_Background.png') no-repeat;
+  background: url('../images/Card_Question_Background_Right.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  padding: 45px 32px;
+}
+.modal.question.ltr {
+  background: url('../images/Card_Question_Background_Left.png') no-repeat;
   background-size: cover;
   background-position: center;
 
