@@ -820,6 +820,20 @@ body.modal-showed {
   background-position: center;
 }
 
+.modal.gift.snow-9 .container {
+  margin: 0px auto;
+  padding: 210px 0 60px 0;
+  text-align: center;
+}
+.modal.gift.snow-9 .container h3 {
+  font-size: 36px;
+  line-height: 36px;
+}
+.modal.gift.snow-9 .container p {
+  font-size: 24px;
+  line-height: 24.67px;
+}
+
 /* #endregion */
 
 /* #region Animation */
