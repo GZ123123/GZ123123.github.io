@@ -3,6 +3,7 @@
   --background-image: url('../images/header.png');
   --background-image-rotate: url("../images/footer.png");
   --color: #FFFFFF;
+  --color-black: #000;
 }
 
 @keyframes Signature {
@@ -127,6 +128,7 @@ header div.title {
   width: -moz-fit-content;
   width: -webkit-fit-content;
   width: fit-content;
+  padding-bottom: 64px;
 
   margin: auto;
 }
@@ -149,9 +151,7 @@ header div.title h1::after {
   width: 55px;
   height: 55px;
 }
-div {
-  text-align: right;
-}
+
 header div.title h4 {
   position: relative;
   width: -moz-fit-content;
@@ -187,9 +187,6 @@ header div.banner svg{
 header div.banner svg.active .svg-star {
   opacity: 0;
   animation: Blind 1s infinite 4.3s;
-  /* animation-name: Blind;
-  animation-duration: 5s;
-  animation-fill-mode: n; */
 }
 header div.banner svg.active .a {
   fill: none;
@@ -652,18 +649,175 @@ body.modal-showed {
   outline: none;
 }
 
-.modal.gift.tree {
-  background: url('../images/Card_Background_1.png') no-repeat;
+
+.modal.gift .container > div {
+  align-items: baseline;
+}
+
+.modal.gift.snow-1 {
+  background: url('../images/gift_1.png') no-repeat;
   background-size: cover;
   background-position: center;
 }
-.modal.gift.tree .container {
+.modal.gift.snow-1 .container {
   margin: 0px 52px 0 294px;
+  padding: 90px 0 0 0 ;
   color: var(--color);
   line-height: 30.89px;
 }
-.modal.gift.tree .container > div {
-  padding-top: 90px;
+.modal.gift.snow-1 .container h3 {
+  font-size: 36px;
+}
+.modal.gift.snow-1 .container p {
+  font-size: 26px
+}
+
+.modal.gift.snow-2 {
+  background: url('../images/gift_2.png ') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.modal.gift.snow-2 .container {
+  margin: 0 15px 0 394px;
+  padding: 100px 0 115px 0;
+  color: #003561;
+  line-height: 117.8%;
+}
+.modal.gift.snow-2 .container h3,
+.modal.gift.snow-2 .container p {
+  color: #003561;
+}
+.modal.gift.snow-2 .container h3 {
+  font-size: 36px;
+  line-height: 36px;
+  font-family: 'iCielKL Soulbeams';
+}
+.modal.gift.snow-2 .container p {
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.modal.gift.snow-3 {
+  background: url('../images/gift_3.png ') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.modal.gift.snow-3 .container {
+  margin: 0 30px 0 370px;
+  padding: 190px 0 115px 0;
+  color: #003561;
+  line-height: 117.8%;
+}
+.modal.gift.snow-3 .container h3 {
+  font-size: 36px;
+  line-height: 36px;
+  color: #000;
+  font-family: 'iCielKL Soulbeams';
+}
+.modal.gift.snow-3 .container p{
+  font-family: 'Dongle';
+  font-size: 22px;
+  line-height: 22px;
+  color: #000;
+  font-weight: 500;
+}
+
+.modal.gift.snow-4 {
+  background: url('../images/gift_4.png ') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.modal.gift.snow-4 .container {
+  margin: 0 38px 0 353px;
+  padding: 94px 0 104px 0;
+}
+.modal.gift.snow-4 .container h3 {
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+.modal.gift.snow-4 .container p {
+  font-size: 24px;
+  line-height: 24.67px;
+}
+.modal.gift.snow-4 .container span {
+  font-family: "Gloria Hallelujah";
+  font-size: 12px;
+}
+
+.modal.gift.snow-5 {
+  background: url('../images/gift_5.png ') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.modal.gift.snow-5 .container {
+  margin: 0px 55px 0 395px;
+  padding: 102px 0 118px 0;
+}
+.modal.gift.snow-5 .container h3 {
+  font-size: 36px;
+  line-height: 36px;
+}
+.modal.gift.snow-5 .container p {
+  font-size: 24px;
+  line-height: 24.67px;
+}
+
+.modal.gift.snow-6 {
+  background: url('../images/gift_6.png ') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.modal.gift.snow-6 .container {
+  margin: 0px 27px 0 340px;
+  padding: 89px 0 178px 0;
+}
+.modal.gift.snow-6 .container h3 {
+  font-size: 36px;
+  line-height: 36px;
+}
+.modal.gift.snow-6 .container p {
+  font-size: 20px;
+  line-height: 24.67px;
+}
+
+.modal.gift.snow-7 {
+  background: url('../images/gift_7.png ') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.modal.gift.snow-7 .container {
+  margin: 0px 32px 0 359px;
+  padding: 100px 0 160px 0;
+}
+.modal.gift.snow-7 .container h3 {
+  font-size: 36px;
+  line-height: 36px;
+}
+.modal.gift.snow-7 .container p {
+  font-size: 24px;
+  line-height: 24.67px;
+}
+
+.modal.gift.snow-8 {
+  background: url('../images/gift_8.png ') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.modal.gift.snow-8 .container {
+  margin: 0px 32px 0 359px;
+  padding: 110px 0 160px 0;
+}
+.modal.gift.snow-8 .container p {
+  font-size: 24px;
+  line-height: 24.67px;
+}
+
+.modal.gift.snow-9 {
+  background: url('../images/gift_9.png ') no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* #endregion */

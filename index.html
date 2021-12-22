@@ -20,7 +20,6 @@
 
 <body>
   <div class="App">
-
     <canvas class="snow" id="snow" width="1848" height="515"></canvas>
     <header>
       <div class="title">
@@ -289,37 +288,37 @@
                 <i class="icon gift"></i>
               </div>
             </li>
-            <li id="gift-2" class="gift-item">
+            <li id="gift-2" class="gift-item" data-toggle='modal' data-target="gift-modal-2">
               <div>
                 <i class="icon gift"></i>
               </div>
             </li>
-            <li id="gift-3" class="gift-item">
+            <li id="gift-3" class="gift-item" data-toggle='modal' data-target="gift-modal-3">
               <div>
                 <i class="icon gift"></i>
               </div>
             </li>
-            <li id="gift-4" class="gift-item">
+            <li id="gift-4" class="gift-item" data-toggle='modal' data-target="gift-modal-4">
               <div>
                 <i class="icon gift"></i>
               </div>
             </li>
-            <li id="gift-5" class="gift-item">
+            <li id="gift-5" class="gift-item" data-toggle='modal' data-target="gift-modal-5">
               <div>
                 <i class="icon gift"></i>
               </div>
             </li>
-            <li id="gift-6" class="gift-item">
+            <li id="gift-6" class="gift-item" data-toggle='modal' data-target="gift-modal-6">
               <div>
                 <i class="icon gift"></i>
               </div>
             </li>
-            <li id="gift-7" class="gift-item">
+            <li id="gift-7" class="gift-item" data-toggle='modal' data-target="gift-modal-7">
               <div>
                 <i class="icon gift"></i>
               </div>
             </li>
-            <li id="gift-8" class="gift-item">
+            <li id="gift-8" class="gift-item" data-toggle='modal' data-target="gift-modal-8">
               <div>
                 <i class="icon gift"></i>
               </div>
@@ -364,52 +363,182 @@
     </fragment>
   </template>
 
-  <template id="gift-modal-1" data-class="gift tree" data-ltr="false">
+  <template id="gift-modal-1" data-class="gift snow-1" data-ltr="false">
     <fragment>
-      <div>
-        <span>
-          Dear , <h3 class="d-inline">%name%</h3>
-        </span>
-        <p>
-          Vậy là một mùa Giáng Sinh nữa lại đến, tụi mình mong bạn có một mùa Giáng Sinh an lành và ấm áp.
-        </p>
-        <p>
-          Chúc cho những cố gắng và nỗ lực trong năm của bạn đều được đền đáp xứng đáng. Chúc cho nụ cười của bạn luôn
-          rực
-          rỡ như những ánh đèn.
-        </p>
-        <p>
-          Mong những lời chúc này sẽ mang đến cho bạn niềm vui nhe!
-        </p>
-        <div class="text-right">
-          <h4>Merry<br />Christmas</h4>
-          <h6 class="text-brown">and happy new year</h6>
-        </div>
+      <div class="d-flex">
+        <p>Dear,&nbsp;</p>
+        <h3 class="d-inline">%name%</h3>
+      </div>
+      <p>
+        Vậy là một mùa Giáng Sinh nữa lại đến, tụi mình mong bạn có một mùa Giáng Sinh an lành và ấm áp.
+      </p>
+      <p>
+        Chúc cho những cố gắng và nỗ lực trong năm của bạn đều được đền đáp xứng đáng. Chúc cho nụ cười của bạn luôn
+        rực
+        rỡ như những ánh đèn.
+      </p>
+      <p>
+        Mong những lời chúc này sẽ mang đến cho bạn niềm vui nhe!
+      </p>
+      <div class="text-right">
+        <h4>Merry<br />Christmas</h4>
+        <h6 class="text-brown">and happy new year</h6>
       </div>
     </fragment>
   </template>
-  <template id="gift-modal-2" data-class="gift tree" data-ltr="false">
+  <template id="gift-modal-2" data-class="gift snow-2" data-ltr="false">
     <fragment>
-      <div>
-        <span>
-          <h3 class="d-inline">%name%</h3> ơi!
-        </span>
-        <p>
-          Noel với bạn có mùi vị như thế nào? Là vị “ngọt ngào”, “ấm áp” hay là “yêu thương”?
-        </p>
-        <p>
-          Tụi mình ước rằng ba vị trên đều hiện diện với bạn trong mùa Giáng Sinh này.
-
-        </p>
-        <p>
-          Mong rằng nụ cười của bạn vẫn tươi vui giữa cuộc sống bộn bề này. Mong rằng những điều bình dị sẽ mang đến sự
-          ấm áp cho bạn, để bạn “can đảm” trao đi yêu thương. Mong rằng có ai đó sẽ luôn bên cạnh và trao cho bạn những
-          chiếc ôm ngọt ngào!
-        </p>
-        <p>
-          Một mùa Giáng Sinh an lành bạn nhé!
-        </p>
+      <div class="d-flex">
+        <h3>%name%</h3>
+        <p>&nbsp;ơi!</p>
       </div>
+      <p>
+        Noel với bạn có mùi vị như thế nào? Là vị “ngọt ngào”, “ấm áp” hay là “yêu thương”?
+      </p>
+      <p>
+        Tụi mình ước rằng ba vị trên đều hiện diện với bạn trong mùa Giáng Sinh này.
+      </p>
+      <p>
+        Mong rằng nụ cười của bạn vẫn tươi vui giữa cuộc sống bộn bề này. Mong rằng những điều bình dị sẽ mang đến sự
+        ấm
+        áp cho bạn, để bạn “can đảm” trao đi yêu thương. Mong rằng có ai đó sẽ luôn bên cạnh và trao cho bạn những
+        chiếc
+        ôm ngọt ngào!
+      </p>
+      <p>
+        Một mùa Giáng Sinh an lành bạn nhé!
+      </p>
+    </fragment>
+  </template>
+  <template id="gift-modal-3" data-class="gift snow-3" data-ltr="false">
+    <fragment>
+      <div class="d-flex">
+        <h3>%name%</h3>
+        <p>&nbsp;ơi</p>
+      </div>
+      <p>
+        Chúc bạn một Giáng Sinh an lành nhé!
+      </p>
+      <p>
+        Chúc bạn có một cuộc đời luôn an nhiên và vô ưu!
+      </p>
+      <p>
+        Chúc cho tâm hồn bạn mãi trong trẻo, giản đơn như trẻ thơ, vì cổ tích đời thường là có thật!
+      </p>
+      <p>
+        Chúc cho bạn có một Santa Claus của riêng bạn, để bạn có thể hồn nhiên mà yêu đời.
+      </p>
+      <p>
+        Hãy luôn yêu thương bản thân và trân trọng mọi thứ, bạn nhé!
+      </p>
+    </fragment>
+  </template>
+  <template id="gift-modal-4" data-class="gift snow-4" data-ltr="false">
+    <fragment>
+      <h3>
+        Christmas is coming!
+      </h3>
+      <p>
+        Thời khắc đặc biệt trong năm đã đến, còn gì tuyệt vời hơn khi bạn có thể tận hưởng trọn vẹn khoảnh khắc này
+        với những người bạn yêu thương!
+      </p>
+      <p>
+        Tụi mình ước rằng mọi điều tốt lành và may mắn sẽ luôn ở bên bạn.
+      </p>
+      <p>
+        Chúc cho cuộc sống sắp tới của bạn luôn vui tươi và ấm áp như những bản nhạc Noel.
+        Chúc cho bạn luôn tự tin tỏa sáng rực rỡ giữa bầu trời đầy sao, bạn nhé!
+      </p>
+      <div class="text-right">
+        <span>Merry Xmas and Happy New Year!</span>
+      </div>
+    </fragment>
+  </template>
+  <template id="gift-modal-5" data-class="gift snow-5" data-ltr="false">
+    <fragment>
+      <div class="d-flex">
+        <p>Tadaaaaaa&nbsp;</p>
+        <h3>%name%</h3>
+      </div>
+      <p>
+        Giáng Sinh đã tràn về với bạn rồi đây!
+      </p>
+      <p>
+        Cầu chúc bạn có một mùa Giáng Sinh trọn vẹn và đặc biệt bên cạnh những người mình yêu thương!
+      </p>
+      <p>
+        Chúc bạn luôn rạng rỡ và lung linh như những vì sao. Chúc bạn mãi luôn giữ được trái tim ấm áp và ngọt ngào
+        đối với mọi người. Chúc cho sự yêu thương luôn tràn ngập quanh bạn.
+      </p>
+      <p>
+        Merry Christmas and Happy New Year!
+      </p>
+    </fragment>
+  </template>
+  <template id="gift-modal-6" data-class="gift snow-6" data-ltr="false">
+    <fragment>
+      <div class="d-flex">
+        <p>Này,&nbsp;</p>
+        <h3>%name%</h3>
+      </div>
+      <p>Này,
+        Giáng Sinh này, bên cậu đã có ai chưa?</p>
+      <p>
+        Nếu rồi, mong rằng thời gian sẽ chậm trôi để cậu cùng người mình thương rong đuổi khắp phố phường, để cảm nhận
+        hết được sự ấm áp bình dị xung quanh ta.
+      </p>
+      <p>
+        Nếu chưa, mong rằng trong một khoảnh khắc nào đó, sẽ có người đến và cầm lấy tay cậu, mang cho cậu sự ấm áp
+        vào những ngày đông lạnh giá, nhé!
+      </p>
+      <p>
+        Chúc cho dù thế nào đi nữa, mong cậu vẫn luôn an nhiên. Chỉ cần cậu mỉm cười, hạnh phúc nhất định sẽ đến với
+        cậu!</p>
+    </fragment>
+  </template>
+  <template id="gift-modal-7" data-class="gift snow-7" data-ltr="false">
+    <fragment>
+      <div class="d-flex">
+        <h3>%name%</h3>
+        <p>&nbsp;ơi</p>
+      </div>
+      <p>
+        Chúc bạn một Giáng Sinh an lành nhé!
+      </p>
+      <p>
+        Chúc bạn có một cuộc đời luôn an nhiên và vô ưu!
+      </p>
+      <p>
+        Chúc cho tâm hồn bạn mãi trong trẻo, giản đơn như trẻ thơ, vì cổ tích đời thường là có thật!
+      </p>
+      <p>
+        Chúc cho bạn có một Santa Claus của riêng bạn, để bạn có thể hồn nhiên mà yêu đời.
+      </p>
+      <p>
+        Hãy luôn yêu thương bản thân và trân trọng mọi thứ, bạn nhé!
+      </p>
+    </fragment>
+  </template>
+  <template id="gift-modal-8" data-class="gift snow-8" data-ltr="false">
+    <fragment>
+      <p>
+        Mùa đẹp nhất trong năm chính là mùa Noel!
+      </p>
+      <p>
+        Bạn chờ đợi điều gì nhất ở mùa Giáng Sinh năm nay?
+      </p>
+      <p>
+        Tụi mình ước rằng những điều bạn mong chờ đều được “Ông già Noel” nghe thấy và trao tặng.
+      </p>
+      <p>
+        Chúc cho những đôi tất của bạn tràn ngập quà tặng từ những người yêu thương.
+      </p>
+      <p>
+        Chúc cho khoảng thời gian ấm áp này sẽ mnag bạn và những người xung quanh đến gần nhau hơn nữa.
+      </p>
+      <p>
+        Giáng sinh bình an và tốt lành
+      </p>
     </fragment>
   </template>
 
@@ -526,11 +655,28 @@
     </fragment>
   </template>
 
-  <div id="modal-container" class="modal-container">
-    <div class="modal">
+  <div id="modal-container" class="modal-container show">
+    <div class="modal gift snow-8">
       <div class="container">
         <!-- Content -->
-
+        <p>
+          Mùa đẹp nhất trong năm chính là mùa Noel!
+        </p>
+        <p>
+          Bạn chờ đợi điều gì nhất ở mùa Giáng Sinh năm nay?
+        </p>
+        <p>
+          Tụi mình ước rằng những điều bạn mong chờ đều được “Ông già Noel” nghe thấy và trao tặng.
+        </p>
+        <p>
+          Chúc cho những đôi tất của bạn tràn ngập quà tặng từ những người yêu thương.
+        </p>
+        <p>
+          Chúc cho khoảng thời gian ấm áp này sẽ mnag bạn và những người xung quanh đến gần nhau hơn nữa.
+        </p>
+        <p>
+          Giáng sinh bình an và tốt lành
+        </p>
         <!-- End Content-->
       </div>
     </div>
