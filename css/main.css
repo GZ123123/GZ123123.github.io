@@ -784,10 +784,6 @@ body.modal-showed {
   line-height: 117.8%;
 }
 
-.modal.gift.snow-2 .container>div {
-  padding-bottom: 10px;
-}
-
 .modal.gift.snow-2 .container h3,
 .modal.gift.snow-2 .container p {
   color: #003561;
@@ -800,7 +796,7 @@ body.modal-showed {
 }
 
 .modal.gift.snow-2 .container p {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 22px;
   font-weight: normal;
 }
