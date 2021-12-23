@@ -24,9 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		modal.querySelector(".container").innerHTML = template.replace(
 			"%name%",
-			_name
+			_name?.trim() || "Matakunkun"
 		);
 	};
+
+	const inViewport = (node) => {
+		const rect = node.getBoundingClientRect();
+		return (rect.top >= -node.offsetHeight / 2
+			&& rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + node.offsetHeight / 2)
+	}
+
+	const viewportDimension = () => {
+		return {
+			top: window.scrollY,
+			width:Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0), 
+			height: Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0),
+		}
+	}
 
 	const clearModal = function () {
 		const modal = document.querySelector("#modal-container");
@@ -45,6 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
 			clearModal();
 		}
 	});
+
+	window.addEventListener("scroll", e => {
+		const node = document.querySelector("[data-toggle='scroll']");
+		if (inViewport(node) && !node.querySelector("svg").classList.contains("active")) {
+			node.querySelector("svg").classList.add("active");
+		}
+	})
 
 	document.querySelectorAll("[data-toggle='modal']").forEach((n) =>
 		n.addEventListener("click", (e) => {
