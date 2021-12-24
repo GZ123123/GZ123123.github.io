@@ -6,28 +6,6 @@
   --color-black: #000;
 }
 
-@keyframes Signature {
-  55% {
-    stroke-dashoffset: 0000;
-  }
-
-  100% {
-    stroke-dashoffset: 0000;
-    fill: white;
-    stroke: none;
-  }
-}
-
-@keyframes Blind {
-  0% {
-    opacity: 0;
-  }
-
-  80% {
-    opacity: 1;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -82,6 +60,34 @@
 .cols {
   flex: 0 1 50%;
 }
+
+.form-group {
+  position: relative;
+}
+
+.form-group .form-control {
+  padding-right: 25px;
+  outline: none;
+  border: none;
+  width: 100%;
+
+  font-size: 24px;
+  color: black;
+  font-family: 'Dongle';
+  outline: none;
+}
+
+.form-group .append {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  cursor: pointer;
+}
+
+.form-group .append.icon::after {
+  background-color: #000;
+}
+
 
 /* #region Override */
 h1 {
@@ -201,7 +207,7 @@ header div.banner svg {
 
 header div.banner svg.active .svg-star {
   opacity: 0;
-  animation: Blind 1s infinite 4.3s;
+  animation: blind 1s infinite 4.3s;
 }
 
 header div.banner svg.active .a {
@@ -211,7 +217,7 @@ header div.banner svg.active .a {
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
 
-  animation-name: Signature;
+  animation-name: signature;
   animation-duration: 10s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(.55, .25, .43, 1);
@@ -224,7 +230,7 @@ header div.banner svg.active .b {
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
 
-  animation-name: Signature;
+  animation-name: signature;
   animation-duration: 8.5s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.25, -0.1, .43, .5);
@@ -237,7 +243,7 @@ header div.banner svg.active .c {
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
 
-  animation-name: Signature;
+  animation-name: signature;
   animation-duration: 6.7s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(.55, -0.43, 0.8, 1);
@@ -598,19 +604,17 @@ body.modal-showed {
 .modal-container {
   display: none;
   position: fixed;
-  /* Stay in place */
   z-index: 2;
-  /* Sit on top */
   left: 0;
   top: 0;
   width: 100vw;
-  /* Full width */
   height: 100vh;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgb(0, 0, 0, 0.4);
-  /* Fallback color */
+
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
 }
 
 .modal-container.bg-white {
@@ -618,14 +622,11 @@ body.modal-showed {
 }
 
 .modal-container.show {
-  display: block;
+  display: flex;
 }
 
 .modal {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: 0;
   border: 1px solid #888;
   width: 727px;
@@ -734,17 +735,19 @@ body.modal-showed {
   pointer-events: none;
 }
 
-.modal.question.name input {
-  border: none;
+.modal.question.name .form-group {
+  width: 199px;
   border-bottom: 1px dotted black;
   margin: 0 75px;
-  font-size: 30px;
-  color: black;
-  width: 199px;
-  font-family: 'Dongle';
-  outline: none;
 }
 
+.modal.gift {
+  overflow: hidden;
+  -webkit-animation-name: stretch;
+  -webkit-animation-duration: 1.5s;
+  animation-name: stretch;
+  animation-duration: 1.5s;
+}
 
 .modal.gift .container>div {
   align-items: baseline;
@@ -967,7 +970,7 @@ body.modal-showed {
   }
 
   to {
-    top: 50%;
+    top: 0%;
     opacity: 1
   }
 }
@@ -979,7 +982,7 @@ body.modal-showed {
   }
 
   to {
-    top: 50%;
+    top: 0%;
     opacity: 1
   }
 }
@@ -1025,6 +1028,40 @@ body.modal-showed {
 
   100% {
     transform: rotate(0);
+  }
+}
+
+@keyframes signature {
+  55% {
+    stroke-dashoffset: 0000;
+  }
+
+  100% {
+    stroke-dashoffset: 0000;
+    fill: white;
+    stroke: none;
+  }
+}
+
+@keyframes blind {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    transform-origin: center;
+    border-radius: 100%;
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 

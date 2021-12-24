@@ -1,11 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-	// let gifts = localStorage.getItem("gifts")?.split(",") || [];
 	let _name = "Matakunkun";
-
-	Object.defineProperty(window, "name", {
-		get: () => _name,
-		set: (v) => (_name = v.toString()),
-	});
 
 	const modal = document.querySelector(".modal-container");
 
@@ -34,19 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
 			&& rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + node.offsetHeight / 2)
 	}
 
-	const viewportDimension = () => {
-		return {
-			top: window.scrollY,
-			width:Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0), 
-			height: Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0),
-		}
-	}
-
 	const clearModal = function () {
 		const modal = document.querySelector("#modal-container");
 		modal.querySelector(".modal").classList.value = "modal";
 		modal.querySelector(".container").innerHTML = "";
 	};
+
+	const onSubmit = function (name) {
+		_name = name;
+		document.querySelector("body").classList.value = "";
+		document.querySelector("#name-modal").remove();
+		document.querySelector(".banner svg").classList.add("active");
+	}
 
 	fetch("../song/santa-tell-me/lyric.lrc")
 		.then((c) => c.text())
@@ -80,18 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			modal.classList.add("show");
 		})
 	);
-
-	// document.querySelectorAll(".gift-item").forEach((n) =>
-	// 	n.addEventListener("click", (e) => {
-	// 		const target = e.target.closest(".gift-item");
-	// 		const index = target.id.split("-").pop();
-	// 		if (!target.classList.contains("active")) {
-	// 			target.classList.add("active");
-	// 			gifts.push(index);
-	// 			localStorage.setItem("gifts", gifts.join(","));
-	// 		}
-	// 	})
-	// );
 
 	document.querySelector("audio").addEventListener("song-duration", (e) => {
 		document.querySelector(
@@ -129,11 +110,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	document
 		.querySelector("input[name='name']")
 		.addEventListener("keydown", (e) => {
-			if (e.keyCode == 13 && !!e.target.value.trim()) {
-				_name = e.target.value;
-				document.querySelector("body").classList.value = "";
-				document.querySelector("#name-modal").remove();
-				document.querySelector(".banner svg").classList.add("active");
-			}
+			if (e.keyCode == 13 && !!e.target.value.trim())
+				onSubmit( e.target.value );
 		});
+	
+	document.querySelector(".form-group .append")
+		.addEventListener("click", e => {
+			const name = e.target.closest(".form-group").querySelector(".form-control").value.trim()
+			if (!!name.trim()) onSubmit( name );
+		})
 });
