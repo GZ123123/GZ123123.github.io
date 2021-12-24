@@ -12,6 +12,10 @@
   .modal .container p {
     font-size: 20px !important;
   }
+
+  .modal.gift {
+    min-width: 720px;
+  }
 }
 
 @media screen and (max-width: 512px) {
@@ -29,5 +33,18 @@
 
   main .gift .content ul {
     padding: 0 !important;
+  }
+
+  main .title span::after {
+    left: -34px !important;
+  }
+
+  main .gift .title span::before {
+    right: -34px !important;
+  }
+
+  .modal-container.show {
+    display: block !important;
+    padding: 150px 10px;
   }
 }
