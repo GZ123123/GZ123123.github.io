@@ -454,6 +454,7 @@ main .gift .content ul {
   flex-wrap: wrap;
   margin: auto;
   justify-content: center;
+  padding: 0 150px;
   /* gap: 58px 47px; */
 }
 
