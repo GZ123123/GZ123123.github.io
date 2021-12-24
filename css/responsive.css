@@ -3,3 +3,31 @@
     margin: 0 auto !important;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .modal .container h3 {
+    font-size: 34px !important;
+  }
+
+  .modal .container p {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  header .title h1 {
+    font-size: 7rem !important;
+  }
+
+  header .title h4 {
+    font-size: 1.5rem !important;
+  }
+
+  main .music .lyric {
+    height: 160px !important;
+  }
+
+  main .gift .content ul {
+    padding: 0 !important;
+  }
+}
