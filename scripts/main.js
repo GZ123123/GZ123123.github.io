@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		modal.querySelector(".container").innerHTML = template.replace(
 			"%name%",
-			_name?.trim() || "Matakunkun"
+			_name.trim() || "Matakunkun"
 		);
 	};
 
