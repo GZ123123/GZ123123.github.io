@@ -47,4 +47,15 @@
     display: block !important;
     padding: 150px 10px;
   }
+
+  main .gift .content ul li {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    padding: 50px 0;
+  }
+
+  main .music .image {
+    min-height: 250px !important;
+    margin: 0 -50px !important;
+  }
 }
