@@ -1,3 +1,149 @@
+@font-face {
+  font-family: MC;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Miraculous&Christmas.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: Salsa;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Salsa-Regular.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: iCiel;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/iCiel-Astrolight-Roman.ttf)
+}
+
+@font-face {
+  font-family: 'iCielKL Soulbeams';
+  src: url(../fonts/Soulbeams.ttf)
+}
+
+@font-face {
+  font-family: RB;
+  src: url(../fonts/ReenieBeanie-Regular.ttf)
+}
+
+@font-face {
+  font-family: Dongle;
+  src: url(../fonts/Dongle-Light.ttf);
+  font-weight: 300
+}
+
+@font-face {
+  font-family: Dongle;
+  src: url(../fonts/Dongle-Regular.ttf);
+  font-weight: 400
+}
+
+@font-face {
+  font-family: Dongle;
+  src: url(../fonts/Dongle-Bold.ttf);
+  font-weight: 700
+}
+
+.icon::after {
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important
+}
+
+.icon.santa::after {
+  -webkit-mask: url(../icons/santa-claus.svg) no-repeat;
+  mask: url(../icons/santa-claus.svg) no-repeat
+}
+
+.icon.gift::after {
+  -webkit-mask: url(../icons/gift.svg) no-repeat;
+  mask: url(../icons/gift.svg) no-repeat
+}
+
+.icon.stocking::after {
+  -webkit-mask: url(../icons/christmas-stocking.svg) no-repeat;
+  mask: url(../icons/christmas-stocking.svg) no-repeat
+}
+
+.icon.star::after {
+  -webkit-mask: url(../icons/star.svg) no-repeat;
+  mask: url(../icons/star.svg) no-repeat
+}
+
+.icon.wreath::after {
+  -webkit-mask: url(../icons/christmas-wreath.svg) no-repeat;
+  mask: url(../icons/christmas-wreath.svg) no-repeat
+}
+
+.icon.tree::after {
+  -webkit-mask: url(../icons/decoration.svg) no-repeat;
+  mask: url(../icons/decoration.svg) no-repeat
+}
+
+.icon.bell::after {
+  -webkit-mask: url(../icons/christmas-bell.svg) no-repeat;
+  mask: url(../icons/christmas-bell.svg) no-repeat
+}
+
+.icon.instagram::after {
+  -webkit-mask: url(../icons/instagram.svg) no-repeat;
+  mask: url(../icons/instagram.svg) no-repeat
+}
+
+.icon.linkedin::after {
+  -webkit-mask: url(../icons/linkedin.svg) no-repeat;
+  mask: url(../icons/linkedin.svg) no-repeat
+}
+
+.icon.facebook::after {
+  -webkit-mask: url(../icons/facebook.svg) no-repeat;
+  mask: url(../icons/facebook.svg) no-repeat
+}
+
+.icon.prev::after {
+  -webkit-mask: url(../icons/prev.svg) no-repeat;
+  mask: url(../icons/prev.svg) no-repeat
+}
+
+.icon.back::after {
+  -webkit-mask: url(../icons/back.svg) no-repeat;
+  mask: url(../icons/back.svg) no-repeat
+}
+
+.icon.play::after {
+  height: 35px;
+  width: 35px;
+  -webkit-mask: url(../icons/play.svg) no-repeat;
+  mask: url(../icons/play.svg) no-repeat
+}
+
+.icon.pause::after {
+  -webkit-mask: url(../icons/pause.svg) no-repeat;
+  mask: url(../icons/pause.svg) no-repeat
+}
+
+.icon.next::after {
+  -webkit-mask: url(../icons/next.svg) no-repeat;
+  mask: url(../icons/next.svg) no-repeat
+}
+
+.icon.skip::after {
+  -webkit-mask: url(../icons/skip.svg) no-repeat;
+  mask: url(../icons/skip.svg) no-repeat
+}
+
+.icon.send::after {
+  -webkit-mask: url(../icons/send.svg) no-repeat;
+  mask: url(../icons/send.svg) no-repeat
+}
+
 :root {
   --background-color: #21283A;
   --background-image: url('../images/header.png');
@@ -1067,3 +1213,130 @@ body.modal-showed {
 }
 
 /* #endregion */
+
+@media screen and (max-width: 992px) {
+  header div.title h4 {
+    margin: 0 auto;
+  }
+
+  main .gift .content ul li {
+    margin: 12px;
+  }
+
+  footer .content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .modal .container h3 {
+    font-size: 34px;
+  }
+
+  .modal .container p {
+    font-size: 20px;
+  }
+
+  .modal.gift {
+    min-width: 720px;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  h3 {
+    font-size: 36px;
+  }
+
+  header {
+    padding-top: 175px;
+  }
+
+  header .title h1 {
+    font-size: 7rem;
+  }
+
+  header .title h4 {
+    font-size: 1.5rem;
+  }
+
+  header div.banner svg {
+    height: auto;
+    margin: 12vw 0;
+  }
+
+  main .music {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  main .music .lyric {
+    font-size: 26px;
+  }
+
+  main .music .image {
+    min-height: 250px;
+    margin: 0 -15px;
+  }
+
+  main .gift .content ul {
+    padding: 0;
+  }
+
+  main .title span::after {
+    left: -34px;
+  }
+
+  main .question h3 {
+    display: block;
+  }
+
+  main .question .content ul li {
+    min-width: 200px;
+  }
+
+  .modal-container.show {
+    display: block;
+    padding: 150px 10px;
+  }
+
+  main .gift .title span::before {
+    right: -34px;
+  }
+
+  main .gift .content ul li {
+    padding: 50px 0;
+    margin: 15px;
+  }
+
+  footer>div {
+    padding-top: 50px;
+  }
+
+  footer .content {
+    display: block;
+  }
+
+  footer .content .socials {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  header .title h1 {
+    font-size: 4rem;
+  }
+
+  header div.title h4 {
+    font-size: 1.5em;
+  }
+
+  main .music .lyric {
+    font-size: 20px;
+  }
+
+  footer .title {
+    font-size: 36px;
+  }
+}
