@@ -1,23 +1,21 @@
-import { Head, Html, Main, NextScript } from "next/document";
-import { ColorModeScript } from "@chakra-ui/react";
+import { ColorModeContext, ColorModeScript, DarkMode } from "@chakra-ui/react";
+import Fonts from "common/fonts/iindex";
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { Html, Head, Main, NextScript } from "next/document";
 
-import theme from "../common/theme/global";
+import theme from "../common/theme";
 
-const MainDocument = () => {
+export default function Document() {
 	return (
 		<Html lang="en">
 			<Head />
+
 			<body>
 				<ColorModeScript initialColorMode={theme.config.initialColorMode} />
-				<ChakraProvider theme={theme}>
-					<Main />
-				</ChakraProvider>
+				<Fonts />
+				<Main />
 				<NextScript />
 			</body>
 		</Html>
 	);
-};
-
-export default MainDocument;
+}

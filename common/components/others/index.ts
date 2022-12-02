@@ -1,3 +1,11 @@
-import Banner from "./Banners";
+import Gift from "./Gift"
+import MerryCard from "./MerryCard"
+import MusicPlayer from "./MusicPlayer"
 
-export { Banner }
+
+
+export {
+  Gift,
+  MerryCard,
+  MusicPlayer
+}

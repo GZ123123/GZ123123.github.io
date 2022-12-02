@@ -1,15 +1,23 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
+import Image from "next/image";
+
+import musicBackground from "../../../../public/images/music-background.webp";
 
 const MusicPlayer = () => {
 	return (
 		<Box>
-			{/* <audio style={{ display: "none" }} controls autoPlay>
-				<source src="/song/santa-tell-me/song.mp3" type="audio/mpeg" />
-				<Box id="__image"></Box>
-				<Box id="__lyricer"></Box>
-				<Box id="__duration"></Box>
-				<Box id="__control"></Box>
-			</audio> */}
+			<Box border={"5px solid white"} borderRadius="12px">
+				<Image
+					style={{
+						height: "350px",
+						objectFit: "cover",
+						clipPath: "inset(0% 0% 0% 0% round 12px)",
+					}}
+					src={musicBackground}
+					alt="music player background"
+				/>
+			</Box>
+			<Text>MusicPlayer</Text>
 		</Box>
 	);
 };
