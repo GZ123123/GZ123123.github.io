@@ -1,4 +1,4 @@
-import { defineStyle, defineStyleConfig, extendTheme } from "@chakra-ui/react";
+import { defineStyleConfig, extendTheme } from "@chakra-ui/react";
 import { mode } from '@chakra-ui/theme-tools';
 
 const config = {
@@ -8,7 +8,7 @@ const config = {
 
 const colors = {
   "primary": "#21283A",
-  "white": "#fff"
+  "white": "#fff",
 }
 
 const components = {
@@ -18,13 +18,14 @@ const components = {
       borderStyle: "solid",
       backgroundColor: 'white'
     }
-  })
+  }),
 }
 
 const styles = {
   global: (props: any) => ({
     "*": {
-      color: mode("primary", "white")(props)
+      color: mode("primary", "white")(props),
+      lineHeight: "100%"
     },
     body: {
       width: "100%",
@@ -38,4 +39,8 @@ const styles = {
   })
 }
 
-export default extendTheme({ styles, config, colors, components })
+const fonts = {
+  body: "Salsa"
+}
+
+export default extendTheme({ styles, config, colors, components, fonts })

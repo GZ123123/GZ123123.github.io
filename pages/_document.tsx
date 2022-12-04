@@ -1,7 +1,8 @@
-import { ColorModeContext, ColorModeScript, DarkMode } from "@chakra-ui/react";
-import Fonts from "common/fonts/iindex";
+import { ColorModeScript } from "@chakra-ui/react";
 
 import { Html, Head, Main, NextScript } from "next/document";
+
+import Fonts from "common/fonts";
 
 import theme from "../common/theme";
 
@@ -10,10 +11,13 @@ export default function Document() {
 		<Html lang="en">
 			<Head />
 
+			<Fonts />
+
 			<body>
 				<ColorModeScript initialColorMode={theme.config.initialColorMode} />
-				<Fonts />
+
 				<Main />
+
 				<NextScript />
 			</body>
 		</Html>

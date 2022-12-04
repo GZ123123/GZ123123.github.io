@@ -1,11 +1,3 @@
-import Gift from "./Gift"
-import MerryCard from "./MerryCard"
-import MusicPlayer from "./MusicPlayer"
-
-
-
-export {
-  Gift,
-  MerryCard,
-  MusicPlayer
-}
+export { default as Gift } from "./Gift"
+export { default as MerryCard } from "./MerryCard"
+export { default as MusicPlayer } from "./MusicPlayer"

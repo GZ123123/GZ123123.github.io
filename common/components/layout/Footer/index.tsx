@@ -1,4 +1,5 @@
-import { Box, Container, Divider, Flex, Text } from "@chakra-ui/react";
+import { Box, Container, Divider, Flex, Icon, Text } from "@chakra-ui/react";
+import { IconFacebook, IconIntagram, IconLinkedin } from "public/icons";
 
 const Footer = () => {
 	return (
@@ -11,11 +12,11 @@ const Footer = () => {
 				</Box>
 				<Divider my={2} variant="think" />
 				<Flex justifyContent="space-between">
-					<Box>
-						<Box></Box>
-						<Box></Box>
-						<Box></Box>
-					</Box>
+					<Flex>
+						<IconFacebook width="32" height="32" />
+						<IconLinkedin width="32" height="32" />
+						<IconIntagram width="32" height="32" />
+					</Flex>
 					<Text as="p">Made by Dong Chi Team</Text>
 				</Flex>
 			</Container>

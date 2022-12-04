@@ -20,7 +20,7 @@ const Main = ({ children, router }: AppWithRoute) => {
 
 			<Container
 				maxW={"container.lg"}
-				mt={{ base: "6rem", sm: "6rem", lg: "8rem" }}
+				mt={{ base: "6rem", md: "10rem", lg: "16rem" }}
 			>
 				<Header />
 
