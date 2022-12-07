@@ -3,7 +3,7 @@ import { IconFacebook, IconIntagram, IconLinkedin } from "public/icons";
 
 const Footer = () => {
 	return (
-		<Box as="footer">
+		<Box as="footer" mt={{ base: 2, md: "4rem" }}>
 			<Container maxW={"container.md"}>
 				<Box>
 					<Text as="h4" textAlign="center">

@@ -20,13 +20,15 @@ const Main = ({ children, router }: AppWithRoute) => {
 
 			<Container
 				maxW={"container.lg"}
-				mt={{ base: "6rem", md: "10rem", lg: "16rem" }}
+				mt={{ base: "6rem", md: "10rem", lg: "14rem" }}
 			>
 				<Header />
 
 				<Box as="main">{children}</Box>
 
 				<Footer />
+
+				<div id="footer_image"></div>
 			</Container>
 		</>
 	);

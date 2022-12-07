@@ -13,8 +13,18 @@ interface ICardItem {
 
 const CardItem = ({ icon, title, children, image }: ICardItem) => {
 	return (
-		<Modal anchor={<Box>{icon}</Box>}>
-			<Flex direction={{ base: "column-reverse", md: "row" }} gap={8} p="2rem">
+		<Modal
+			anchor={
+				<Box
+					p={{ base: "1.5rem", md: "4rem" }}
+					border="1px solid white"
+					borderRadius={"1rem"}
+				>
+					{icon}
+				</Box>
+			}
+		>
+			<Flex direction={{ base: "column-reverse", md: "row" }}>
 				<Box>
 					<Center as="h4">{title}</Center>
 					{children}

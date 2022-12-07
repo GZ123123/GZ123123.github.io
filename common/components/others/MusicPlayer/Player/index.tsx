@@ -1,6 +1,19 @@
-import { Box, Center, Flex, Progress, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Center,
+	Flex,
+	Progress,
+	Text,
+	VisuallyHidden,
+} from "@chakra-ui/react";
 import { IconNext, IconPause, IconPlay, IconPrev } from "public/icons";
-import { forwardRef, useImperativeHandle, useState } from "react";
+import {
+	forwardRef,
+	useEffect,
+	useImperativeHandle,
+	useRef,
+	useState,
+} from "react";
 
 interface IPlayerProps {
 	song: ISong;
@@ -8,22 +21,46 @@ interface IPlayerProps {
 
 interface ISong {
 	name: string;
+	src: string;
 	lyric: string;
 }
 
 const Player = ({ song }: IPlayerProps, ref: any) => {
+	const audio = useRef<any>();
+
 	const [process, setProcess] = useState(80);
 
 	const [lyric, setLyric] = useState("Justin Bieber, Mariah Carey");
 
-	useImperativeHandle(
-		ref,
-		() => ({
-			play: () => console.log("play"),
-			pause: () => console.log("pause"),
-		}),
-		[]
-	);
+	const play = () => {
+		console.log(audio.current);
+	};
+
+	const pause = () => {
+		console.log(audio.current);
+	};
+
+	const togglePlay = () => {
+		console.log(audio.current.play());
+	};
+
+	const onDurationChange = (e: any) => {
+		console.log(e);
+	};
+
+	const prev = () => {};
+
+	const next = () => {};
+
+	useImperativeHandle(ref, () => ({ play, pause }), []);
+
+	useEffect(() => {
+		audio.current.addEventListener("timeupdate", onDurationChange);
+
+		return () => {
+			audio.current.removeEventListener("timeupdatef", onDurationChange);
+		};
+	}, []);
 
 	return (
 		<Box mt={{ base: "1.5rem" }} textAlign="center">
@@ -52,19 +89,25 @@ const Player = ({ song }: IPlayerProps, ref: any) => {
 					}}
 				/>
 				<Flex
-					w={"35%"}
-					maxW="350px"
+					w={{ base: "unset", md: "35%" }}
+					maxW={"350px"}
 					justifyContent="space-between"
 					mx="auto"
 					mt="1.5rem"
 				>
-					<Box as="button">
+					<VisuallyHidden>
+						<audio ref={audio} controls>
+							<source src={song.src} type="audio/mpeg" />
+							Your browser does not support the audio element.
+						</audio>
+					</VisuallyHidden>
+					<Box as="button" onClick={prev}>
 						<IconPrev width="64px" height="64px" />
 					</Box>
-					<Box as="button">
+					<Box as="button" onClick={togglePlay}>
 						<IconPause width="64px" height="64px" />
 					</Box>
-					<Box as="button">
+					<Box as="button" onClick={next}>
 						<IconNext width="64px" height="64px" />
 					</Box>
 				</Flex>

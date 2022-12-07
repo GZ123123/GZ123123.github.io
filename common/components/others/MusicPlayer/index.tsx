@@ -8,15 +8,20 @@ import Player from "./Player";
 const MusicPlayer = () => {
 	const [song] = useState({
 		name: "All I Want For Christmas Is You",
+		src: "/song/santa-tell-me/song.mp3",
 		lyric: "/song/santa-tell-me/lyric.lrc",
 	});
 
 	return (
-		<Box>
-			<Box border={"5px solid white"} borderRadius="12px">
+		<Box as="section">
+			<Box
+				border={"5px solid white"}
+				borderRadius="12px"
+				height={{ base: "350px", md: "500px" }}
+			>
 				<Image
 					style={{
-						height: "350px",
+						height: "100%",
 						objectFit: "cover",
 						clipPath: "inset(0% 0% 0% 0% round 12px)",
 					}}

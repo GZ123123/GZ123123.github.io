@@ -35,7 +35,14 @@ const styles = {
       backgroundRepeat: `no-repeat`,
       backgroundSize: `contain`,
       backgroundPosition: `top`,
-    }
+    },
+    "#__next": {
+      paddingBottom: "10%",
+      backgroundImage: "url('/images/footer.webp')",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      backgroundPosition: "bottom"
+    },
   })
 }
 
