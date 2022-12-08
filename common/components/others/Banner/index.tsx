@@ -1,11 +1,11 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 interface IBanner {
 	className: string;
 }
 
 const Banner = ({ className }: IBanner) => {
-	useLayoutEffect(() => {
+	useEffect(() => {
 		document
 			.querySelectorAll("svg .star")
 			.forEach((node: any) =>

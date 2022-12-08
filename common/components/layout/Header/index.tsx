@@ -3,19 +3,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 // import Banner from "./banner.svg";
 import Title from "./title.svg";
 
-import Banner from "./Banner";
-
-const h1After = {
-	content: "''",
-	position: "absolute",
-	right: "-1.5rem",
-	top: "25%",
-	backgroundImage: "url(/icons/star-icon.svg)",
-	backgroundSize: "contain",
-	backgroundRepeat: "no-repeat",
-	width: "42px",
-	height: "42px",
-};
+import Banner from "../../others/Banner";
 
 const pBefore = {
 	content: "''",
@@ -56,7 +44,17 @@ const Header = () => {
 						fontSize={{ base: "8rem", lg: "12rem" }}
 						px={{ base: "3rem" }}
 						textAlign={"center"}
-						_after={h1After}
+						_after={{
+							content: "''",
+							position: "absolute",
+							right: "-1.5rem",
+							top: "25%",
+							backgroundImage: "url(/icons/star-icon.svg)",
+							backgroundSize: "contain",
+							backgroundRepeat: "no-repeat",
+							width: "42px",
+							height: "42px",
+						}}
 					>
 						Merry Christmas
 					</Text>
@@ -78,9 +76,6 @@ const Header = () => {
 					/>
 				</Flex>
 			</Flex>
-			<Box width={"100%"} mb={{ base: "3rem", sm: "5.5rem" }}>
-				<Banner className={"banner active"} />
-			</Box>
 		</Box>
 	);
 };

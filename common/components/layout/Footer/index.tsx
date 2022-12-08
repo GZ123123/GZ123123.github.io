@@ -6,18 +6,20 @@ const Footer = () => {
 		<Box as="footer" mt={{ base: 2, md: "4rem" }}>
 			<Container maxW={"container.md"}>
 				<Box>
-					<Text as="h4" textAlign="center">
+					<Text as="h4" textAlign="center" fontSize={{ base: "2.5rem" }}>
 						A little cuteness for Christmas
 					</Text>
 				</Box>
-				<Divider my={2} variant="think" />
-				<Flex justifyContent="space-between">
+				<Divider my={3} variant="think" />
+				<Flex justifyContent="space-between" alignItems="center">
 					<Flex>
-						<IconFacebook width="32" height="32" />
-						<IconLinkedin width="32" height="32" />
-						<IconIntagram width="32" height="32" />
+						<IconIntagram width="50" height="50" />
+						<IconLinkedin width="50" height="50" />
+						<IconFacebook width="50" height="50" />
 					</Flex>
-					<Text as="p">Made by Dong Chi Team</Text>
+					<Text as="p" fontSize={{ base: "1.25rem" }}>
+						Made by Dong Chi Team
+					</Text>
 				</Flex>
 			</Container>
 		</Box>

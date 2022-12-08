@@ -7,6 +7,7 @@ import { Router } from "next/router";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import { Canvas } from "./Canvas";
 
 type AppWithRoute = { children: ReactNode; router: Router };
 
@@ -18,9 +19,11 @@ const Main = ({ children, router }: AppWithRoute) => {
 				<title>Merry Christmas</title>
 			</Head>
 
+			<Canvas />
+
 			<Container
 				maxW={"container.lg"}
-				mt={{ base: "6rem", md: "10rem", lg: "14rem" }}
+				pt={{ base: "6rem", md: "10rem", lg: "14rem" }}
 			>
 				<Header />
 

@@ -55,10 +55,10 @@ const Player = ({ song }: IPlayerProps, ref: any) => {
 	useImperativeHandle(ref, () => ({ play, pause }), []);
 
 	useEffect(() => {
-		audio.current.addEventListener("timeupdate", onDurationChange);
+		audio.current?.addEventListener("timeupdate", onDurationChange);
 
 		return () => {
-			audio.current.removeEventListener("timeupdatef", onDurationChange);
+			audio.current?.removeEventListener("timeupdatef", onDurationChange);
 		};
 	}, []);
 

@@ -11,14 +11,34 @@ interface ICardItem {
 	ltr?: boolean;
 }
 
+const before = {
+	content: "''",
+	backgroundImage: "url(/icons/stars-icon.svg)",
+	backgroundSize: "contain",
+	backgroundRepeat: "no-repeat",
+	width: "48px",
+	height: "48px",
+	position: "absolute",
+	top: "-24px",
+	left: "-24px",
+};
+
+const hover = {
+	":before": before,
+	svg: {
+		animation: "shake 1.6s infinite",
+	},
+};
 const CardItem = ({ icon, title, children, image }: ICardItem) => {
 	return (
 		<Modal
 			anchor={
 				<Box
+					overflow={"visible !important"}
 					p={{ base: "1.5rem", md: "4rem" }}
 					border="1px solid white"
 					borderRadius={"1rem"}
+					_hover={hover}
 				>
 					{icon}
 				</Box>

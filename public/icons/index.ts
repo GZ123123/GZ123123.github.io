@@ -19,15 +19,19 @@ export { default as IconGiftHidden } from './gift-hidden-icon.svg';
 //#endregion
 
 //#region Card
-export { default as IconBauble } from './icon/bauble-icon.svg';
-export { default as IconChristmasBell } from './icon/christmas-bell-icon.svg';
-export { default as IconChristmasDecorations } from './icon/christmas-decorations-icon.svg';
-export { default as IconChristmasLight } from './icon/christmas-lights-icon.svg';
-export { default as IconChristmasStocking } from './icon/christmas-stocking-icon.svg';
-export { default as IconChristmasWreath } from './icon/christmas-wreath-icon.svg';
-export { default as IconDecoration } from './icon/decoration-icon.svg';
-export { default as IconReindeer } from './icon/reindeer-icon.svg';
-export { default as IconSantaClausHat } from './icon/santa-claus-hat-icon.svg';
-export { default as IconSantaClaus } from './icon/santa-claus-icon.svg';
-export { default as IconStar } from './icon/star-icon.svg';
+export { default as IconBauble } from './bauble-icon.svg';
+export { default as IconChristmasBell } from './christmas-bell-icon.svg';
+export { default as IconChristmasDecorations } from './christmas-decorations-icon.svg';
+export { default as IconChristmasLight } from './christmas-lights-icon.svg';
+export { default as IconChristmasStocking } from './christmas-stocking-icon.svg';
+export { default as IconChristmasWreath } from './christmas-wreath-icon.svg';
+export { default as IconDecoration } from './decoration-icon.svg';
+export { default as IconReindeer } from './reindeer-icon.svg';
+export { default as IconSantaClausHat } from './santa-claus-hat-icon.svg';
+export { default as IconSantaClaus } from './santa-claus-icon.svg';
+export { default as IconStar } from './star-icon.svg';
+//#endregion
+
+//#region Letter
+export { default as IconLetterClose } from './letter-close-icon.svg';
 //#endregion
