@@ -34,6 +34,7 @@ const CardItem = ({ icon, title, children, image }: ICardItem) => {
 		<Modal
 			anchor={
 				<Box
+					as="button"
 					overflow={"visible !important"}
 					p={{ base: "1.5rem", md: "4rem" }}
 					border="1px solid white"

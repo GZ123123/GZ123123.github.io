@@ -5,9 +5,10 @@ import { Modal as CModal, ModalOverlay, ModalContent } from "@chakra-ui/react";
 interface IModalProps {
 	children: ReactNode;
 	anchor: ReactElement;
+	size: string;
 }
 
-const Modal = ({ children, anchor }: IModalProps) => {
+const Modal = ({ children, anchor, size }: IModalProps) => {
 	const [isOpen, setOpen] = useState(false);
 
 	const onOpen = useCallback(() => setOpen(true), []);
@@ -16,7 +17,7 @@ const Modal = ({ children, anchor }: IModalProps) => {
 	return (
 		<>
 			{React.cloneElement(anchor, { onClick: onOpen })}
-			<CModal size={"2xl"} isOpen={isOpen} onClose={onClose} isCentered>
+			<CModal size={size || "md"} isOpen={isOpen} onClose={onClose} isCentered>
 				<ModalOverlay />
 				<ModalContent>{children}</ModalContent>
 			</CModal>

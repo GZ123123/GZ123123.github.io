@@ -1,68 +1,108 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 
-function init() {
-  var t, i, n = [], h = 200;
-  function e() {
-    (this.x = Math.random() * (t.width + h) - h / 2),
-      (this.y = Math.random() * (t.height + h) - h / 2),
-      (this.z = 1 * Math.random() + 0.5),
-      (this.vx = (1.5 * Math.random() - 0.5) * this.z),
-      (this.vy = (0.5 * Math.random() + 0.5) * this.z),
-      (this.fill = "rgba(255,255,255)"),
-      (this.dia = (2.5 * Math.random() + 1.5) * this.z),
-      n.push(this);
-  }
-  function a(i) {
-    (i.x += i.vx),
-      (i.y += i.vy),
-      i.x > t.width + h / 2
-        ? (i.x = -h / 2)
-        : 0,
-      i.y > t.height + h / 2
-        ? (i.y = -h / 2)
-        : i.y < -h / 2 && (i.y = t.height + h / 2);
-  }
-  function d() {
-    i.clearRect(0, 0, t.width, t.height);
-    for (var h = 0; h < n.length; h++)
-      (e = n[h]),
-        i.beginPath(),
-        (i.strokeStyle = "transparent"),
-        (i.fillStyle = e.fill),
-        i.arc(e.x, e.y, e.dia, 0, 2 * Math.PI),
-        i.closePath(),
-        i.stroke(),
-        i.fill(),
-        a(n[h]);
-    var e;
+function Snow(canvas) {
+  const ctx = canvas.getContext('2d');
+  const padding = 200;
+  const maxCount = 500;
+  const color = "rgba(255,255,255)";
 
-    requestAnimationFrame(d)
+  let timeout = null;
+  let snows = [];
 
-  }
-  function o() {
-    (t.width = window.innerWidth);
-    (t.height = window.innerHeight);
-    (n = []);
-    console.log(n);
-    (function (t) {
-      for (var i = 0; i < t; i++) new e();
-    })(window.innerWidth / 10);
-    d();
+  function Item() {
+    this.x = Math.random() * (canvas.width + padding) - padding / 2;
+    this.y = Math.random() * (canvas.height + padding) - padding / 2;
+    this.z = 1.5 * Math.random() + 0.5;
+    this.vx = (1.5 * Math.random() - 0.5) * this.z;
+    this.vy = (0.5 * Math.random() + 0.5) * this.z;
+    this.size = (3 * Math.random() + 1) * this.z;
   }
 
-  return function (canvas) {
-    (t = canvas),
-      (i = t.getContext("2d")),
-      o(),
-      window.addEventListener("resize", o, !1);
+  const init = () => {
+    snows = [];
+
+    for (let index = 0; index < maxCount; index++) {
+      snows.push(new Item())
+    }
+
+    update();
+
+    render();
+
+    // check if canvas overflow on first load
+    setTimeout(() => update(), 100)
   }
-};
+
+  const update = () => {
+    canvas.width = window.innerWidth;
+    canvas.height = document.querySelector("#__next").offsetHeight;
+  }
+
+  const caculate = (snow) => {
+    snow.x += snow.vx + Math.random();
+    snow.y += snow.vy + Math.random();
+
+    if (snow.x > canvas.width + padding / 2) {
+      snow.x = -padding / 2
+      snow.vx = (1.5 * Math.random() - 0.5) * snow.z
+    } else if (snow.x < -padding / 2) {
+      snow.x = canvas.width + padding / 2
+      snow.vx = (1.5 * Math.random() - 0.5) * snow.z
+    }
+
+    if (snow.y > canvas.height + padding / 2) {
+      snow.y = -padding / 2
+      snow.vy = (0.5 * Math.random() + 0.5) * snow.z;
+    } else if (snow.y < -padding / 2) {
+      snow.y = canvas.height + padding / 2
+      snow.vy = (0.5 * Math.random() + 0.5) * snow.z;
+    }
+
+  }
+
+  const render = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    snows.forEach((snow, index) => {
+      ctx.beginPath();
+
+      ctx.strokeStyle = "transparent";
+      ctx.fillStyle = color;
+      ctx.arc(snow.x, snow.y, snow.size, 0, 2 * Math.PI)
+
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fill();
+      caculate(snows[index])
+    })
+
+    requestAnimationFrame(render)
+  }
+
+  init()
+
+  window.addEventListener('resize', () => {
+    if (timeout) clearTimeout(timeout);
+
+    timeout = setTimeout(update, 50)
+  })
+
+  return () => {
+    timeout = null;
+    snows = [];
+  }
+}
+
+
 
 export const Canvas = () => {
   const canvas = useRef();
 
-  useLayoutEffect(() => init()(canvas.current), [])
+  useEffect(() => {
+    const decontruct = Snow(canvas.current)
+    return () => decontruct()
+  }, [])
 
-  return <canvas style={{ position: 'fixed', pointerEvents: 'none' }} ref={canvas} width="100%" height="100vh" />
+  return <canvas style={{ position: 'absolute', pointerEvents: 'none' }} ref={canvas} width="1848" height="515" />
 }

@@ -16,7 +16,7 @@ const MerryCard = () => {
 	return (
 		<Section title="Christmas symbols mean?">
 			<Flex
-				gap={{ base: 0, md: "5rem 2.5rem", lg: "5rem" }}
+				gap={{ base: 0, sm: "2rem 1.5rem", md: "5rem 2.5rem", lg: "5rem" }}
 				flexWrap="wrap"
 				justifyContent="space-between"
 			>

@@ -5,34 +5,27 @@ import Modal from "../../Modal";
 const GiftItem = ({ children }: any) => {
 	return (
 		<Modal
+			size="2xl"
 			anchor={
 				<Box
+					as="button"
 					sx={{
-						"&.active": {
-							background: "red",
-						},
-						"svg.gift": {
-							display: "inline-block",
-						},
-						"svg.gift-hidden": {
-							display: "none",
-						},
+						"svg.gift": { display: "inline-block" },
+						"svg.gift-hidden": { display: "none" },
 					}}
 					_hover={{
-						"svg.gift": {
-							display: "none",
-						},
-						"svg.gift-hidden": {
-							display: "inline-block",
-						},
+						"svg.gift": { display: "none" },
+						"svg.gift-hidden": { display: "inline-block" },
 					}}
 				>
-					<IconGift className="gift" width="200px" height="200px" />
-					<IconGiftHidden
-						className="gift-hidden"
-						width="200px"
-						height="200px"
-					/>
+					<Box width="200px" height="200px">
+						<IconGift className="gift" width="100%" height="100%" />
+						<IconGiftHidden
+							className="gift-hidden"
+							width="100%"
+							height="100%"
+						/>
+					</Box>
 				</Box>
 			}
 		>
