@@ -1,11 +1,12 @@
 import { Box } from "@chakra-ui/react";
+import Image from "next/image";
 import { IconGift, IconGiftHidden } from "public/icons";
 import Modal from "../../Modal";
 
-const GiftItem = ({ children }: any) => {
+const GiftItem = ({ children, images, alt, top, left, width }: any) => {
 	return (
 		<Modal
-			size="2xl"
+			size={{ base: "xs", md: "3xl" }}
 			anchor={
 				<Box
 					as="button"
@@ -29,7 +30,19 @@ const GiftItem = ({ children }: any) => {
 				</Box>
 			}
 		>
-			{children}
+			<Box display={{ base: "none", md: "inline-block" }}>
+				<Image style={{ width: "100%" }} src={images[0]} alt={alt} />
+			</Box>
+			<Box display={{ base: "inline-block", md: "none" }}>
+				<Image
+					style={{ width: "100%" }}
+					src={images[1] || images[0]}
+					alt={alt}
+				/>
+			</Box>
+			<Box pos={"absolute"} top={top || 0} left={left || 0} width={width}>
+				{children}
+			</Box>
 		</Modal>
 	);
 };

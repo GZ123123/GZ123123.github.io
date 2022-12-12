@@ -19,7 +19,7 @@ const Main = ({ children, router }: AppWithRoute) => {
 				<title>Merry Christmas</title>
 			</Head>
 
-			<Canvas />
+			{/* <Canvas /> */}
 
 			<Container
 				maxW={"container.lg"}

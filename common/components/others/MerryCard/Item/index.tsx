@@ -32,6 +32,7 @@ const hover = {
 const CardItem = ({ icon, title, children, image }: ICardItem) => {
 	return (
 		<Modal
+			size={{ base: "2xl" }}
 			anchor={
 				<Box
 					as="button"
@@ -51,13 +52,7 @@ const CardItem = ({ icon, title, children, image }: ICardItem) => {
 					{children}
 				</Box>
 				<Flex justify={"center"}>
-					<Image
-						style={{
-							minWidth: "300px",
-						}}
-						src={image}
-						alt="santa image"
-					/>
+					<Image style={{ minWidth: "300px" }} src={image} alt="santa image" />
 				</Flex>
 			</Flex>
 		</Modal>

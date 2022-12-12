@@ -5,7 +5,7 @@ import { Modal as CModal, ModalOverlay, ModalContent } from "@chakra-ui/react";
 interface IModalProps {
 	children: ReactNode;
 	anchor: ReactElement;
-	size: string;
+	size: any;
 }
 
 const Modal = ({ children, anchor, size }: IModalProps) => {

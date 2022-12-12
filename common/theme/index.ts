@@ -35,6 +35,8 @@ const styles = {
       backgroundRepeat: `no-repeat`,
       backgroundSize: `contain`,
       backgroundPosition: `top`,
+      overflowX: 'hidden',
+      overflowY: 'overlay'
     },
     "#__next": {
       paddingBottom: "10%",

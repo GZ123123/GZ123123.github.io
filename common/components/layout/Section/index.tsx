@@ -45,6 +45,7 @@ const Section = ({ title, children }: ISection) => {
 		<Box as="section" mt={"4rem"}>
 			<Center
 				as="h3"
+				lineHeight={{ base: "125%", lg: "100%" }}
 				fontSize={{ base: "1.5rem", sm: "3rem", md: "4rem" }}
 				mb={{ base: "2rem" }}
 				textAlign="center"
