@@ -13,6 +13,7 @@ const Letter = () => {
 				<IconLetterClose width="100%" height="100%" />
 
 				<Box
+					tabIndex={-1}
 					onClick={onClick}
 					as="button"
 					sx={{

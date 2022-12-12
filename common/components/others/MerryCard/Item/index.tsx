@@ -1,7 +1,9 @@
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import Image, { StaticImageData } from "next/image";
-import { ReactNode } from "react";
+import { ReactNode, useMemo } from "react";
 import Modal from "../../Modal";
+
+import background from "./background.png";
 
 interface ICardItem {
 	icon: any;
@@ -29,32 +31,57 @@ const hover = {
 		animation: "shake 1.6s infinite",
 	},
 };
-const CardItem = ({ icon, title, children, image }: ICardItem) => {
+const CardItem = ({ icon, title, children, image, ltr }: ICardItem) => {
 	return (
 		<Modal
-			size={{ base: "2xl" }}
+			size={{ base: "xs", md: "2xl" }}
 			anchor={
-				<Box
-					as="button"
-					overflow={"visible !important"}
-					p={{ base: "1.5rem", md: "4rem" }}
-					border="1px solid white"
-					borderRadius={"1rem"}
-					_hover={hover}
-				>
-					{icon}
+				<Box overflow={"visible !important"} _hover={hover}>
+					<Box
+						as="button"
+						p={{ base: "1.5rem", md: "4rem" }}
+						border="1px solid white"
+						borderRadius={"1rem"}
+						_focus={hover}
+					>
+						{icon}
+					</Box>
 				</Box>
 			}
 		>
-			<Flex direction={{ base: "column-reverse", md: "row" }}>
-				<Box>
-					<Center as="h4">{title}</Center>
-					{children}
-				</Box>
-				<Flex justify={"center"}>
-					<Image style={{ minWidth: "300px" }} src={image} alt="santa image" />
+			<Box
+				backgroundImage={background.src}
+				backgroundSize="cover"
+				backgroundPosition={{ base: "top", md: "center" }}
+			>
+				<Flex
+					margin={"55px auto"}
+					px={{ base: "28px", md: "0" }}
+					maxW={"530px"}
+					gap={"1.2rem"}
+					direction={{ base: "column-reverse", md: "row" }}
+				>
+					<Box order={{ base: 0, md: Number(ltr) }}>
+						<Center
+							as="h4"
+							lineHeight={{ base: "140%" }}
+							fontSize={{ base: "45px", md: "45px" }}
+							fontFamily="iCielKL Soulbeams"
+							mb={{ base: "8px" }}
+						>
+							{title}
+						</Center>
+						{children}
+					</Box>
+					<Flex order={{ base: 1, md: Number(!ltr) }} justify={"center"}>
+						<Image
+							style={{ minWidth: "250px" }}
+							src={image}
+							alt="santa image"
+						/>
+					</Flex>
 				</Flex>
-			</Flex>
+			</Box>
 		</Modal>
 	);
 };

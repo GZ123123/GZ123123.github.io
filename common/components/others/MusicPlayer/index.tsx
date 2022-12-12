@@ -17,7 +17,7 @@ const MusicPlayer = () => {
 			<Box
 				border={"5px solid white"}
 				borderRadius="12px"
-				height={{ base: "350px", md: "500px" }}
+				height={{ base: "200px", sm: "250px", md: "400px", lg: "500px" }}
 			>
 				<Image
 					style={{

@@ -96,7 +96,7 @@ const Player = ({ song }: IPlayerProps, ref: any) => {
 					mt="1.5rem"
 				>
 					<VisuallyHidden>
-						<audio ref={audio} controls>
+						<audio ref={audio} controls tabIndex={-1}>
 							<source src={song.src} type="audio/mpeg" />
 							Your browser does not support the audio element.
 						</audio>
