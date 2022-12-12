@@ -456,9 +456,8 @@ const Gift = () => {
 						>
 							<Box lineHeight="140%">
 								<Box as="span" fontSize={"32px"} fontFamily="iCielKL Soulbeams">
-									Matakunkun
-								</Box>{" "}
-								thân mến
+									Matakunkun thân mến
+								</Box>
 							</Box>
 							<Box lineHeight="120%" mt={1}>
 								Những ngày cuối năm chắc hẳn sẽ
