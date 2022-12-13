@@ -34,13 +34,14 @@ const hover = {
 const CardItem = ({ icon, title, children, image, ltr }: ICardItem) => {
 	return (
 		<Modal
+			sx={{ width: "595px", height: "420px" }}
 			size={{ base: "xs", md: "2xl" }}
 			anchor={
 				<Box overflow={"visible !important"} _hover={hover}>
 					<Box
 						as="button"
 						p={{ base: "1.5rem", md: "4rem" }}
-						border="1px solid white"
+						border="3px solid white"
 						borderRadius={"1rem"}
 						_focus={hover}
 					>
@@ -51,7 +52,7 @@ const CardItem = ({ icon, title, children, image, ltr }: ICardItem) => {
 		>
 			<Box
 				backgroundImage={background.src}
-				backgroundSize="cover"
+				backgroundSize="contain"
 				backgroundPosition={{ base: "top", md: "center" }}
 			>
 				<Flex

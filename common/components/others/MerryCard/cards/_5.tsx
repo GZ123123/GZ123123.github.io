@@ -1,5 +1,5 @@
 import { AspectRatio, Box } from "@chakra-ui/react";
-import { IconChristmasDecorations } from "public/icons";
+import { IconChristmasTree } from "public/icons";
 import CardItem from "../Item";
 
 import Image from "public/images/question-tree-card.webp";
@@ -8,7 +8,7 @@ const Card_5 = () => {
 	return (
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<CardItem
-				icon={<IconChristmasDecorations width="100%" height="100%" />}
+				icon={<IconChristmasTree width="100%" height="100%" />}
 				title="Cây Thông Noel"
 				image={Image}
 				ltr

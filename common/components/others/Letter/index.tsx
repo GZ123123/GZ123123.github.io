@@ -22,6 +22,8 @@ const Letter = () => {
 					}}
 					top={{ base: "52%", md: "41%" }}
 					left={{ base: "46%", md: "41%" }}
+					// top="50%"
+					// left="50%"
 					transform={{
 						base: "translate(-50%, calc(50% - 1rem) )",
 						md: "translate(-50%, calc(50% - 6rem) )",
@@ -29,7 +31,15 @@ const Letter = () => {
 					w={{ base: "2rem", md: "8rem" }}
 					h={{ base: "2rem", md: "8rem" }}
 				>
-					<IconStar width="100%" height="100%" />
+					<IconStar
+						width="100%"
+						height="100%"
+						style={{
+							// filter: "drop-shadow(0px 0px 12px rgb(208 66 45 / 1))",
+							// transition: "filter 2s ease-out",
+							animation: "shadow 2s infinite",
+						}}
+					/>
 				</Box>
 			</Container>
 		</Section>

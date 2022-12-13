@@ -159,4 +159,21 @@ svg.banner.active .c {
     transform: scale(1);
   }
 }
+
+@keyframes shadow {
+  0% {
+    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 0.7));
+    /* background-color: red; */
+  }
+
+  50% {
+    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 0.2));
+    /* background-color: green; */
+  }
+
+  100% {
+    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 0.7));
+    /* background-color: blue; */
+  }
+}
 /* #endregion */

@@ -6,9 +6,10 @@ interface IModalProps {
 	children: ReactNode;
 	anchor: ReactElement;
 	size: any;
+	sx?: any;
 }
 
-const Modal = ({ children, anchor, size }: IModalProps) => {
+const Modal = ({ children, anchor, size, sx }: IModalProps) => {
 	const [isOpen, setOpen] = useState(false);
 
 	const onOpen = useCallback(() => setOpen(true), []);
@@ -19,7 +20,7 @@ const Modal = ({ children, anchor, size }: IModalProps) => {
 			{React.cloneElement(anchor, { onClick: onOpen })}
 			<CModal size={size || "md"} isOpen={isOpen} onClose={onClose} isCentered>
 				<ModalOverlay />
-				<ModalContent>{children}</ModalContent>
+				<ModalContent sx={sx}>{children}</ModalContent>
 			</CModal>
 		</>
 	);

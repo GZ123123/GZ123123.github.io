@@ -13,8 +13,8 @@ export { default as IconNext } from './next-icon.svg';
 //#endregion
 
 //#region Gift
-// export { default as IconGift } from './gift-icon.svg';
-export { default as IconGift } from './gift-icon.mobile.svg';
+export { default as IconGift } from './gift-icon.svg';
+// export { default as IconGift } from './gift-icon.mobile.svg';
 export { default as IconGiftHidden } from './gift-hidden-icon.svg';
 //#endregion
 
@@ -22,6 +22,7 @@ export { default as IconGiftHidden } from './gift-hidden-icon.svg';
 export { default as IconBauble } from './bauble-icon.svg';
 export { default as IconChristmasBell } from './christmas-bell-icon.svg';
 export { default as IconChristmasDecorations } from './christmas-decorations-icon.svg';
+export { default as IconChristmasTree } from './christmas-tree-icon.svg';
 export { default as IconChristmasLight } from './christmas-lights-icon.svg';
 export { default as IconChristmasStocking } from './christmas-stocking-icon.svg';
 export { default as IconChristmasWreath } from './christmas-wreath-icon.svg';
