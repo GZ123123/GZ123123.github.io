@@ -1,0 +1,192 @@
+.bling_after::after {
+  opacity: 0.2;
+  animation: bling 2s infinite;
+}
+
+svg.banner {
+  width: 100%;
+  transform: rotateY(180deg);
+  transform-origin: center;
+}
+
+svg.banner.active .star {
+  opacity: 0;
+  animation: bling 2s infinite /*4.3s*/var(--duration);
+}
+
+svg.banner.active .a {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+
+  animation-name: signature;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.55, .25, .43, 1);
+}
+
+svg.banner.active .b {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+
+  animation-name: signature;
+  animation-duration: 8.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.25, -0.1, .43, .5);
+}
+
+svg.banner.active .c {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+
+  animation-name: signature;
+  animation-duration: 6.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.55, -0.43, 0.8, 1);
+}
+
+/* #region Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -50%;
+    opacity: 0
+  }
+
+  to {
+    top: 0%;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -50%;
+    opacity: 0
+  }
+
+  to {
+    top: 0%;
+    opacity: 1
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+
+  15% {
+    transform: rotate(10deg);
+  }
+
+  30% {
+    transform: rotate(-10deg);
+  }
+
+  45% {
+    transform: rotate(8deg);
+  }
+
+  60% {
+    transform: rotate(-8deg);
+  }
+
+  75% {
+    transform: rotate(6deg);
+  }
+
+  85% {
+    transform: rotate(-6deg);
+  }
+
+  92% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes signature {
+  55% {
+    stroke-dashoffset: 0000;
+  }
+  
+  100% {
+    stroke-dashoffset: 0000;
+    fill: white;
+    stroke: none;
+  }
+}
+
+@keyframes bling {
+  0% {
+    opacity: 0.2;
+  }
+  
+  50% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    transform-origin: center;
+    border-radius: 100%;
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes star-shadow {
+  0% { 
+    filter: drop-shadow(0px 0px 0px rgb(255 255 255 / 0));
+  }
+  20% { 
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
+   }
+  45% { 
+    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 1));
+  }
+  75% { 
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
+   }
+  90% { 
+    filter: drop-shadow(0px 0px 0px rgb(255 255 255 / 0.5));
+  }
+}
+
+@keyframes star-shake {
+  0% { 
+    transform: rotate(0deg);
+  }
+  20% { 
+    transform: rotate(-30deg);
+   }
+  45% { 
+    transform: rotate(30deg);
+  }
+  75% { 
+    transform: rotate(-30deg);
+   }
+  97% { 
+    transform: rotate(0deg);
+  }
+}
+/* #endregion */
