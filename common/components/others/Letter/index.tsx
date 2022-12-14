@@ -18,12 +18,12 @@ const Letter = () => {
 					as="button"
 					sx={{
 						position: "absolute",
-						animation: "shake 1.6s infinite",
+						// animation: "star-shake 2s infinite",
 					}}
-					top={{ base: "52%", md: "41%" }}
-					left={{ base: "46%", md: "41%" }}
-					// top="50%"
-					// left="50%"
+					// top={{ base: "52%", md: "41%" }}
+					// left={{ base: "46%", md: "41%" }}
+					top="50%"
+					left="50%"
 					transform={{
 						base: "translate(-50%, calc(50% - 1rem) )",
 						md: "translate(-50%, calc(50% - 6rem) )",
@@ -32,12 +32,14 @@ const Letter = () => {
 					h={{ base: "2rem", md: "8rem" }}
 				>
 					<IconStar
+						className="test"
 						width="100%"
 						height="100%"
 						style={{
-							// filter: "drop-shadow(0px 0px 12px rgb(208 66 45 / 1))",
+							// filter: "drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5))",
 							// transition: "filter 2s ease-out",
-							animation: "shadow 2s infinite",
+							animation:
+								"star-shake 3s linear infinite, star-shadow 3s steps(4, jump-both) infinite",
 						}}
 					/>
 				</Box>

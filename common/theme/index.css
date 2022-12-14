@@ -79,12 +79,6 @@ svg.banner.active .c {
 }
 
 @keyframes shake {
-
-  /* 0% { transform: rotate(0deg) }
-  22% { transform: rotate(30deg) }
-  50% { transform: rotate(0deg) }
-  72% { transform: rotate(-30deg) }
-  100% { transform: rotate(0deg) } */
   0% {
     transform: rotate(0);
   }
@@ -126,7 +120,7 @@ svg.banner.active .c {
   55% {
     stroke-dashoffset: 0000;
   }
-
+  
   100% {
     stroke-dashoffset: 0000;
     fill: white;
@@ -138,11 +132,11 @@ svg.banner.active .c {
   0% {
     opacity: 0.2;
   }
-
+  
   50% {
     opacity: 1;
   }
-
+  
   100% {
     opacity: 0.2;
   }
@@ -154,26 +148,45 @@ svg.banner.active .c {
     transform-origin: center;
     border-radius: 100%;
   }
-
+  
   100% {
     transform: scale(1);
   }
 }
 
-@keyframes shadow {
-  0% {
-    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 0.7));
-    /* background-color: red; */
+@keyframes star-shadow {
+  0% { 
+    filter: drop-shadow(0px 0px 0px rgb(255 255 255 / 0));
   }
-
-  50% {
-    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 0.2));
-    /* background-color: green; */
+  20% { 
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
+   }
+  45% { 
+    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 1));
   }
+  75% { 
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
+   }
+  90% { 
+    filter: drop-shadow(0px 0px 0px rgb(255 255 255 / 0.5));
+  }
+}
 
-  100% {
-    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 0.7));
-    /* background-color: blue; */
+@keyframes star-shake {
+  0% { 
+    transform: rotate(0deg);
+  }
+  20% { 
+    transform: rotate(-30deg);
+   }
+  45% { 
+    transform: rotate(30deg);
+  }
+  75% { 
+    transform: rotate(-30deg);
+   }
+  97% { 
+    transform: rotate(0deg);
   }
 }
 /* #endregion */

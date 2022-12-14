@@ -1,5 +1,7 @@
 import { Box } from "@chakra-ui/react";
+
 import Banner from "common/components/others/Banner";
+
 import {
 	Gift,
 	Letter,
@@ -25,10 +27,8 @@ const App = () => {
 	);
 };
 
-export async function getStaticProps() {
+export async function getServer() {
 	return {
 		props: {},
 	};
 }
-
-export default App;
