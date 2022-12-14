@@ -32,3 +32,5 @@ export async function getServer() {
 		props: {},
 	};
 }
+
+export default App;
