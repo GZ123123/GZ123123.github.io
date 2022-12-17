@@ -31,7 +31,7 @@ const styles = {
       width: "100%",
       minHeight: "100vh",
       bg: mode("white", "primary")(props),
-      backgroundImage: `url('/images/header.webp')`,
+      backgroundImage: `url('/images/header.png')`,
       backgroundRepeat: `no-repeat`,
       backgroundSize: `contain`,
       backgroundPosition: `top`,
@@ -40,7 +40,7 @@ const styles = {
     },
     "#__next": {
       paddingBottom: "10%",
-      backgroundImage: "url('/images/footer.webp')",
+      backgroundImage: "url('/images/footer.png')",
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
       backgroundPosition: "bottom"

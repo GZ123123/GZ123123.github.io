@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 
 import Banner from "common/components/others/Banner";
+import { withSessionSsr } from "common/utilities/session";
 
 import {
 	Gift,
@@ -9,7 +10,7 @@ import {
 	MusicPlayer,
 } from "../common/components/others";
 
-const App = () => {
+const App = ({ user }: any) => {
 	return (
 		<>
 			<Box width={"100%"} mb={{ base: "3rem", sm: "5.5rem" }}>
@@ -27,10 +28,10 @@ const App = () => {
 	);
 };
 
-export async function getServer() {
-	return {
-		props: {},
-	};
-}
+export const getServerSideProps = withSessionSsr(async ({ req, res }: any) => {
+	const user = req.session.user ?? {};
+
+	return { props: { user } };
+});
 
 export default App;

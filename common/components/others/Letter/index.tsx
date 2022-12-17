@@ -16,28 +16,21 @@ const Letter = () => {
 					tabIndex={-1}
 					onClick={onClick}
 					as="button"
-					sx={{
-						position: "absolute",
-						// animation: "star-shake 2s infinite",
-					}}
-					// top={{ base: "52%", md: "41%" }}
-					// left={{ base: "46%", md: "41%" }}
+					sx={{ position: "absolute" }}
 					top="50%"
 					left="50%"
 					transform={{
-						base: "translate(-50%, calc(50% - 1rem) )",
+						base: "translate(-50%, calc(50% - 4rem) )",
 						md: "translate(-50%, calc(50% - 6rem) )",
 					}}
-					w={{ base: "2rem", md: "8rem" }}
-					h={{ base: "2rem", md: "8rem" }}
+					w={{ base: "6rem", md: "8rem" }}
+					h={{ base: "6rem", md: "8rem" }}
 				>
 					<IconStar
 						className="test"
 						width="100%"
 						height="100%"
 						style={{
-							// filter: "drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5))",
-							// transition: "filter 2s ease-out",
 							animation:
 								"star-shake 3s linear infinite, star-shadow 3s steps(4, jump-both) infinite",
 						}}

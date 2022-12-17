@@ -10,7 +10,7 @@ const Card_5 = () => {
 					require("public/images/gifts/gift_5_mobile.webp"),
 				]}
 				alt="gift_5"
-				top={{ base: "45%", md: "40%" }}
+				top={{ base: "55%", md: "40%" }}
 				left={{ base: 0, md: "47%" }}
 				width={{ base: "100%", md: "52%" }}
 			>
