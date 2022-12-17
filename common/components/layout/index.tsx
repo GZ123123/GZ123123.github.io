@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { Box, Container } from "@chakra-ui/react";
+import { Box, ChakraProvider, Container } from "@chakra-ui/react";
 
 import { ReactNode } from "react";
 import { Router } from "next/router";
@@ -8,18 +8,19 @@ import { Router } from "next/router";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Canvas } from "./Canvas";
+import theme from "common/theme";
 
 type AppWithRoute = { children: ReactNode; router: Router };
 
-const Main = ({ children, router }: AppWithRoute) => {
+const Main = ({ children }: AppWithRoute) => {
 	return (
-		<>
+		<ChakraProvider theme={theme}>
 			<Head>
 				<meta name="viewport" content="width=device-width,initial-scale=1" />
 				<title>Merry Christmas</title>
 			</Head>
 
-			{/* <Canvas /> */}
+			<Canvas component={children} />
 
 			<Container
 				maxW={"container.lg"}
@@ -33,7 +34,7 @@ const Main = ({ children, router }: AppWithRoute) => {
 
 				<div id="footer_image"></div>
 			</Container>
-		</>
+		</ChakraProvider>
 	);
 };
 

@@ -1,21 +1,17 @@
 import "../common/theme/index.css";
 
-import type { AppProps } from "next/app";
-
-import { ChakraProvider } from "@chakra-ui/react";
-
 import { Layout } from "../common/components";
 
-import theme from "../common/theme";
+import { AppPropsWithLayout } from "../common/interfaces";
 
-const MyApp = ({ Component, pageProps, router }: AppProps) => {
-	return (
-		<ChakraProvider theme={theme}>
-			<Layout router={router}>
-				<Component {...pageProps} key={router.route} />
-			</Layout>
-		</ChakraProvider>
-	);
+import { ReactNode } from "react";
+
+const MyApp = ({ Component, pageProps, router }: AppPropsWithLayout) => {
+	const layout = Component.getLayout
+		? Component.getLayout
+		: (component: ReactNode) => <Layout router={router}>{component}</Layout>;
+
+	return layout(<Component {...pageProps} key={router.route} />);
 };
 
 export default MyApp;

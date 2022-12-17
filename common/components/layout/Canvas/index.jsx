@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react";
 
 
 function Snow(canvas) {
@@ -88,20 +88,29 @@ function Snow(canvas) {
     timeout = setTimeout(update, 50)
   })
 
-  return () => {
-    timeout = null;
-    snows = [];
+  return {
+    update: () => update(),
+    decontruct: () => {
+      timeout = null;
+      snows = [];
+    }
   }
 }
 
-
-
-export const Canvas = () => {
+export const Canvas = ({ component }) => {
   const canvas = useRef();
 
+  const [snow, setSnow] = useState(null);
+
   useEffect(() => {
-    const decontruct = Snow(canvas.current)
-    return () => decontruct()
+    snow && snow.update();
+  }, [component])
+
+
+  useEffect(() => {
+    const _snow = Snow(canvas.current)
+    setSnow(_snow)
+    return () => _snow.decontruct()
   }, [])
 
   return <canvas style={{ position: 'absolute', pointerEvents: 'none' }} ref={canvas} width="1848" height="515" />
