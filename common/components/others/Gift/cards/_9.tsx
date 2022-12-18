@@ -6,7 +6,7 @@ const Card_9 = () => {
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<GiftItem
 				images={[
-					require("public/images/gifts/gift_9.webp"),
+					require("public/images/gifts/gift_9.png"),
 					require("public/images/gifts/gift_9_mobile.webp"),
 				]}
 				alt="gift_9"
@@ -21,8 +21,9 @@ const Card_9 = () => {
 				>
 					<Box lineHeight="140%">
 						<Box as="span" fontSize={"32px"} fontFamily="iCielKL Soulbeams">
-							Matakunkun thân mến
+							Matakunkun
 						</Box>
+						&nbsp; thân mến
 					</Box>
 					<Box lineHeight="120%" mt={1}>
 						Những ngày cuối năm chắc hẳn sẽ

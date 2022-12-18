@@ -6,7 +6,7 @@ const Card_6 = () => {
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<GiftItem
 				images={[
-					require("public/images/gifts/gift_6.webp"),
+					require("public/images/gifts/gift_6.png"),
 					require("public/images/gifts/gift_6_mobile.webp"),
 				]}
 				alt="gift_6"

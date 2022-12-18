@@ -6,7 +6,7 @@ const Card_8 = () => {
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<GiftItem
 				images={[
-					require("public/images/gifts/gift_8.webp"),
+					require("public/images/gifts/gift_8.png"),
 					require("public/images/gifts/gift_8_mobile.webp"),
 				]}
 				alt="gift_8"
@@ -20,23 +20,25 @@ const Card_8 = () => {
 					fontSize={"24px"}
 					fontFamily={"dongle"}
 				>
-					<Box lineHeight="140%">
+					<Box lineHeight={{ base: "140%", md: "120%" }}>
+						Gửi &nbsp;
 						<Box as="span" fontSize={"32px"} fontFamily="iCielKL Soulbeams">
 							Matakunkun
-						</Box>{" "}
-						thân mến
+						</Box>
+						&nbsp; thân mến!
 					</Box>
 					<Box
-						lineHeight={{ base: "120%", md: "100%" }}
+						lineHeight={{ base: "120%", md: "120%" }}
 						display={{ base: "none", md: "block" }}
+						mt={1}
 					>
 						Đây là thời khắc chuyển mùa trong năm. Mùa đông lại giá sắp qua đi
 						và một mùa xuân ấm áp sắp tràn về!
 					</Box>
-					<Box lineHeight={{ base: "120%", md: "100%" }}>
+					<Box lineHeight={{ base: "120%", md: "120%" }} mt={1}>
 						Chúc cho bạn đủ ngọt ngào để ấm áp suốt mùa đông lạnh lẽo.
 					</Box>
-					<Box lineHeight={{ base: "120%", md: "100%" }}>
+					<Box lineHeight={{ base: "120%", md: "120%" }} mt={1}>
 						Chúc cho những mối quan hệ bạn{" "}
 						<Box as="br" display={{ base: "block", md: "none" }} />
 						“để tâm” sẽ tiến triển tươi mới như không khí ngày xuân.

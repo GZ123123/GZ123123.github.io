@@ -6,7 +6,7 @@ const Card_5 = () => {
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<GiftItem
 				images={[
-					require("public/images/gifts/gift_5.webp"),
+					require("public/images/gifts/gift_5.png"),
 					require("public/images/gifts/gift_5_mobile.webp"),
 				]}
 				alt="gift_5"
@@ -20,20 +20,63 @@ const Card_5 = () => {
 					fontSize={{ base: "24px", md: "20px" }}
 					fontFamily={"dongle"}
 				>
-					<Box lineHeight="140%">
+					<Box lineHeight="140%" color="#233239">
 						<Box
 							as="span"
 							fontSize={"32px"}
-							fontFamily="iCielKL Soulbeams"
 							color="#233239"
+							fontFamily="iCielKL Soulbeams"
 						>
-							Matakunkun ơi
+							Matakunkun
 						</Box>
+						&nbsp; ơi
 					</Box>
-					<Box lineHeight="120%" color="#233239">
+					<Box
+						lineHeight="120%"
+						color="#233239"
+						display={{ base: "block", md: "none" }}
+					>
 						Chúc bạn một Giáng Sinh an lành nhé Chúc bạn có một cuộc đời luôn an
 						nhiên và vô ưu! Chúc cho tâm hồn bạn mãi trong trẻo, giản đơn như
 						trẻ thơ, vì cổ tích đời thường là có thật!
+					</Box>
+					<Box
+						lineHeight="120%"
+						color="#233239"
+						display={{ base: "none", md: "block" }}
+					>
+						Chúc bạn một Giáng Sinh an lành nhé!
+					</Box>
+
+					<Box
+						lineHeight="120%"
+						color="#233239"
+						display={{ base: "none", md: "block" }}
+					>
+						Chúc bạn có một cuộc đời luôn an nhiên và vô ưu!
+					</Box>
+					<Box
+						lineHeight="120%"
+						color="#233239"
+						display={{ base: "none", md: "block" }}
+					>
+						Chúc cho tâm hồn bạn mãi trong trẻo, giản đơn như trẻ thơ, vì cổ
+						tích đời thường là có thật!
+					</Box>
+					<Box
+						lineHeight="120%"
+						color="#233239"
+						display={{ base: "none", md: "block" }}
+					>
+						Chúc cho bạn có một Santa Claus của riêng bạn, để bạn có thể hồn
+						nhiên mà yêu đời.
+					</Box>
+					<Box
+						lineHeight="120%"
+						color="#233239"
+						display={{ base: "none", md: "block" }}
+					>
+						Hãy luôn yêu thương bản thân và trân trọng mọi thứ, bạn nhé!
 					</Box>
 				</Box>
 			</GiftItem>

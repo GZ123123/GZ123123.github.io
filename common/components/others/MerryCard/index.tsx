@@ -6,13 +6,14 @@ import cards from "./cards";
 
 const MerryCard = () => {
 	return (
-		<Section title="Christmas symbols mean?">
+		<Section title="Christmas symbols mean?" pt={"2rem"}>
 			<Flex
 				gap={{
 					base: "2rem 3rem",
 					sm: "2rem 2rem",
 					lg: "5rem",
 				}}
+				mt={{ base: "3rem", md: "6rem" }}
 				flexWrap="wrap"
 				justifyContent={{ base: "center", md: "space-between" }}
 			>

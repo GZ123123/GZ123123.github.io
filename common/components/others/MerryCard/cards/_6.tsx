@@ -2,7 +2,7 @@ import { AspectRatio, Box, Text } from "@chakra-ui/react";
 import { IconChristmasBell } from "public/icons";
 import CardItem from "../Item";
 
-import Image from "public/images/question-bell-card.webp";
+import Image from "public/images/question-bell-card.png";
 
 const Card_6 = () => {
 	return (

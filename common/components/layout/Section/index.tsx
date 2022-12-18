@@ -2,8 +2,9 @@ import { Box, Center, Text } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface ISection {
-	title: string;
+	title?: string;
 	children: ReactNode;
+	pt?: any;
 }
 
 const before = {
@@ -40,20 +41,22 @@ const after = {
 	},
 };
 
-const Section = ({ title, children }: ISection) => {
+const Section = ({ title, children, pt }: ISection) => {
 	return (
-		<Box as="section" mt={"4rem"}>
-			<Center
-				as="h3"
-				lineHeight={{ base: "125%", lg: "100%" }}
-				fontSize={{ base: "1.5rem", sm: "3rem", md: "4rem" }}
-				mb={{ base: "2rem" }}
-				textAlign="center"
-				_before={before}
-				_after={after}
-			>
-				{title}
-			</Center>
+		<Box as="section" mt={{ base: "1.5rem", md: "6rem" }} pt={pt}>
+			{title && (
+				<Center
+					as="h3"
+					lineHeight={{ base: "125%", lg: "100%" }}
+					fontSize={{ base: "1.5rem", sm: "3rem", md: "4rem" }}
+					mb={{ base: "2rem" }}
+					textAlign="center"
+					_before={before}
+					_after={after}
+				>
+					{title}
+				</Center>
+			)}
 			<Box>{children}</Box>
 		</Box>
 	);

@@ -2,7 +2,7 @@ import { AspectRatio, Box } from "@chakra-ui/react";
 import { IconChristmasTree } from "public/icons";
 import CardItem from "../Item";
 
-import Image from "public/images/question-tree-card.webp";
+import Image from "public/images/question-tree-card.png";
 
 const Card_5 = () => {
 	return (

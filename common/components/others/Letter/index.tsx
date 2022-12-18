@@ -8,8 +8,12 @@ const Letter = () => {
 
 	const onClick = () => navigate.push("/wishes");
 	return (
-		<Section title="Write best wishes">
-			<Container maxW={"container.md"} pos="relative">
+		<Section title="Write best wishes" pt="2rem">
+			<Container
+				maxW={"container.md"}
+				pos="relative"
+				mt={{ base: "2rem", md: "6rem" }}
+			>
 				<IconLetterClose width="100%" height="100%" />
 
 				<Box
@@ -20,11 +24,12 @@ const Letter = () => {
 					top="50%"
 					left="50%"
 					transform={{
-						base: "translate(-50%, calc(50% - 4rem) )",
+						base: "translate(-50%, calc(50% - 2rem) )",
+						sm: "translate(-50%, calc(50% - 3rem) )",
 						md: "translate(-50%, calc(50% - 6rem) )",
 					}}
-					w={{ base: "6rem", md: "8rem" }}
-					h={{ base: "6rem", md: "8rem" }}
+					w={{ base: "3rem", sm: "5rem", md: "8rem" }}
+					h={{ base: "3rem", sm: "5rem", md: "8rem" }}
 				>
 					<IconStar
 						className="test"
@@ -32,7 +37,7 @@ const Letter = () => {
 						height="100%"
 						style={{
 							animation:
-								"star-shake 3s linear infinite, star-shadow 3s steps(4, jump-both) infinite",
+								"star-shake-begin 500ms linear, star-shake 2s infinite linear 500ms",
 						}}
 					/>
 				</Box>

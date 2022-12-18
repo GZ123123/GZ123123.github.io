@@ -2,7 +2,7 @@ import { AspectRatio, Box } from "@chakra-ui/react";
 import { IconChristmasStocking } from "public/icons";
 import CardItem from "../Item";
 
-import Image from "public/images/question-sock-card.webp";
+import Image from "public/images/question-sock-card.png";
 
 const Card_2 = () => {
 	return (

@@ -6,11 +6,11 @@ const Card_7 = () => {
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<GiftItem
 				images={[
-					require("public/images/gifts/gift_7.webp"),
+					require("public/images/gifts/gift_7.png"),
 					require("public/images/gifts/gift_7_mobile.webp"),
 				]}
 				alt="gift_7"
-				top={{ base: "50%", md: "20%" }}
+				top={{ base: "50%", md: "18%" }}
 				left={{ base: 0, md: "42%" }}
 				width={{ base: "100%", md: "57%" }}
 			>
@@ -24,11 +24,22 @@ const Card_7 = () => {
 					<Box lineHeight="140%">
 						<Box as="span" fontSize={"32px"} fontFamily="iCielKL Soulbeams">
 							Matakunkun
-						</Box>{" "}
-						ơi
+						</Box>
+						&nbsp; ơi
 					</Box>
-					<Box lineHeight={{ base: "120%", md: "120%" }} mt={1}>
+					<Box
+						lineHeight={{ base: "120%", md: "120%" }}
+						mt={1}
+						display={{ base: "block", md: "none" }}
+					>
 						Giáng Sinh đã tràn về với bạn rồi đây!
+					</Box>
+					<Box
+						lineHeight={{ base: "120%", md: "120%" }}
+						mt={1}
+						display={{ base: "none", md: "block" }}
+					>
+						Giáng Sinh này, bên cậu đã có ai chưa?
 					</Box>
 					<Box
 						lineHeight={{ base: "120%", md: "120%" }}

@@ -154,39 +154,73 @@ svg.banner.active .c {
   }
 }
 
-@keyframes star-shadow {
+
+@keyframes star-shake-begin {
   0% { 
-    filter: drop-shadow(0px 0px 0px rgb(255 255 255 / 0));
+    transform: rotate(0deg);
   }
-  20% { 
+  100% {
+    transform: rotate(-30deg);
     filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
-   }
-  45% { 
-    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 1));
-  }
-  75% { 
-    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
-   }
-  90% { 
-    filter: drop-shadow(0px 0px 0px rgb(255 255 255 / 0.5));
   }
 }
 
 @keyframes star-shake {
   0% { 
-    transform: rotate(0deg);
-  }
-  20% { 
     transform: rotate(-30deg);
-   }
-  45% { 
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
+  }
+
+  25% {
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 1));
+  }
+  
+  50% {
+    transform: rotate(30deg);
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
+  }
+ 
+  75% {
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 1));
+  }
+  
+  100% {
+    transform: rotate(-30deg);
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
+  }
+  
+  /* 40%{
     transform: rotate(30deg);
   }
-  75% { 
+  50% {
+    transform: rotate(30deg);
+    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 1));
+  }
+  70% {
     transform: rotate(-30deg);
+  } 
+  80% {
+    transform: rotate(-30deg);
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
+  }
+  90% {
+    transform: rotate(0deg);
+  } */
+  /* 17% { 
+    transform: rotate(-30deg);
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
+  }
+  48% { 
+    transform: rotate(30deg);
+    filter: drop-shadow(0px 0px 12px rgb(255 255 255 / 1));
+  }
+  80% { 
+    transform: rotate(-30deg);
+    filter: drop-shadow(0px 0px 6px rgb(255 255 255 / 0.5));
    }
   97% { 
     transform: rotate(0deg);
-  }
+    filter: drop-shadow(0px 0px 0px rgb(255 255 255 / 0.5));
+  } */
 }
 /* #endregion */

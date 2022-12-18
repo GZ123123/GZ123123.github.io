@@ -58,9 +58,10 @@ const CardItem = ({ icon, title, children, image, ltr }: ICardItem) => {
 				<Flex
 					margin={"55px auto"}
 					px={{ base: "28px", md: "0" }}
-					maxW={"530px"}
-					gap={"1.2rem"}
+					maxW={"547px"}
+					gap={"22px"}
 					direction={{ base: "column-reverse", md: "row" }}
+					alignItems="center"
 				>
 					<Box order={{ base: 0, md: Number(ltr) }}>
 						<Center

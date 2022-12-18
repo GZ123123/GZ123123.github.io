@@ -4,7 +4,16 @@ import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState }
 function Snow(canvas) {
   const ctx = canvas.getContext('2d');
   const padding = 200;
-  const maxCount = 500;
+  const MAX_COUNT = 600;
+  const MAX_SIZE = 1.5;
+  const MIN_SIZE = 0.5;
+
+  const MAX_VX = 1;
+  const MIN_VX = -0.5;
+
+  const MAX_VY = 1;
+  const MIN_VY = 0;
+
   const color = "rgba(255,255,255)";
 
   let timeout = null;
@@ -14,15 +23,15 @@ function Snow(canvas) {
     this.x = Math.random() * (canvas.width + padding) - padding / 2;
     this.y = Math.random() * (canvas.height + padding) - padding / 2;
     this.z = 1.5 * Math.random() + 0.5;
-    this.vx = (1.5 * Math.random() - 0.5) * this.z;
-    this.vy = (0.5 * Math.random() + 0.5) * this.z;
-    this.size = (3 * Math.random() + 1) * this.z;
+    this.vx = (MAX_VX * Math.random() + MIN_VX);
+    this.vy = (MAX_VY * Math.random() + MIN_VY);
+    this.size = (MAX_SIZE * Math.random() + MIN_SIZE) * this.z;
   }
 
   const init = () => {
     snows = [];
 
-    for (let index = 0; index < maxCount; index++) {
+    for (let index = 0; index < MAX_COUNT; index++) {
       snows.push(new Item())
     }
 
@@ -40,23 +49,23 @@ function Snow(canvas) {
   }
 
   const caculate = (snow) => {
-    snow.x += snow.vx + Math.random();
-    snow.y += snow.vy + Math.random();
+    snow.x += snow.vx;
+    snow.y += snow.vy;
 
     if (snow.x > canvas.width + padding / 2) {
       snow.x = -padding / 2
-      snow.vx = (1.5 * Math.random() - 0.5) * snow.z
+      snow.vx = (MAX_VX * Math.random() + MIN_VX) * snow.z
     } else if (snow.x < -padding / 2) {
       snow.x = canvas.width + padding / 2
-      snow.vx = (1.5 * Math.random() - 0.5) * snow.z
+      snow.vx = (MAX_VX * Math.random() + MIN_VX) * snow.z
     }
 
     if (snow.y > canvas.height + padding / 2) {
       snow.y = -padding / 2
-      snow.vy = (0.5 * Math.random() + 0.5) * snow.z;
+      snow.vy = (MAX_VY * Math.random() + MIN_VY) * snow.z;
     } else if (snow.y < -padding / 2) {
       snow.y = canvas.height + padding / 2
-      snow.vy = (0.5 * Math.random() + 0.5) * snow.z;
+      snow.vy = (MAX_VY * Math.random() + MIN_VY) * snow.z;
     }
 
   }
@@ -113,5 +122,5 @@ export const Canvas = ({ component }) => {
     return () => _snow.decontruct()
   }, [])
 
-  return <canvas style={{ position: 'absolute', pointerEvents: 'none' }} ref={canvas} width="1848" height="515" />
+  return <canvas style={{ position: 'absolute', pointerEvents: 'none', zIndex: 1 }} ref={canvas} width="1848" height="515" />
 }

@@ -56,10 +56,10 @@ const Wishes = ({ user, messages }: IWishProps) => {
 			<Container minH={"50vh"} maxW="container.md" pos="relative">
 				<Box
 					sx={{ borderRadius: "8px", overflow: "hidden", position: "relative" }}
-					mb="3rem"
+					mt="6rem"
 					_before={before}
 				>
-					<InputGroup size={{ base: "sm", md: "lg" }} alignItems={"flex-end"}>
+					<InputGroup size={{ base: "md", md: "lg" }} alignItems={"flex-end"}>
 						<Textarea
 							disabled={!!sended}
 							value={input}
@@ -89,7 +89,7 @@ const Wishes = ({ user, messages }: IWishProps) => {
 							as={"button"}
 							children="SEND"
 							fontFamily="Dongle"
-							fontSize={{ base: "18px !important", md: "30px !important" }}
+							fontSize={{ base: "18px !important", sm: "30px !important" }}
 							paddingTop={{ md: "4px" }}
 							backgroundColor="transparent"
 							display="none"
@@ -99,7 +99,7 @@ const Wishes = ({ user, messages }: IWishProps) => {
 				</Box>
 				<Box
 					pos={"relative"}
-					mt={{ base: "6rem", sm: "10rem" }}
+					mt={{ base: "6rem", sm: "14rem" }}
 					mb={{ base: "6rem", md: "8rem" }}
 				>
 					<Box
@@ -124,13 +124,15 @@ const Wishes = ({ user, messages }: IWishProps) => {
 						width="100%"
 						height="100%"
 						minHeight="50vh"
+						maxH="90vh"
+						overflowY="scroll"
 					>
 						<Box
+							pt="15px"
 							sx={{
 								minH: "500px",
-								marginTop: "4px",
 								background:
-									"repeating-linear-gradient(transparent, transparent 25px, white 26px, white 27px)",
+									"repeating-linear-gradient(transparent, transparent 39px, white 40px, white 40px)",
 							}}
 						>
 							{_message.map((value, index) => (
@@ -143,14 +145,14 @@ const Wishes = ({ user, messages }: IWishProps) => {
 											as="pre"
 											fontFamily="Dongle"
 											fontSize="24px"
-											marginTop={"5px"}
-											lineHeight="27px"
+											marginTop={"10px"}
+											lineHeight="40px"
 											whiteSpace="pre-wrap"
 											wordBreak="break-word"
 										>
 											{value.message}
 										</Text>
-										<Box height={"25px"}></Box>
+										<Box height={"46px"}></Box>
 									</Box>
 								</Box>
 							))}

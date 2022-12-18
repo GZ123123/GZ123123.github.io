@@ -5,7 +5,7 @@ import cards from "./cards";
 
 const Gift = () => {
 	return (
-		<Section title="Gift love for u">
+		<Section title="Gift love for u" pt={"2rem"}>
 			<Flex
 				gap={{ base: 0, md: "0.5rem" }}
 				flexWrap="wrap"

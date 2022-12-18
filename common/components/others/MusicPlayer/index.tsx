@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import musicBackground from "public/images/music-background.webp";
 import Player from "./Player";
+import Section from "common/components/layout/Section";
 
 const MusicPlayer = () => {
 	const [song] = useState({
@@ -13,11 +14,16 @@ const MusicPlayer = () => {
 	});
 
 	return (
-		<Box as="section">
+		<Section pt="2rem">
 			<Box
 				border={"5px solid white"}
 				borderRadius="12px"
-				height={{ base: "200px", sm: "250px", md: "400px", lg: "500px" }}
+				height={{
+					base: "200px",
+					sm: "250px",
+					md: "400px",
+					lg: "500px",
+				}}
 			>
 				<Image
 					style={{
@@ -31,7 +37,7 @@ const MusicPlayer = () => {
 			</Box>
 
 			<Player song={song} />
-		</Box>
+		</Section>
 	);
 };
 

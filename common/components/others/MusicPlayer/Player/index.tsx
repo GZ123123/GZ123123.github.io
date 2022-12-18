@@ -9,6 +9,7 @@ import {
 import { IconNext, IconPause, IconPlay, IconPrev } from "public/icons";
 import {
 	forwardRef,
+	useCallback,
 	useEffect,
 	useImperativeHandle,
 	useRef,
@@ -28,37 +29,60 @@ interface ISong {
 const Player = ({ song }: IPlayerProps, ref: any) => {
 	const audio = useRef<any>();
 
-	const [process, setProcess] = useState(80);
+	const [status, setStatus] = useState(0);
+
+	const [process, setProcess] = useState(0);
 
 	const [lyric, setLyric] = useState("Justin Bieber, Mariah Carey");
 
-	const play = () => {
-		console.log(audio.current);
-	};
+	const [duration, setDuration] = useState("00:00");
 
-	const pause = () => {
-		console.log(audio.current);
-	};
+	const play = useCallback(() => {
+		setStatus(1);
+		audio.current.play();
+	}, []);
 
-	const togglePlay = () => {
-		console.log(audio.current.play());
-	};
+	const pause = useCallback(() => {
+		setStatus(0);
+		audio.current.pause();
+	}, []);
+
+	const togglePlay = useCallback(() => (!!status ? pause() : play()), [status]);
 
 	const onDurationChange = (e: any) => {
-		console.log(e);
+		setProcess(
+			Math.min((audio.current.currentTime / audio.current.duration) * 100, 100)
+		);
 	};
 
 	const prev = () => {};
 
 	const next = () => {};
 
+	const caculateDuration = () => {
+		const _duration = audio.current.duration;
+
+		const minus = Math.ceil(_duration / 60);
+		const second = Math.ceil(_duration % 60);
+
+		setDuration(
+			`${minus < 10 ? `0${minus}` : minus}:${
+				second < 10 ? `0${second}` : second
+			}`
+		);
+	};
+
 	useImperativeHandle(ref, () => ({ play, pause }), []);
 
 	useEffect(() => {
-		audio.current?.addEventListener("timeupdate", onDurationChange);
+		// audio.current?.addEventListener("timeupdate", onDurationChange);
+
+		audio.current?.addEventListener("loadeddata", caculateDuration);
+
+		caculateDuration();
 
 		return () => {
-			audio.current?.removeEventListener("timeupdatef", onDurationChange);
+			// audio.current?.removeEventListener("timeupdatef", onDurationChange);
 		};
 	}, []);
 
@@ -88,28 +112,60 @@ const Player = ({ song }: IPlayerProps, ref: any) => {
 						},
 					}}
 				/>
-				<Flex
-					w={{ base: "unset", md: "35%" }}
-					maxW={"350px"}
-					justifyContent="space-between"
-					mx="auto"
-					mt="1.5rem"
-				>
-					<VisuallyHidden>
-						<audio ref={audio} controls tabIndex={-1}>
-							<source src={song.src} type="audio/mpeg" />
-							Your browser does not support the audio element.
-						</audio>
-					</VisuallyHidden>
-					<Box as="button" onClick={prev}>
-						<IconPrev width="64px" height="64px" />
-					</Box>
-					<Box as="button" onClick={togglePlay}>
-						<IconPause width="64px" height="64px" />
-					</Box>
-					<Box as="button" onClick={next}>
-						<IconNext width="64px" height="64px" />
-					</Box>
+				<Flex mt="1.5rem" alignItems={"center"}>
+					<Text fontFamily="Dongle" fontSize={{ base: "24px", md: "32px" }}>
+						00:00
+					</Text>
+
+					<Flex
+						w={{ base: "50%", md: "35%" }}
+						maxW={"350px"}
+						justifyContent="space-between"
+						mx="auto"
+					>
+						<VisuallyHidden>
+							<audio
+								ref={audio}
+								controls
+								tabIndex={-1}
+								onTimeUpdate={onDurationChange}
+							>
+								<source src={song.src} type="audio/mpeg" />
+								Your browser does not support the audio element.
+							</audio>
+						</VisuallyHidden>
+						<Box
+							as="button"
+							onClick={prev}
+							width={{ base: "32px", md: "64px" }}
+							height={{ base: "32px", md: "64px" }}
+						>
+							<IconPrev style={{ width: "100%", height: "100%" }} />
+						</Box>
+						<Box
+							as="button"
+							onClick={togglePlay}
+							width={{ base: "32px", md: "64px" }}
+							height={{ base: "32px", md: "64px" }}
+						>
+							{status ? (
+								<IconPause style={{ width: "100%", height: "100%" }} />
+							) : (
+								<IconPlay style={{ width: "100%", height: "100%" }} />
+							)}
+						</Box>
+						<Box
+							as="button"
+							onClick={next}
+							width={{ base: "32px", md: "64px" }}
+							height={{ base: "32px", md: "64px" }}
+						>
+							<IconNext style={{ width: "100%", height: "100%" }} />
+						</Box>
+					</Flex>
+					<Text fontFamily="Dongle" fontSize={{ base: "24px", md: "32px" }}>
+						{duration}
+					</Text>
 				</Flex>
 			</Box>
 		</Box>

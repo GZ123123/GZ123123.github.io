@@ -2,7 +2,7 @@ import { AspectRatio, Box, Text } from "@chakra-ui/react";
 import { IconChristmasWreath } from "public/icons";
 import CardItem from "../Item";
 
-import Image from "public/images/question-wreath-card.webp";
+import Image from "public/images/question-wreath-card.png";
 
 const Card_4 = () => {
 	return (
