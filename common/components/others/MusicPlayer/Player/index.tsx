@@ -6,7 +6,6 @@ import {
 	Text,
 	VisuallyHidden,
 } from "@chakra-ui/react";
-import { IconNext, IconPause, IconPlay, IconPrev } from "public/icons";
 import {
 	forwardRef,
 	useCallback,
@@ -16,24 +15,78 @@ import {
 	useState,
 } from "react";
 
-interface IPlayerProps {
-	song: ISong;
+import { IconNext, IconPause, IconPlay, IconPrev } from "public/icons";
+
+import { IPlayerProps } from "common/interfaces";
+
+interface ILyrical {
+	startAt: number;
+	endAt: number;
+	value: string;
 }
 
-interface ISong {
-	name: string;
-	src: string;
-	lyric: string;
+class Lyricer {
+	private cache: { [key: string]: string } = {};
+	private lyric: ILyrical[] = [];
+
+	public async init(src: string) {
+		let raw = this.cache[src];
+
+		if (!raw) {
+			raw = await fetch(src).then((res) => res.text());
+		}
+
+		this.lyric = [];
+		let _lyric: { startAt: number; endAt?: number; value: string }[] = [];
+
+		raw.split(/[\r\n]/).forEach((line) => {
+			if (/\[([a-z]+):(.*)\].*/.test(line)) return; // tag
+			// timeline
+			const [, time, lyric] = /(\[[0-9.:\[\]]*\])+(.*)/.exec(line) ?? [];
+			time
+				?.replace(/\]\[/g, "],[")
+				.split(",")
+				.forEach((t) => {
+					const [, minus, second] = /\[([0-9]+):([0-9.]+)\]/.exec(t) ?? [];
+					if (minus && second) {
+						_lyric.push({
+							startAt: parseInt(minus, 10) * 60 + parseFloat(second),
+							value: lyric,
+						});
+					}
+				});
+		});
+
+		_lyric.sort((a, b) => a.startAt - b.startAt);
+
+		for (let i = 0; i < _lyric.length; i++)
+			this.lyric.push({
+				startAt: _lyric[i].startAt,
+				value: _lyric[i].value,
+				endAt: _lyric[i + 1]?.startAt,
+			});
+
+		return this.lyric[0].value;
+	}
+
+	public get(current: number): string {
+		return (
+			this.lyric.find((l) => l.startAt <= current && l.endAt >= current)
+				?.value ?? ""
+		);
+	}
 }
 
-const Player = ({ song }: IPlayerProps, ref: any) => {
+const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 	const audio = useRef<any>();
+
+	const [lyricer] = useState(new Lyricer());
 
 	const [status, setStatus] = useState(0);
 
 	const [process, setProcess] = useState(0);
 
-	const [lyric, setLyric] = useState("Justin Bieber, Mariah Carey");
+	const [lyric, setLyric] = useState("");
 
 	const [duration, setDuration] = useState("00:00");
 
@@ -50,41 +103,40 @@ const Player = ({ song }: IPlayerProps, ref: any) => {
 	const togglePlay = useCallback(() => (!!status ? pause() : play()), [status]);
 
 	const onDurationChange = (e: any) => {
+		setLyric(lyricer.get(audio.current.currentTime));
 		setProcess(
 			Math.min((audio.current.currentTime / audio.current.duration) * 100, 100)
 		);
 	};
 
-	const prev = () => {};
-
-	const next = () => {};
-
-	const caculateDuration = () => {
+	const caculateDuration = useCallback(() => {
 		const _duration = audio.current.duration;
 
-		const minus = Math.ceil(_duration / 60);
-		const second = Math.ceil(_duration % 60);
+		const minus = _duration ? Math.ceil(_duration / 60) : 0;
+		const second = _duration ? Math.ceil(_duration % 60) : 0;
 
 		setDuration(
 			`${minus < 10 ? `0${minus}` : minus}:${
 				second < 10 ? `0${second}` : second
 			}`
 		);
-	};
+	}, []);
 
 	useImperativeHandle(ref, () => ({ play, pause }), []);
 
 	useEffect(() => {
-		// audio.current?.addEventListener("timeupdate", onDurationChange);
-
 		audio.current?.addEventListener("loadeddata", caculateDuration);
 
 		caculateDuration();
 
 		return () => {
-			// audio.current?.removeEventListener("timeupdatef", onDurationChange);
+			audio.current?.removeEventListener("loadeddata", caculateDuration);
 		};
 	}, []);
+
+	useEffect(() => {
+		(async () => setLyric(await lyricer.init(song.lyric)))();
+	}, [song]);
 
 	return (
 		<Box mt={{ base: "1.5rem" }} textAlign="center">
@@ -136,7 +188,7 @@ const Player = ({ song }: IPlayerProps, ref: any) => {
 						</VisuallyHidden>
 						<Box
 							as="button"
-							onClick={prev}
+							onClick={onPrev}
 							width={{ base: "32px", md: "64px" }}
 							height={{ base: "32px", md: "64px" }}
 						>
@@ -156,7 +208,7 @@ const Player = ({ song }: IPlayerProps, ref: any) => {
 						</Box>
 						<Box
 							as="button"
-							onClick={next}
+							onClick={onNext}
 							width={{ base: "32px", md: "64px" }}
 							height={{ base: "32px", md: "64px" }}
 						>

@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 function Snow(canvas) {
@@ -44,7 +44,7 @@ function Snow(canvas) {
   }
 
   const update = () => {
-    canvas.width = window.innerWidth;
+    canvas.width = document.body.clientWidth;
     canvas.height = document.querySelector("#__next").offsetHeight;
   }
 
@@ -110,6 +110,7 @@ export const Canvas = ({ component }) => {
   const canvas = useRef();
 
   const [snow, setSnow] = useState(null);
+
 
   useEffect(() => {
     snow && snow.update();

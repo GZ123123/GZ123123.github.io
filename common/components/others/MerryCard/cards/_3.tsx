@@ -4,10 +4,11 @@ import CardItem from "../Item";
 
 import Image from "public/images/question-star-card.png";
 
-const Card_3 = () => {
+const Card_3 = ({ active }: any) => {
 	return (
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<CardItem
+				active={active}
 				icon={<IconStar width="100%" height="100%" />}
 				title="Ngôi Sao"
 				image={Image}

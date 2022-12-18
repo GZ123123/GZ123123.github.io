@@ -53,6 +53,22 @@ svg.banner.active .c {
   animation-timing-function: cubic-bezier(.55, -0.43, 0.8, 1);
 }
 
+.merry-card.active::before{
+  content: '';
+	background-image: url(/icons/stars-icon.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	top: -24px;
+	left: -24px;
+}
+
+.merry-card.active svg {
+  animation: shake-begin 150ms infinite linear, shake 1s infinite linear 150ms
+}
+
 /* #region Animation */
 @-webkit-keyframes animatetop {
   from {
@@ -78,8 +94,27 @@ svg.banner.active .c {
   }
 }
 
+@keyframes shake-begin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
 @keyframes shake {
   0% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+
+  /* 0% {
     transform: rotate(0);
   }
 
@@ -113,7 +148,7 @@ svg.banner.active .c {
 
   100% {
     transform: rotate(0);
-  }
+  } */
 }
 
 @keyframes signature {
