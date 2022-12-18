@@ -1,12 +1,6 @@
+import { IMessage } from 'common/interfaces/message';
 import fs from 'fs-extra';
 
-export interface IMessage {
-  id: string;
-
-  name: string;
-
-  message: string;
-}
 
 export enum OBJECT {
   SAVED = "saved",
@@ -24,6 +18,7 @@ export class Database {
   }
 
   save() {
+    console.log(this.data);
     return fs.writeJSON(this.path, this.data);
   }
 

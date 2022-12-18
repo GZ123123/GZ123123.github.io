@@ -9,11 +9,10 @@ import {
 import { Database, OBJECT } from "common/utilities/database";
 
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import ResizeTextarea from "react-textarea-autosize";
 
-import { withIronSessionSsr } from "iron-session/next";
 import { withSessionSsr } from "common/utilities/session";
 
 interface IWishProps {
@@ -33,16 +32,25 @@ const before = {
 };
 
 const Wishes = ({ user, messages }: IWishProps) => {
-	console.log("user: ", user);
-	const [input, setInput] = useState("");
+	const [sended, setSended] = useState(null);
+
+	const _message = useMemo(() => {
+		return sended ? [sended, ...messages] : [...messages];
+	}, [sended, messages]);
+
+	const [input, setInput] = useState<string | undefined>("");
+
 	const send = useCallback(() => {
-		// call api
 		fetch("/api/form", {
 			method: "POST",
 			body: JSON.stringify({ message: input }),
-		});
+		})
+			.then((res) => res.json())
+			.then((res) => setSended(res));
+
 		setInput("");
 	}, [input]);
+
 	return (
 		<>
 			<Container minH={"50vh"} maxW="container.md" pos="relative">
@@ -51,8 +59,9 @@ const Wishes = ({ user, messages }: IWishProps) => {
 					mb="3rem"
 					_before={before}
 				>
-					<InputGroup size={{ base: "sm", md: "lg" }} alignItems={"baseline"}>
+					<InputGroup size={{ base: "sm", md: "lg" }} alignItems={"flex-end"}>
 						<Textarea
+							disabled={!!sended}
 							value={input}
 							onChange={({ target }) => setInput(target.value)}
 							as={ResizeTextarea}
@@ -124,20 +133,25 @@ const Wishes = ({ user, messages }: IWishProps) => {
 									"repeating-linear-gradient(transparent, transparent 25px, white 26px, white 27px)",
 							}}
 						>
-							{messages.map((value, index) => (
+							{_message.map((value, index) => (
 								<Box key={index} textAlign={index % 2 ? "right" : "left"}>
-									<Text fontSize="24px" fontFamily="iCielKL Soulbeams">
-										{value.name}
-									</Text>
-									<Text
-										fontFamily="Dongle"
-										fontSize="24px"
-										marginTop={"5px"}
-										lineHeight="27px"
-									>
-										{value.message}
-									</Text>
-									<Box height={"25px"}></Box>
+									<Box>
+										<Text fontSize="24px" fontFamily="iCielKL Soulbeams">
+											{value.name}
+										</Text>
+										<Text
+											as="pre"
+											fontFamily="Dongle"
+											fontSize="24px"
+											marginTop={"5px"}
+											lineHeight="27px"
+											whiteSpace="pre-wrap"
+											wordBreak="break-word"
+										>
+											{value.message}
+										</Text>
+										<Box height={"25px"}></Box>
+									</Box>
 								</Box>
 							))}
 						</Box>
@@ -163,6 +177,7 @@ const Wishes = ({ user, messages }: IWishProps) => {
 
 export const getServerSideProps = withSessionSsr(async ({ req, res }: any) => {
 	const messages = new Database(OBJECT.SAVED).data;
+
 	const user = req.session.user || {};
 
 	return { props: { messages, user } };
