@@ -29,13 +29,14 @@ const GiftItem = ({ children, images, alt, top, left, width }: any) => {
 					</Box>
 				</Box>
 			}
+			borderRadius={{ base: "10px", md: "0" }}
 		>
 			<Box display={{ base: "none", md: "inline-block" }}>
 				<Image style={{ width: "100%" }} src={images[0]} alt={alt} />
 			</Box>
 			<Box display={{ base: "inline-block", md: "none" }}>
 				<Image
-					style={{ width: "100%" }}
+					style={{ width: "100%", borderRadius: "10px" }}
 					src={images[1] || images[0]}
 					alt={alt}
 				/>

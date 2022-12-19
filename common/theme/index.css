@@ -65,8 +65,22 @@ svg.banner.active .c {
 	left: -24px;
 }
 
+@media screen and (max-width: 800px) {
+  .merry-card.active::before{
+    content: '';
+    background-image: url(/icons/stars-icon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -12px;
+    left: -12px;
+  }
+}
+
 .merry-card.active svg {
-  animation: shake-begin 150ms infinite linear, shake 1s infinite linear 150ms
+  animation: shake-begin 333ms linear , shake 1s infinite linear 333ms
 }
 
 /* #region Animation */

@@ -7,10 +7,10 @@ const Card_6 = () => {
 			<GiftItem
 				images={[
 					require("public/images/gifts/gift_6.png"),
-					require("public/images/gifts/gift_6_mobile.webp"),
+					require("public/images/gifts/gift_6_mobile.png"),
 				]}
 				alt="gift_6"
-				top={{ base: "60%", md: "19%" }}
+				top={{ base: "48%", md: "19%" }}
 				left={{ base: 0, md: "45%" }}
 				width={{ base: "100%", md: "51%" }}
 			>
@@ -21,10 +21,10 @@ const Card_6 = () => {
 					fontFamily={"dongle"}
 				>
 					<Box
-						display={{ base: "none", md: "block" }}
+						display={{ base: "block", md: "block" }}
 						lineHeight={"140%"}
 						fontSize="32px"
-						mb="17px"
+						mb={{ base: "0", md: "17px" }}
 						fontFamily={"iCielKL Soulbeams"}
 					>
 						Christmas is coming!

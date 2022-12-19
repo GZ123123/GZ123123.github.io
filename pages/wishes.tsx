@@ -56,7 +56,7 @@ const Wishes = ({ user, messages }: IWishProps) => {
 			<Container minH={"50vh"} maxW="container.md" pos="relative">
 				<Box
 					sx={{ borderRadius: "8px", overflow: "hidden", position: "relative" }}
-					mt="6rem"
+					mt={{ base: "2rem", md: "3rem" }}
 					_before={before}
 				>
 					<InputGroup size={{ base: "md", md: "lg" }} alignItems={"flex-end"}>
@@ -99,7 +99,7 @@ const Wishes = ({ user, messages }: IWishProps) => {
 				</Box>
 				<Box
 					pos={"relative"}
-					mt={{ base: "6rem", sm: "14rem" }}
+					mt={{ base: "6rem", sm: "8rem", md: "14rem" }}
 					mb={{ base: "6rem", md: "8rem" }}
 				>
 					<Box
