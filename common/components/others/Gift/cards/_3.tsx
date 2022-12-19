@@ -1,4 +1,4 @@
-import { AspectRatio, Box } from "@chakra-ui/react";
+import { AspectRatio, background, Box } from "@chakra-ui/react";
 import GiftItem from "../Item";
 
 const Card_3 = () => {
@@ -6,7 +6,7 @@ const Card_3 = () => {
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<GiftItem
 				images={[
-					require("public/images/gifts/gift_3.webp"),
+					require("public/images/gifts/gift_3.png"),
 					require("public/images/gifts/gift_3_mobile.webp"),
 				]}
 				alt="gift_3"

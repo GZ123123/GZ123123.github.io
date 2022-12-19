@@ -1,23 +1,34 @@
 import { Box } from "@chakra-ui/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import musicBackground from "public/images/music-background.webp";
 import Player from "./Player";
+import Section from "common/components/layout/Section";
+import { ISong } from "common/interfaces";
 
-const MusicPlayer = () => {
-	const [song] = useState({
-		name: "All I Want For Christmas Is You",
-		src: "/song/santa-tell-me/song.mp3",
-		lyric: "/song/santa-tell-me/lyric.lrc",
-	});
+const MusicPlayer = ({ songs }: { songs: ISong[] }) => {
+	const [current, setCurrent] = useState(0);
+
+	const song = useMemo(() => songs?.[current], [current]);
+
+	const onNext = () =>
+		setCurrent(current + 1 >= songs.length ? 0 : current + 1);
+
+	const onPrev = () =>
+		setCurrent(current - 1 < 0 ? songs.length - 1 : current - 1);
 
 	return (
-		<Box as="section">
+		<Section pt="2rem">
 			<Box
 				border={"5px solid white"}
 				borderRadius="12px"
-				height={{ base: "200px", sm: "250px", md: "400px", lg: "500px" }}
+				height={{
+					base: "200px",
+					sm: "250px",
+					md: "400px",
+					lg: "500px",
+				}}
 			>
 				<Image
 					style={{
@@ -29,9 +40,10 @@ const MusicPlayer = () => {
 					alt="music player background"
 				/>
 			</Box>
-
-			<Player song={song} />
-		</Box>
+			{song && (
+				<Player key={song.src} song={song} onNext={onNext} onPrev={onPrev} />
+			)}
+		</Section>
 	);
 };
 

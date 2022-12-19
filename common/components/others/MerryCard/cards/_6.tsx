@@ -2,12 +2,13 @@ import { AspectRatio, Box, Text } from "@chakra-ui/react";
 import { IconChristmasBell } from "public/icons";
 import CardItem from "../Item";
 
-import Image from "public/images/question-bell-card.webp";
+import Image from "public/images/question-bell-card.png";
 
-const Card_6 = () => {
+const Card_6 = ({ active }: any) => {
 	return (
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<CardItem
+				active={active}
 				icon={<IconChristmasBell width="100%" height="100%" />}
 				title="Tiếng Chuông"
 				image={Image}

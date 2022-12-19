@@ -11,6 +11,7 @@ interface ICardItem {
 	children: ReactNode;
 	image: StaticImageData;
 	ltr?: boolean;
+	active: boolean;
 }
 
 const before = {
@@ -28,10 +29,11 @@ const before = {
 const hover = {
 	":before": before,
 	svg: {
-		animation: "shake 1.6s infinite",
+		animation:
+			"shake-begin 150ms infinite linear, shake 1s infinite linear 150ms",
 	},
 };
-const CardItem = ({ icon, title, children, image, ltr }: ICardItem) => {
+const CardItem = ({ icon, title, children, image, ltr, active }: ICardItem) => {
 	return (
 		<Modal
 			sx={{ width: "595px", height: "420px" }}
@@ -39,8 +41,14 @@ const CardItem = ({ icon, title, children, image, ltr }: ICardItem) => {
 			anchor={
 				<Box overflow={"visible !important"} _hover={hover}>
 					<Box
+						className={`merry-card ${active ? "active" : ""}`}
 						as="button"
-						p={{ base: "1.5rem", md: "4rem" }}
+						p={{
+							base: "0.75rem",
+							sm: "2rem",
+							md: "3rem",
+							lg: "4rem",
+						}}
 						border="3px solid white"
 						borderRadius={"1rem"}
 						_focus={hover}
@@ -58,9 +66,10 @@ const CardItem = ({ icon, title, children, image, ltr }: ICardItem) => {
 				<Flex
 					margin={"55px auto"}
 					px={{ base: "28px", md: "0" }}
-					maxW={"530px"}
-					gap={"1.2rem"}
+					maxW={"547px"}
+					gap={"22px"}
 					direction={{ base: "column-reverse", md: "row" }}
+					alignItems="center"
 				>
 					<Box order={{ base: 0, md: Number(ltr) }}>
 						<Center
