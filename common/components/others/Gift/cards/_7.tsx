@@ -7,7 +7,7 @@ const Card_7 = () => {
 			<GiftItem
 				images={[
 					require("public/images/gifts/gift_7.png"),
-					require("public/images/gifts/gift_7_mobile.webp"),
+					require("public/images/gifts/gift_7_mobile.png"),
 				]}
 				alt="gift_7"
 				top={{ base: "50%", md: "18%" }}

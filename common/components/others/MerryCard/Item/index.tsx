@@ -36,15 +36,16 @@ const hover = {
 const CardItem = ({ icon, title, children, image, ltr, active }: ICardItem) => {
 	return (
 		<Modal
-			sx={{ width: "595px", height: "420px" }}
-			size={{ base: "xs", md: "2xl" }}
+			width={{ base: "316px", md: "595px" }}
+			height={{ md: "420px" }}
+			size={{ base: "sm", md: "2xl" }}
 			anchor={
 				<Box overflow={"visible !important"} _hover={hover}>
 					<Box
 						className={`merry-card ${active ? "active" : ""}`}
 						as="button"
 						p={{
-							base: "0.75rem",
+							base: "1.5rem",
 							sm: "2rem",
 							md: "3rem",
 							lg: "4rem",
@@ -64,7 +65,7 @@ const CardItem = ({ icon, title, children, image, ltr, active }: ICardItem) => {
 				backgroundPosition={{ base: "top", md: "center" }}
 			>
 				<Flex
-					margin={"55px auto"}
+					margin={{ base: "35px auto", md: "55px auto" }}
 					px={{ base: "28px", md: "0" }}
 					maxW={"547px"}
 					gap={"22px"}
@@ -84,11 +85,9 @@ const CardItem = ({ icon, title, children, image, ltr, active }: ICardItem) => {
 						{children}
 					</Box>
 					<Flex order={{ base: 1, md: Number(!ltr) }} justify={"center"}>
-						<Image
-							style={{ minWidth: "250px" }}
-							src={image}
-							alt="santa image"
-						/>
+						<Box maxW={{ base: "150px" }}>
+							<Image style={{ width: "100%" }} src={image} alt="santa image" />
+						</Box>
 					</Flex>
 				</Flex>
 			</Box>

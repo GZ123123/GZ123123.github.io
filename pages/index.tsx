@@ -33,7 +33,7 @@ export const getServerSideProps = withSessionSsr(async ({ req, res }: any) => {
 
 	const songs = [
 		{
-			name: "All I Want For Christmas Is You",
+			name: "Santa Tell Me",
 			src: "/song/santa-tell-me/song.mp3",
 			lyric: "/song/santa-tell-me/lyric.lrc",
 		},

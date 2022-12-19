@@ -10,7 +10,7 @@ const Card_1 = ({ active }: any) => {
 			<CardItem
 				active={active}
 				icon={<IconSantaClaus width="100%" height="100%" />}
-				title="Ông già Noel"
+				title="Ông Già Noel"
 				image={Image}
 			>
 				<Box
