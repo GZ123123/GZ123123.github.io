@@ -13,7 +13,11 @@ import {
 const App = ({ user, songs }: any) => {
 	return (
 		<>
-			<Box width={"100%"} mb={{ base: "3rem", sm: "5.5rem" }}>
+			<Box
+				width={"100%"}
+				mt={{ base: "2rem" }}
+				mb={{ base: "2rem", sm: "3.5rem" }}
+			>
 				<Banner className={"banner active"} />
 			</Box>
 
@@ -36,11 +40,6 @@ export const getServerSideProps = withSessionSsr(async ({ req, res }: any) => {
 			name: "Santa Tell Me",
 			src: "/song/santa-tell-me/song.mp3",
 			lyric: "/song/santa-tell-me/lyric.lrc",
-		},
-		{
-			name: "Đế vương",
-			src: "/song/de-vuong/song.mp3",
-			lyric: "/song/de-vuong/lyric.lrc",
 		},
 		{
 			name: "Last Christmas",

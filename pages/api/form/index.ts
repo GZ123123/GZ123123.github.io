@@ -30,6 +30,8 @@ const put = (req: any, res: any) => {
   if (!data) return res.status(404).json({ error: "Not Found" });
 
   saved.data = [...data, ...saved.data];
+
+  console.log(saved.data)
   sended.save()
   saved.save()
 

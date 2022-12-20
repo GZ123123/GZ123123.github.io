@@ -43,7 +43,7 @@ const after = {
 
 const Section = ({ title, children, pt }: ISection) => {
 	return (
-		<Box as="section" mt={{ base: "1.5rem", md: "6rem" }} pt={pt}>
+		<Box as="section" mt={{ base: "1.5rem", md: "3rem" }} pt={pt}>
 			{title && (
 				<Center
 					as="h3"

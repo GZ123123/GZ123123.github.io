@@ -19,7 +19,7 @@ const MusicPlayer = ({ songs }: { songs: ISong[] }) => {
 		setCurrent(current - 1 < 0 ? songs.length - 1 : current - 1);
 
 	return (
-		<Section pt={{ base: "0", md: "2rem" }}>
+		<Section pt={{ base: "0", md: "0rem" }}>
 			<Box
 				border={"5px solid white"}
 				borderRadius="12px"

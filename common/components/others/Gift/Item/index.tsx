@@ -19,7 +19,7 @@ const GiftItem = ({ children, images, alt, top, left, width }: any) => {
 						"svg.gift-hidden": { display: "inline-block" },
 					}}
 				>
-					<Box width="200px" height="200px">
+					<Box width={{ md: "200px" }} height={{ md: "200px" }}>
 						<IconGift className="gift" width="100%" height="100%" />
 						<IconGiftHidden
 							className="gift-hidden"
