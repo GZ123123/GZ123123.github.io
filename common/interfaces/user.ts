@@ -3,3 +3,10 @@ export interface IUser {
 
   isAdmin?: boolean;
 }
+
+
+export interface IBanner {
+  className?: string;
+
+  active?: boolean;
+}

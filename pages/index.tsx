@@ -1,7 +1,9 @@
 import { Box } from "@chakra-ui/react";
 
 import Banner from "common/components/others/Banner";
+import InputModal from "common/components/others/inputModal";
 import { withSessionSsr } from "common/utilities/session";
+import { useState } from "react";
 
 import {
 	Gift,
@@ -11,14 +13,20 @@ import {
 } from "../common/components/others";
 
 const App = ({ user, songs }: any) => {
+	const [_user, setUser] = useState(user);
+
+	const onSave = (user: any) => setUser(user);
+
 	return (
 		<>
+			{!_user?.name && <InputModal onSave={onSave} />}
+
 			<Box
 				width={"100%"}
 				mt={{ base: "2rem" }}
 				mb={{ base: "2rem", sm: "3.5rem" }}
 			>
-				<Banner className={"banner active"} />
+				<Banner active={!!_user?.name} />
 			</Box>
 
 			<MusicPlayer songs={songs} />

@@ -3,6 +3,10 @@
   animation: bling 2s infinite;
 }
 
+svg.banner.hidden {
+  visibility: hidden;
+}
+
 svg.banner {
   width: 100%;
   transform: rotateY(180deg);

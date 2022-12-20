@@ -35,4 +35,5 @@ export { default as IconStar } from './star-icon.svg';
 
 //#region Letter
 export { default as IconLetterClose } from './letter-close-icon.svg';
+export { default as IconSend } from './send.svg';
 //#endregion
