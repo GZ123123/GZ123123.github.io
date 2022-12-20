@@ -1,10 +1,21 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-interface IBanner {
-	className: string;
-}
+import { IBanner } from "common/interfaces";
 
-const Banner = ({ className }: IBanner) => {
+const Banner = ({ active }: IBanner) => {
+	const [animated, setAnimated] = useState(false);
+
+	const isInViewport = (element: any) => {
+		const rect = element.getBoundingClientRect();
+		return (
+			rect.top >= 0 &&
+			rect.left >= 0 &&
+			rect.bottom <=
+				(window.innerHeight || document.documentElement.clientHeight) &&
+			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	};
+
 	useEffect(() => {
 		document
 			.querySelectorAll("svg .star")
@@ -27,13 +38,39 @@ const Banner = ({ className }: IBanner) => {
 		}
 	}, []);
 
+	useEffect(() => {
+		if (active) {
+			let _active = false;
+
+			document.querySelector(".banner")?.classList.remove("hidden");
+
+			document.addEventListener("scroll", () => {
+				const el = document.querySelector(".banner");
+				if (!el) return;
+
+				if (isInViewport(el)) {
+					if (!el.classList.contains("active")) el.classList.add("active");
+				}
+			});
+		}
+	}, [active]);
+
+	useEffect(() => {
+		const el = document.querySelector(".banner");
+		if (!el) return;
+
+		if (isInViewport(el)) {
+			if (!el.classList.contains("active")) el.classList.add("active");
+		}
+	}, []);
+
 	return (
 		<svg
 			width="100%"
 			height="100%"
 			viewBox="0 0 1276 500"
 			fill="#fff"
-			className={`banner ${className}`}
+			className={`banner hidden`}
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path

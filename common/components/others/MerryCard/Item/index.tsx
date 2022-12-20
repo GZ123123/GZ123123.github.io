@@ -33,10 +33,11 @@ const hover = {
 			"shake-begin 150ms infinite linear, shake 1s infinite linear 150ms",
 	},
 };
+
 const CardItem = ({ icon, title, children, image, ltr, active }: ICardItem) => {
 	return (
 		<Modal
-			width={{ base: "316px", md: "595px" }}
+			width={{ base: "316px", sm: "595px" }}
 			height={{ md: "420px" }}
 			size={{ base: "sm", md: "2xl" }}
 			anchor={
@@ -85,7 +86,7 @@ const CardItem = ({ icon, title, children, image, ltr, active }: ICardItem) => {
 						{children}
 					</Box>
 					<Flex order={{ base: 1, md: Number(!ltr) }} justify={"center"}>
-						<Box maxW={{ base: "150px" }}>
+						<Box maxW={{ base: "150px" }} minW={{ base: "100px", md: "250px" }}>
 							<Image style={{ width: "100%" }} src={image} alt="santa image" />
 						</Box>
 					</Flex>
