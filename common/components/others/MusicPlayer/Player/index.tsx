@@ -140,19 +140,19 @@ const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 
 	return (
 		<Box mt={{ base: "1.5rem" }} textAlign="center">
-			<Text as="h4" fontSize={{ base: "1.75rem", md: "2.5rem" }}>
+			<Text as="h4" fontSize={{ base: "2rem", md: "3rem" }}>
 				{song.name}
 			</Text>
-			<Center
+			<Text
 				as="p"
 				fontFamily={"Dongle"}
-				fontSize={{ base: "2rem", md: "2.5rem" }}
-				mt="0.5rem"
-				height={{ base: "4rem", md: "5rem" }}
+				fontSize={{ base: "1.5rem", sm: "1.75rem", md: "2.25rem" }}
+				pt={{ base: "0.5rem", md: "1rem" }}
+				height={{ base: "3.25rem", sm: "3.5rem", md: "4rem" }}
 			>
 				{lyric}
-			</Center>
-			<Box mt={"1rem"}>
+			</Text>
+			<Box mt={{ base: "0", md: "1rem" }}>
 				<Progress
 					value={process}
 					sx={{

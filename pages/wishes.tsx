@@ -15,6 +15,8 @@ import ResizeTextarea from "react-textarea-autosize";
 
 import { withSessionSsr } from "common/utilities/session";
 
+import * as icons from "public/icons";
+
 interface IWishProps {
 	user: any;
 	messages: { name: string; message: string }[];
@@ -30,6 +32,15 @@ const before = {
 	left: "-3px",
 	right: "-3px",
 };
+
+const randomIcons = [
+	icons.IconSantaClaus,
+	icons.IconChristmasStocking,
+	icons.IconStar,
+	icons.IconChristmasWreath,
+	icons.IconChristmasTree,
+	icons.IconChristmasBell,
+];
 
 const Wishes = ({ user, messages }: IWishProps) => {
 	const [sended, setSended] = useState(null);
@@ -128,7 +139,7 @@ const Wishes = ({ user, messages }: IWishProps) => {
 						overflowY="scroll"
 					>
 						<Box
-							pt="15px"
+							pt="5px"
 							sx={{
 								minH: "500px",
 								background:
@@ -138,21 +149,53 @@ const Wishes = ({ user, messages }: IWishProps) => {
 							{_message.map((value, index) => (
 								<Box key={index} textAlign={index % 2 ? "right" : "left"}>
 									<Box>
-										<Text fontSize="24px" fontFamily="iCielKL Soulbeams">
+										<Text
+											fontSize="32px"
+											fontFamily="iCielKL Soulbeams"
+											display={"flex"}
+											justifyContent={index % 2 ? "right" : "left"}
+											alignItems="center"
+										>
+											{(() => {
+												const Icon = randomIcons.at(index % 6);
+
+												return (
+													!(index % 2) && (
+														<Icon
+															width="24px"
+															height="24px"
+															style={{ marginRight: "12px" }}
+														/>
+													)
+												);
+											})()}
 											{value.name}
+											{(() => {
+												const Icon = randomIcons.at(index % 6);
+
+												return (
+													index % 2 && (
+														<Icon
+															width="24px"
+															height="24px"
+															style={{ marginLeft: "12px" }}
+														/>
+													)
+												);
+											})()}
 										</Text>
 										<Text
 											as="pre"
 											fontFamily="Dongle"
 											fontSize="24px"
-											marginTop={"10px"}
+											marginTop={"12px"}
 											lineHeight="40px"
 											whiteSpace="pre-wrap"
 											wordBreak="break-word"
 										>
 											{value.message}
 										</Text>
-										<Box height={"46px"}></Box>
+										<Box height={"36px"}></Box>
 									</Box>
 								</Box>
 							))}

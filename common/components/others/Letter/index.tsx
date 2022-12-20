@@ -12,7 +12,7 @@ const Letter = () => {
 			<Container
 				maxW={"container.md"}
 				pos="relative"
-				mt={{ base: "2rem", md: "6rem" }}
+				mt={{ base: "3rem", md: "6rem" }}
 			>
 				<IconLetterClose width="100%" height="100%" />
 
@@ -21,12 +21,12 @@ const Letter = () => {
 					onClick={onClick}
 					as="button"
 					sx={{ position: "absolute" }}
-					top="50%"
+					top="60%"
 					left="50%"
 					transform={{
-						base: "translate(-50%, calc(50% - 2rem) )",
-						sm: "translate(-50%, calc(50% - 3rem) )",
-						md: "translate(-50%, calc(50% - 6rem) )",
+						base: "translate(-50%, -50%)",
+						sm: "translate(-50%, -50%)",
+						md: "translate(-50%, -50%)",
 					}}
 					w={{ base: "3rem", sm: "5rem", md: "8rem" }}
 					h={{ base: "3rem", sm: "5rem", md: "8rem" }}

@@ -9,7 +9,7 @@ const Footer = () => {
 					<Text
 						as="h4"
 						textAlign="center"
-						fontSize={{ base: "24px", md: "2.5rem" }}
+						fontSize={{ base: "20px", md: "2.5rem" }}
 					>
 						A little cuteness for Christmas
 					</Text>
