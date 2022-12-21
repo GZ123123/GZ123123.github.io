@@ -87,7 +87,12 @@ const CardItem = ({ icon, title, children, image, ltr, active }: ICardItem) => {
 					</Box>
 					<Flex order={{ base: 1, md: Number(!ltr) }} justify={"center"}>
 						<Box maxW={{ base: "150px" }} minW={{ base: "100px", md: "250px" }}>
-							<Image style={{ width: "100%" }} src={image} alt="santa image" />
+							<Image
+								style={{ width: "100%" }}
+								src={image}
+								alt="santa image"
+								loading="eager"
+							/>
 						</Box>
 					</Flex>
 				</Flex>

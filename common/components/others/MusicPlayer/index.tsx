@@ -38,6 +38,7 @@ const MusicPlayer = ({ songs }: { songs: ISong[] }) => {
 					}}
 					src={musicBackground}
 					alt="music player background"
+					loading="eager"
 				/>
 			</Box>
 			{song && (

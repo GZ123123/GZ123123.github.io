@@ -12,10 +12,12 @@ import {
 	MusicPlayer,
 } from "../common/components/others";
 
-const App = ({ user, songs }: any) => {
+const App = ({ user, songs, path }: any) => {
 	const [_user, setUser] = useState(user);
 
 	const onSave = (user: any) => setUser(user);
+
+	console.log(path);
 
 	return (
 		<>
@@ -31,7 +33,7 @@ const App = ({ user, songs }: any) => {
 
 			<MusicPlayer songs={songs} />
 
-			<Gift />
+			<Gift user={user} />
 
 			<MerryCard />
 
@@ -42,6 +44,8 @@ const App = ({ user, songs }: any) => {
 
 export const getServerSideProps = withSessionSsr(async ({ req, res }: any) => {
 	const user = req.session.user ?? {};
+
+	const path = `${process.cwd()}/sended.json`;
 
 	const songs = [
 		{
@@ -56,7 +60,7 @@ export const getServerSideProps = withSessionSsr(async ({ req, res }: any) => {
 		},
 	];
 
-	return { props: { user, songs } };
+	return { props: { user, songs, path } };
 });
 
 export default App;

@@ -3,7 +3,7 @@ import Section from "common/components/layout/Section";
 
 import cards from "./cards";
 
-const Gift = () => {
+const Gift = ({ user }: any) => {
 	return (
 		<Section title="Gift love for u" pt={{ base: "1rem", md: "2rem" }}>
 			<Flex
@@ -13,7 +13,7 @@ const Gift = () => {
 				justifyContent="space-between"
 			>
 				{cards.map((Card, index) => (
-					<Card key={index} />
+					<Card key={index} user={user} />
 				))}
 			</Flex>
 		</Section>

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import cards from "./cards";
 
-const MerryCard = () => {
+const MerryCard = ({ user }: any) => {
 	const [isSmallerThanMD] = useMediaQuery("(max-width: 48em)");
 	const [id, setId] = useState<any>(null);
 	const [current, setCurrent] = useState<number | null>(null);
