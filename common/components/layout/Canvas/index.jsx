@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 function Snow(canvas) {
   const ctx = canvas.getContext('2d');
   const padding = 200;
-  const MAX_COUNT = 600;
+  const MAX_COUNT = 400;
   const MAX_SIZE = 1.5;
   const MIN_SIZE = 0.5;
 

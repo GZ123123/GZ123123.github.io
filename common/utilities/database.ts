@@ -13,7 +13,7 @@ export class Database {
   public data: IMessage[];
 
   constructor(object: string) {
-    this.path = `../../${object}.json`
+    this.path = `${process.cwd()}/${object}.json`
     this.data = this.get();
   }
 
