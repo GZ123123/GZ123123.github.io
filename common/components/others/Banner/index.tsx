@@ -22,20 +22,6 @@ const Banner = ({ active }: IBanner) => {
 			.forEach((node: any) =>
 				node.style.setProperty("--duration", `${4.3 + Math.random() * 2}s`)
 			);
-
-		const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-		if (isSafari) {
-			setTimeout(() => {
-				const elementa: any = document.querySelector("svg .a");
-				const elementb: any = document.querySelector("svg .c");
-				const elementc: any = document.querySelector("svg .b");
-
-				elementa && (elementa.style.fill = "white");
-				elementb && (elementb.style.fill = "white");
-				elementc && (elementc.style.fill = "white");
-			}, 4300);
-		}
 	}, []);
 
 	useEffect(() => {

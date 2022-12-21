@@ -12,12 +12,10 @@ import {
 	MusicPlayer,
 } from "../common/components/others";
 
-const App = ({ user, songs, path }: any) => {
+const App = ({ user, songs }: any) => {
 	const [_user, setUser] = useState(user);
 
 	const onSave = (user: any) => setUser(user);
-
-	console.log(path);
 
 	return (
 		<>

@@ -16,6 +16,7 @@ import ResizeTextarea from "react-textarea-autosize";
 import { withSessionSsr } from "common/utilities/session";
 
 import * as icons from "public/icons";
+import InputModal from "common/components/others/inputModal";
 
 interface IWishProps {
 	user: any;
@@ -43,6 +44,8 @@ const randomIcons = [
 ];
 
 const Wishes = ({ user, messages }: IWishProps) => {
+	const [_user, setUser] = useState(user);
+
 	const [sended, setSended] = useState(null);
 
 	const _message = useMemo(() => {
@@ -50,6 +53,8 @@ const Wishes = ({ user, messages }: IWishProps) => {
 	}, [sended, messages]);
 
 	const [input, setInput] = useState<string | undefined>("");
+
+	const onSave = (user: any) => setUser(user);
 
 	const send = useCallback(() => {
 		fetch("/api/form", {
@@ -64,6 +69,8 @@ const Wishes = ({ user, messages }: IWishProps) => {
 
 	return (
 		<>
+			{!_user?.name && <InputModal onSave={onSave} />}
+
 			<Container minH={"50vh"} maxW="container.md" pos="relative">
 				<Box
 					sx={{ borderRadius: "8px", overflow: "hidden", position: "relative" }}

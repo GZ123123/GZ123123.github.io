@@ -19,42 +19,34 @@ svg.banner.active .star {
 }
 
 svg.banner.active .a {
-  fill: none;
+  fill: transparent;
   stroke: white;
   stroke-width: 3px;
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
 
-  animation-name: signature;
-  animation-duration: 10s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(.55, .25, .43, 1);
+  animation: signature 10s forwards cubic-bezier(.55, .25, .43, 1), signature-fillcolor 500ms forwards 4.3s;
 }
 
 svg.banner.active .b {
-  fill: none;
+  fill: transparent;
   stroke: white;
   stroke-width: 3px;
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
 
-  animation-name: signature;
-  animation-duration: 8.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.25, -0.1, .43, .5);
+  animation: signature 8.5s forwards cubic-bezier(0.25, -0.1, .43, .5), signature-fillcolor 500ms forwards 3s;
+
 }
 
 svg.banner.active .c {
-  fill: none;
+  fill: transparent;
   stroke: white;
   stroke-width: 3px;
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
 
-  animation-name: signature;
-  animation-duration: 6.7s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(.55, -0.43, 0.8, 1);
+  animation: signature 8.5s forwards cubic-bezier(.55, -0.43, 0.8, 1), signature-fillcolor 500ms forwards 3s;
 }
 
 .merry-card.active::before{
@@ -176,6 +168,11 @@ svg.banner.active .c {
   
   100% {
     stroke-dashoffset: 0000;
+  }
+}
+
+@keyframes signature-fillcolor {
+  100% {
     fill: white;
     stroke: none;
   }
