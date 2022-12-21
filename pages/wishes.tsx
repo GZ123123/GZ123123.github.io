@@ -124,6 +124,7 @@ const Wishes = ({ user, messages }: IWishProps) => {
 							style={{ width: "100%" }}
 							src={require("public/images/letter-header.png")}
 							alt="snow"
+							loading="eager"
 						/>
 					</Box>
 					<Box
@@ -212,6 +213,7 @@ const Wishes = ({ user, messages }: IWishProps) => {
 							style={{ width: "100%" }}
 							src={require("public/images/letter-footer.png")}
 							alt="snow"
+							loading="eager"
 						/>
 					</Box>
 				</Box>

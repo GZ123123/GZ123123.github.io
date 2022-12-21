@@ -37,12 +37,17 @@ const ImputModal = ({ onSave }: any) => {
 			<ModalOverlay bgColor={"rgba(0, 0, 0, 0.7)"} />
 			<ModalContent bgColor={"transparent"} pos="relative" boxShadow={"unset"}>
 				<Box display={{ base: "block", sm: "none" }} paddingRight={"25px"}>
-					<Image src={require("public/images/ask-name.png")} alt="Ask Name" />
+					<Image
+						src={require("public/images/ask-name.png")}
+						alt="Ask Name"
+						loading="eager"
+					/>
 				</Box>
 				<Box display={{ base: "none", sm: "block" }}>
 					<Image
 						src={require("public/images/ask-name-desktop.png")}
 						alt="Ask Name"
+						loading="eager"
 					/>
 				</Box>
 				<Box
@@ -86,6 +91,7 @@ const ImputModal = ({ onSave }: any) => {
 							/>
 						</InputGroup>
 						<Button
+							sx={{ aspectRatio: "1" }}
 							color={"primary"}
 							size="xs"
 							ml="4px"

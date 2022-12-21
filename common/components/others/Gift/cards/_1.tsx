@@ -1,7 +1,7 @@
 import { AspectRatio, Box } from "@chakra-ui/react";
 import GiftItem from "../Item";
 
-const Card_1 = () => {
+const Card_1 = ({ user }: any) => {
 	return (
 		<AspectRatio ratio={1} w="30%" maxW="250px">
 			<GiftItem
@@ -26,7 +26,7 @@ const Card_1 = () => {
 							fontSize={{ base: "32px", md: "30px" }}
 							fontFamily="iCielKL Soulbeams"
 						>
-							Matakunkun
+							{user?.name ?? "Matakunkun"}
 						</Box>{" "}
 						ơi <br />
 					</Box>
