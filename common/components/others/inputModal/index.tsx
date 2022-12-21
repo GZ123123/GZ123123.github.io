@@ -85,7 +85,7 @@ const ImputModal = ({ onSave }: any) => {
 								borderBottom={"1px dashed"}
 								borderColor={"primary"}
 								textAlign={"center"}
-								_placeholder={{ color: "primary" }}
+								_placeholder={{ color: "gray.500" }}
 								{...register("name", { required: true })}
 								onKeyDown={onKeyDown}
 							/>
