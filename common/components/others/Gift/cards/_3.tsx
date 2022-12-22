@@ -28,16 +28,27 @@ const Card_3 = ({ user }: any) => {
 					</Box>
 					<Box
 						lineHeight={{ base: "140%", md: "110%" }}
-						display={{ base: "none", md: "inline-block" }}
+						display={{ base: "contents", md: "inline-block" }}
 					>
-						Mùa đẹp nhất trong năm chính là mùa Noel!
+						Mùa đẹp nhất trong năm chính là mùa Noel!{" "}
 					</Box>
-					<Box lineHeight={{ base: "140%", md: "110%" }} mt={"1px"}>
-						Bạn chờ đợi điều gì nhất ở mùa Giáng Sinh năm nay?
+					<Box
+						display={{ base: "contents", md: "inline-block" }}
+						lineHeight={{ base: "140%", md: "110%" }}
+						mt={"1px"}
+					>
+						Bạn chờ đợi điều gì nhất ở mùa Giáng Sinh năm nay?{" "}
 					</Box>
-					<Box lineHeight={{ base: "140%", md: "110%" }} mt={"1px"}>
+					<Box
+						display={{ base: "contents", md: "inline-block" }}
+						lineHeight={{ base: "140%", md: "110%" }}
+						mt={"1px"}
+					>
 						Tụi mình ước rằng những điều bạn mong chờ đều được “Ông già Noel”
-						nghe thấy và trao tặng.
+						nghe thấy
+						<Box display={{ base: "block", md: "none" }} as="br" />
+						và trao tặng
+						<Box display={{ base: "none", md: "contents" }}>.</Box>{" "}
 					</Box>
 					<Box
 						lineHeight={{ base: "140%", md: "110%" }}
@@ -64,7 +75,7 @@ const Card_3 = ({ user }: any) => {
 					</Box>
 					<Box
 						lineHeight={{ base: "140%", md: "110%" }}
-						display={{ base: "block", md: "none" }}
+						display={{ base: "contents", md: "none" }}
 					>
 						bạn nhé!
 					</Box>

@@ -36,8 +36,8 @@ const Card_5 = ({ user }: any) => {
 						color="#233239"
 						display={{ base: "block", md: "none" }}
 					>
-						Chúc bạn một Giáng Sinh an lành nhé Chúc bạn có một cuộc đời luôn an
-						nhiên và vô ưu! Chúc cho tâm hồn bạn mãi trong trẻo, giản đơn như
+						Chúc bạn một Giáng Sinh an lành nhé! Chúc bạn có một cuộc đời luôn
+						an nhiên và vô ưu! Chúc cho tâm hồn bạn mãi trong trẻo, giản đơn như
 						trẻ thơ, vì cổ tích đời thường là có thật!
 					</Box>
 					<Box

@@ -31,8 +31,9 @@ const Card_4 = ({ user }: any) => {
 						Giáng Sinh an lành và ấm áp.
 					</Box>
 					<Box lineHeight={{ base: "140%", md: "110%" }} mt="1px">
-						Chúc cho những cố gắng và nỗ lực trong năm của bạn đều được đền đáp
-						xứng đáng.
+						Chúc cho những cố gắng và nỗ lực trong năm của bạn đều được
+						<Box as="br" display={{ base: "block", md: "none" }} />
+						đền đáp xứng đáng.
 					</Box>
 					<Box
 						display={{ base: "none", md: "inline-block" }}

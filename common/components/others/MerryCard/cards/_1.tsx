@@ -19,9 +19,9 @@ const Card_1 = ({ active }: any) => {
 					fontFamily="Dongle"
 				>
 					<Box as="p" display={{ base: "contents", md: "block" }}>
-						Theo truyền thuyết ông Già Noel sống tại Bắc Cực. Ống sống với những
+						Theo truyền thuyết ông Già Noel sống tại Bắc Cực. Ông sống với những
 						người lùn và dành đa số thời gian để nhận thư từ tất cả trẻ con trên
-						thế giới và chuẩn bị quà cho chúng.
+						thế giới và chuẩn bị quà cho chúng.{" "}
 					</Box>
 					<Box as="p" display={{ base: "contents", md: "block" }}>
 						Hình mẫu ông già Noel được xuất phát từ Santa Claus - Thánh Nicholas

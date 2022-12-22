@@ -1,4 +1,4 @@
-import { AspectRatio, Box, Text } from "@chakra-ui/react";
+import { AspectRatio, Box } from "@chakra-ui/react";
 import { IconChristmasBell } from "public/icons";
 import CardItem from "../Item";
 

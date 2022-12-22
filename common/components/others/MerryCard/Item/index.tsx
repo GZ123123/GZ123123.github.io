@@ -1,9 +1,11 @@
-import { Box, Center, Flex, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, useBreakpointValue } from "@chakra-ui/react";
 import Image, { StaticImageData } from "next/image";
-import { ReactNode, useMemo } from "react";
+import { ReactNode } from "react";
 import Modal from "../../Modal";
 
 import background from "./background.png";
+import backgroundRTL from "./background-rtl.png";
+import backgroundMobile from "./background-mobile.png";
 
 interface ICardItem {
 	icon: any;
@@ -35,6 +37,15 @@ const hover = {
 };
 
 const CardItem = ({ icon, title, children, image, ltr, active }: ICardItem) => {
+	const backgroundImage = useBreakpointValue(
+		{
+			base: backgroundMobile.src,
+			md: ltr ? background.src : backgroundRTL.src,
+		},
+		{
+			fallback: "base",
+		}
+	);
 	return (
 		<Modal
 			width={{ base: "316px", sm: "595px" }}
@@ -61,8 +72,8 @@ const CardItem = ({ icon, title, children, image, ltr, active }: ICardItem) => {
 			}
 		>
 			<Box
-				backgroundImage={background.src}
-				backgroundSize="contain"
+				backgroundImage={backgroundImage}
+				backgroundSize={{ base: "cover", md: "contain" }}
 				backgroundPosition={{ base: "top", md: "center" }}
 			>
 				<Flex
