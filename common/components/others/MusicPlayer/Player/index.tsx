@@ -80,6 +80,8 @@ class Lyricer {
 const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 	const audio = useRef<any>();
 
+	const [firstTime, setFirstTime] = useState(true);
+
 	const [lyricer] = useState(new Lyricer());
 
 	const [status, setStatus] = useState(0);
@@ -126,6 +128,13 @@ const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 
 	useEffect(() => {
 		audio.current?.addEventListener("loadeddata", caculateDuration);
+
+		const firstTimeClick = () => {
+			play();
+			window.removeEventListener("click", firstTimeClick);
+		};
+
+		window.addEventListener("click", firstTimeClick);
 
 		caculateDuration();
 
@@ -181,6 +190,7 @@ const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 								controls
 								tabIndex={-1}
 								onTimeUpdate={onDurationChange}
+								autoPlay
 							>
 								<source src={song.src} type="audio/mpeg" />
 								Your browser does not support the audio element.
