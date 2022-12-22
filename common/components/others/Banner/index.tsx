@@ -20,7 +20,7 @@ const Banner = ({ active }: IBanner) => {
 		document
 			.querySelectorAll("svg .star")
 			.forEach((node: any) =>
-				node.style.setProperty("--duration", `${4.3 + Math.random() * 2}s`)
+				node.style.setProperty("--duration", `${3.8 + Math.random() * 2}s`)
 			);
 	}, []);
 

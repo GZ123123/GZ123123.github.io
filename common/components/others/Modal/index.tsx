@@ -32,6 +32,7 @@ const Modal = ({
 			<CModal size={size || "md"} isOpen={isOpen} onClose={onClose} isCentered>
 				<ModalOverlay />
 				<ModalContent
+					className="scale-in-center"
 					sx={sx}
 					width={width}
 					height={height}

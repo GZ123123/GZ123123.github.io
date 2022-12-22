@@ -77,8 +77,9 @@ const Wishes = ({ user, messages }: IWishProps) => {
 					mt={{ base: "2rem", md: "3rem" }}
 					_before={before}
 				>
-					<InputGroup size={{ base: "md", md: "lg" }} alignItems={"flex-end"}>
+					<InputGroup size={{ base: "md", md: "lg" }} alignItems={"center"}>
 						<Textarea
+							placeholder="Viết ở đây nè..."
 							disabled={!!sended}
 							value={input}
 							onChange={({ target }) => setInput(target.value)}
@@ -88,7 +89,11 @@ const Wishes = ({ user, messages }: IWishProps) => {
 							w="100%"
 							resize="none"
 							minRows={1}
+							paddingTop="10px"
 							fontSize={{ base: "18px !important", md: "26px !important" }}
+							_placeholder={{
+								color: "rgba(229, 229, 229, 0.5)",
+							}}
 							sx={{
 								borderRadius: "8px",
 								border: "none !important",
@@ -103,15 +108,18 @@ const Wishes = ({ user, messages }: IWishProps) => {
 							}}
 						/>
 						<InputRightAddon
+							mb={"2px"}
+							alignSelf={"flex-end"}
 							onClick={send}
 							as={"button"}
 							children="SEND"
 							fontFamily="Dongle"
-							fontSize={{ base: "18px !important", sm: "30px !important" }}
+							fontSize={{ base: "18px !important", sm: "26px !important" }}
 							paddingTop={{ md: "4px" }}
 							backgroundColor="transparent"
 							display="none"
 							transition="all 250ms ease-out"
+							border={"none"}
 						/>
 					</InputGroup>
 				</Box>
@@ -167,29 +175,29 @@ const Wishes = ({ user, messages }: IWishProps) => {
 											{(() => {
 												const Icon = randomIcons.at(index % 6);
 
-												return (
-													!(index % 2) && (
+												if (!(index % 2)) {
+													return (
 														<Icon
 															width="24px"
 															height="24px"
 															style={{ marginRight: "12px" }}
 														/>
-													)
-												);
+													);
+												}
 											})()}
 											{value.name}
 											{(() => {
 												const Icon = randomIcons.at(index % 6);
 
-												return (
-													index % 2 && (
+												if (index % 2) {
+													return (
 														<Icon
 															width="24px"
 															height="24px"
 															style={{ marginLeft: "12px" }}
 														/>
-													)
-												);
+													);
+												}
 											})()}
 										</Text>
 										<Text
