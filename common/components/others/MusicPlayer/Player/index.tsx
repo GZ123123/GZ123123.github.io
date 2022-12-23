@@ -96,10 +96,6 @@ const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 		if (timeId) clearTimeout(timeId);
 		setStatus(1);
 		audio.current?.play();
-
-		if (audio.current?.duration) {
-			audio.current.currentTime = audio.current?.duration - 2;
-		}
 	}, []);
 
 	const pause = useCallback(() => {
@@ -132,10 +128,11 @@ const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 
 	const onEnd = useCallback(() => {
 		setStatus(0);
+
 		timeId = setTimeout(() => {
 			onNext();
 			setStatus(1);
-		}, 10000);
+		}, 2000);
 	}, []);
 
 	useImperativeHandle(ref, () => ({ play, pause }), []);
