@@ -41,12 +41,7 @@ const Admin = ({ saved, sended }: IAdminProp) => {
 
 	return (
 		<>
-			<Card
-				direction="column"
-				w="100%"
-				px="0px"
-				overflowX={{ sm: "scroll", lg: "hidden" }}
-			>
+			<Card direction="column" w="100%" px="0px" overflowX={"scroll"}>
 				<Flex px="25px" justify="space-between" mb="20px" align="center">
 					<Text fontSize="22px" fontWeight="700" lineHeight="100%">
 						Đã gửi
@@ -82,12 +77,7 @@ const Admin = ({ saved, sended }: IAdminProp) => {
 					</Tbody>
 				</Table>
 			</Card>
-			<Card
-				direction="column"
-				w="100%"
-				px="0px"
-				overflowX={{ sm: "scroll", lg: "hidden" }}
-			>
+			<Card direction="column" w="100%" px="0px" overflowX={"scroll"}>
 				<Flex px="25px" justify="space-between" mb="20px" align="center">
 					<Text fontSize="22px" fontWeight="700" lineHeight="100%">
 						Đang hiển thị

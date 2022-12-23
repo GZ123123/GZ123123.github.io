@@ -25,13 +25,13 @@ const put = (req: any, res: any) => {
   const saved = new Database(OBJECT.SAVED);
   const sended = new Database(OBJECT.SENDED);
 
-  const data = sended.data.splice(req.body.approved, 1);
+  const { approved } = JSON.parse(req.body);
+
+  const data = sended.data.splice(approved, 1);
 
   if (!data) return res.status(404).json({ error: "Not Found" });
 
   saved.data = [...data, ...saved.data];
-
-  console.log(saved.data)
   sended.save()
   saved.save()
 
