@@ -25,6 +25,8 @@ interface ILyrical {
 	value: string;
 }
 
+let timeId: any = null;
+
 class Lyricer {
 	private cache: { [key: string]: string } = {};
 	private lyric: ILyrical[] = [];
@@ -80,8 +82,6 @@ class Lyricer {
 const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 	const audio = useRef<any>();
 
-	const [firstTime, setFirstTime] = useState(true);
-
 	const [lyricer] = useState(new Lyricer());
 
 	const [status, setStatus] = useState(0);
@@ -93,13 +93,19 @@ const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 	const [duration, setDuration] = useState("00:00");
 
 	const play = useCallback(() => {
+		if (timeId) clearTimeout(timeId);
 		setStatus(1);
-		audio.current.play();
+		audio.current?.play();
+
+		if (audio.current?.duration) {
+			audio.current.currentTime = audio.current?.duration - 2;
+		}
 	}, []);
 
 	const pause = useCallback(() => {
+		if (timeId) clearTimeout(timeId);
 		setStatus(0);
-		audio.current.pause();
+		audio.current?.pause();
 	}, []);
 
 	const togglePlay = useCallback(() => (!!status ? pause() : play()), [status]);
@@ -124,10 +130,20 @@ const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 		);
 	}, []);
 
+	const onEnd = useCallback(() => {
+		setStatus(0);
+		timeId = setTimeout(() => {
+			onNext();
+			setStatus(1);
+		}, 10000);
+	}, []);
+
 	useImperativeHandle(ref, () => ({ play, pause }), []);
 
 	useEffect(() => {
 		audio.current?.addEventListener("loadeddata", caculateDuration);
+
+		audio.current?.addEventListener("ended", onEnd);
 
 		const firstTimeClick = () => {
 			play();
@@ -139,11 +155,14 @@ const Player = ({ song, onPrev, onNext }: IPlayerProps, ref: any) => {
 		caculateDuration();
 
 		return () => {
+			audio.current?.removeEventListener("ended", () => onEnd);
 			audio.current?.removeEventListener("loadeddata", caculateDuration);
 		};
 	}, []);
 
 	useEffect(() => {
+		if (timeId) clearTimeout(timeId);
+
 		(async () => setLyric(await lyricer.init(song.lyric)))();
 	}, [song]);
 

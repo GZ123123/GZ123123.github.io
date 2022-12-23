@@ -56,6 +56,21 @@ export const getServerSideProps = withSessionSsr(async ({ req, res }: any) => {
 			src: "/song/last-chirstmas/song.mp3",
 			lyric: "/song/last-chirstmas/lyric.lrc",
 		},
+		{
+			name: "Mistletoe",
+			src: "/song/mistletoe/song.mp3",
+			lyric: "/song/mistletoe/lyric.lrc",
+		},
+		{
+			name: "Oh My Wish!",
+			src: "/song/oh-my-wish/song.mp3",
+			lyric: "/song/oh-my-wish/lyric.lrc",
+		},
+		{
+			name: "Santa Can`t You Hear Me",
+			src: "/song/santa-cant-you-hear-me/song.mp3",
+			lyric: "/song/santa-cant-you-hear-me/lyric.lrc",
+		},
 	];
 
 	return { props: { user, songs, path } };
