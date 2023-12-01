@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'nuxt-svgo'],
+  svgo: {
+    global: false,
+    autoImportPath: '~/assets/icons/',
+    componentPrefix: 'icons',
+  },
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
     configPath: 'configs/tailwind.config',
