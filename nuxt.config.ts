@@ -1,6 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  app: {
+    head: {
+      meta: [{
+        name: 'theme-color',
+        content: '#21283a'
+      }]
+    }
+  },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'nuxt-svgo'],
   svgo: {
     global: false,

@@ -4,13 +4,21 @@ import type { Config } from 'tailwindcss'
 
 export default <Partial<Config>>{
   darkMode: 'class',
-  content: [`pages/**/*.vue`],
+  content: [`pages/**/*.vue`, `components/**/*.vue`],
   theme: {
     extend: {
       colors: {
-        primary: '#000',
+        primary: '#21283A',
       },
+      fontFamily: {
+        dongle: 'Dongle',
+        rb: ['RB', '"Open Sans"'],
+        iciel: ['iCiel', '"Open Sans"'],
+        salsa: ['Salsa', '"Open Sans"'],
+        mc: ['MC', '"Open Sans"']
+      }
     },
+    
   },
   plugins: [],
 }

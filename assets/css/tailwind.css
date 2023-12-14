@@ -1,3 +1,38 @@
+@import 'fonts';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Salsa", system-ui, sans-serif;
+  }
+}
+
+body {
+  width: 100%;
+  background: #21283a;
+  overflow-x: hidden;
+  overflow-y: overlay;
+}
+
+#layout {
+  min-height: 100vh;
+  background-color: #21283a;
+  background-image: url('/images/header-mobile.png'), url('/images/footer-mobile.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+  background-size: contain, contain;
+} 
+
+@media (min-width: 768px) {
+  #layout {
+    background-image: url('/images/header.png'), url('/images/footer.png');
+  } 
+}
+
+.nuxt-icon {
+  width: 100% !important;
+  height: 100% !important;
+}

@@ -1,15 +1,31 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
+definePageMeta({
+  layout: 'default'
+})
 </script>
 
 <template>
-  <div>
-    <h1 class="p-20 bg-primary">Nuxt Routing set up successfully!</h1>
-    <p>Current route: {{ route.path }}</p>
-    <a href="https://nuxt.com/docs/getting-started/routing" target="_blank">
-      Learn more about Nuxt Routing
-    </a>
+  <div class="px-5 md:px-20 pt-40 md:pt-64 mx-auto">
+    <div>
+      <AppHeader />
+      
+      <AppBanner />
+    </div>
+
+    <div>
+      <AppMusic />
+    </div>
+
+    <div>
+      <AppGifts />
+    </div>
+
+    <div>
+      <AppCards />
+    </div>
+
+    <div>
+      <AppLetter />
+    </div>
   </div>
 </template>
