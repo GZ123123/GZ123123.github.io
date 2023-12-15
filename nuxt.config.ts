@@ -5,8 +5,9 @@ export default defineNuxtConfig({
     head: {
       meta: [{
         name: 'theme-color',
-        content: '#21283a'
-      }]
+        content: '#21283a',
+      }],
+      title: process.env.APP_TITLE
     }
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'nuxt-svgo'],
