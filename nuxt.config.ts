@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       title: process.env.APP_TITLE
     }
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'nuxt-svgo'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'nuxt-svgo', "@nuxt/image"],
   svgo: {
     global: false,
     autoImportPath: '~/assets/icons/',

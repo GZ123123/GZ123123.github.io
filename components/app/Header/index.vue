@@ -40,13 +40,13 @@ import Title from './title.vue';
     position: absolute;
     bottom: 12px;
     padding: 14px;
-    border-bottom: 3px solid #fff;
+    border-bottom: 4px solid #fff;
   }
 
   #title span::before {
     left: calc(-15px - 28px);
   }
-  
+
   #title span::after {
     right:  calc(-15px - 28px);
   }

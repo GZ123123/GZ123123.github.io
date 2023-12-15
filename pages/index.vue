@@ -1,29 +1,33 @@
-<script setup lang="ts">
-definePageMeta({
-  layout: 'default'
-})
-</script>
-
 <template>
-  <div>
-    <div>     
-      <AppBanner />
+  <div class="text-white">
+    <div class="mt-6 md:mt-16">     
+      <AppBanner active />
     </div>
 
-    <div>
-      <AppMusic />
+    <div class="mt-10 md:mt-18">
+      <AppMusic :songs="songs" />
     </div>
 
-    <div>
+    <div class="mt-15 md:mt-44">
       <AppGifts />
     </div>
 
-    <div>
+    <div class="mt-15 md:mt-28">
       <AppCards />
     </div>
 
-    <div>
+    <div class="mt-15 md:mt-32">
       <AppLetter />
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { TSong } from '~/types';
+
+definePageMeta({
+  layout: 'default'
+})
+
+const songs = <TSong[]>[]
+</script>

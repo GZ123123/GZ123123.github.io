@@ -16,6 +16,10 @@ export default <Partial<Config>>{
         iciel: ['iCiel', '"Open Sans"'],
         salsa: ['Salsa', '"Open Sans"'],
         mc: ['MC', '"Open Sans"']
+      },
+      spacing: {
+        15: '60px',
+        18: '4.5rem'
       }
     },
     
