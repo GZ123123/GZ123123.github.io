@@ -1,24 +1,24 @@
 <template>
   <div class="text-white">
-    <div class="mt-6 md:mt-16">     
+    <Section class="mt-6 md:mt-16">     
       <AppBanner active />
-    </div>
+    </Section>
 
-    <div class="mt-10 md:mt-18">
+    <Section class="mt-10 md:mt-18">
       <AppMusic :songs="songs" />
-    </div>
+    </Section>
 
-    <div class="mt-15 md:mt-44">
+    <Section title="Gift love for u" class="mt-15 md:mt-44">
       <AppGifts />
-    </div>
+    </Section>
 
-    <div class="mt-15 md:mt-28">
+    <Section title="Xmas symbols mean?" class="mt-15 md:mt-28 px-[25px]">
       <AppCards />
-    </div>
+    </Section>
 
-    <div class="mt-15 md:mt-32">
+    <Section title="Write best wishes" class="mt-15 md:mt-32 px-[25px]">
       <AppLetter />
-    </div>
+    </Section>
   </div>
 </template>
 

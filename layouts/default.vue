@@ -1,5 +1,5 @@
 <template>
-  <div id="layout" class="px-5 md:px-20 pt-40 md:pt-64 mx-auto text-white">
+  <div id="layout" class="px-5 md:px-20 pt-40 md:pt-64 pb-20 md:pb-64 mx-auto text-white">
 
     <div>
       <AppHeader />
@@ -9,7 +9,7 @@
       <slot />
     </main>
 
-    <div>
+    <div class="px-14">
       <AppFooter/>
     </div>
 
