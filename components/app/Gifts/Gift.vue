@@ -1,0 +1,68 @@
+<template>
+  <svg ref="el" :class="{ active }" @click="onClick" width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g class="gift" >
+      <path id="top" fill="white" d="M64.6 46.7248C64.9 46.5232 65.3 46.3216 65.6 46.0192C67.3 44.608 68.4 42.4912 68.6 40.1728C68.7 38.056 68 35.8384 66.6 34.024C65.1 32.3104 63.1 31.2016 60.8 31C58.5 30.7984 56.3 31.504 54.6 33.016C53.5 33.9232 52.6 35.2336 52.1 36.6448L49.7 43.6L47.2 36.6448C46.7 35.2336 45.8 34.024 44.7 33.016C43 31.504 40.8 30.8992 38.5 31C36.2 31.2016 34.2 32.3104 32.7 34.024C31.2 35.7376 30.6 37.9552 30.7 40.2736C30.9 42.592 32 44.608 33.7 46.12C34 46.4224 34.3 46.624 34.6 46.8256H20V61.0384H23.9H46.5V49.9504H52.8V60.9376H79.4V46.7248H64.6ZM43.4 57.8128H23.1V49.9504H43.4V57.8128V57.8128ZM38.4 44.8096C37.5 44.608 36.6 44.2048 35.9 43.6C34.8 42.6928 34.1 41.3824 34 39.9712C33.9 38.56 34.3 37.1488 35.2 36.04C36.1 34.9312 37.4 34.2256 38.8 34.1248C40.2 34.024 41.6 34.4272 42.7 35.3344C43.4 36.04 44 36.8464 44.3 37.6528L47.3 46.3216L38.4 44.8096ZM52 46.3216L55 37.6528C55.3 36.7456 55.9 35.9392 56.6 35.3344C57.6 34.528 58.8 34.024 60 34.024C60.2 34.024 60.3 34.024 60.5 34.024C62 34.3264 63.3 35.032 64.2 36.04C65.1 37.1488 65.6 38.56 65.4 39.9712C65.3 41.3824 64.6 42.6928 63.5 43.6C62.8 44.2048 61.9 44.608 61 44.8096L52 46.3216ZM76.3 57.8128H55.9V49.9504H76.2V57.8128H76.3Z" />
+      <path id="bottom" fill="white" d="M75.5 60.9376V94H23.9V60.9376H27V90.8752H43.5V60.9376H46.6V90.8752H52.8V60.9376H56V90.8752H72.4V60.9376H75.5Z" />
+    </g>
+  </svg>
+</template>
+
+<script setup lang="ts">
+  const el = ref<HTMLElement>()
+
+  const _props = withDefaults( defineProps<{ active: boolean }>() , { active: false }) ;
+
+  const _emit = defineEmits<{ (event: 'open'): void }>()
+
+  const onClick = () => {
+    const classList = el.value?.classList;
+
+    if(!classList || classList.contains('active')) {
+      return;
+    }
+
+    classList.add('activating')
+    
+    setTimeout(() => {
+      classList.remove('activating')
+      classList.add('active')
+
+      _emit('open')
+    }, 1000)
+  }
+</script>
+
+<style scoped>
+.activating .gift {
+  transform-origin: 50% 100%;
+
+  animation: shake 500ms alternate;
+}
+
+.activating .gift #top {
+  animation: open 300ms 500ms forwards;
+}
+
+.active .gift #top {
+  transform: translatey(-25px)
+}
+
+@keyframes shake {
+  24% {
+    transform: rotate(5deg);
+  }
+
+  72% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes open {
+  60% {
+    transform: translatey(-25px) scaleY(1.4)
+  }
+  100% {
+    transform: translatey(-25px) scaleY(1)
+  }
+}
+</style>

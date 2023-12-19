@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-  const _props = defineProps<{ title: string }>()
+  const _props = defineProps<{ title?: string }>()
 </script>
 
 <style scoped>  
