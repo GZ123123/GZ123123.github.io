@@ -10,7 +10,7 @@
 <script setup lang="ts">
   const el = ref<HTMLElement>()
 
-  const _props = withDefaults( defineProps<{ active: boolean }>() , { active: false }) ;
+  const _props = withDefaults( defineProps<{ active?: boolean }>() , { active: false }) ;
 
   const _emit = defineEmits<{ (event: 'open'): void }>()
 

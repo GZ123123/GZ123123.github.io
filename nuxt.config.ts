@@ -10,6 +10,9 @@ export default defineNuxtConfig({
       title: process.env.APP_TITLE
     }
   },
+  build: {
+    analyze: true
+  },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'nuxt-svgo', "@nuxt/image"],
   svgo: {
     global: false,

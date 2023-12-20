@@ -1,15 +1,13 @@
 
 <template>
-  <div>
-    <div class="anchor">
-      <button @click="active = true">click</button>
-    </div>
-    <Teleport v-if="active" to="body">
-      <div class="modal-container" @click="active = false">
-        <div class="modal" @click.stop></div>
-      </div>
-    </Teleport>
+  <div class="anchor w-full h-full flex justify-center items-center" @click="active = true">
+    <slot />
   </div>
+  <Teleport v-if="active" to="body">
+    <div class="modal-container" @click="active = false">
+      <div class="modal" @click.stop></div>
+    </div>
+  </Teleport>
 </template>
 
 <script setup lang="ts">

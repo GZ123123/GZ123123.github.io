@@ -1,14 +1,8 @@
 <template>
   <div class="grid grid-cols-3 gap-x-5 md:gap-x-[172px] gap-y-[30px] md:gap-y-[8px]">
-    <div class="aspect-square"><Gift @open="onOpen" /></div>
-    <div class="aspect-square"><Gift active @open="onOpen" /></div>
-    <div class="aspect-square"><Gift @open="onOpen" /></div>
-    <div class="aspect-square"><Gift @open="onOpen" /></div>
-    <div class="aspect-square"><Gift @open="onOpen" /></div>
-    <div class="aspect-square"><Gift @open="onOpen" /></div>
-    <div class="aspect-square"><Gift @open="onOpen" /></div>
-    <div class="aspect-square"><Gift @open="onOpen" /></div>
-    <div class="aspect-square"><Gift @open="onOpen" /></div>
+    <template v-for="(gift, index) in gifts" :key="index">
+      <div class="aspect-square"><Gift :active="gift.isActive" @open="onOpen(index)" /></div>
+    </template>
   </div>
 </template>
 
@@ -16,7 +10,19 @@
 
 import Gift from './Gift.vue'
 
-const onOpen = () => {
+const gifts = [
+  { isActive: false },
+  { isActive: false },
+  { isActive: false },
+  { isActive: false },
+  { isActive: false },
+  { isActive: false },
+  { isActive: false },
+  { isActive: false },
+  { isActive: false },
+]
+
+const onOpen = (index: number) => {
 
 }
 
